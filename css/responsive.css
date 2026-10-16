@@ -193,6 +193,61 @@
     display: none !important;
   }
 
+  /* Landing page responsive containment */
+  .landing-sticky-nav {
+    top: 0;
+    padding: 0.5rem 0;
+  }
+
+  .landing-sticky-nav .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .landing-sticky-nav .btn-back-home {
+    align-self: flex-start;
+  }
+
+  .landing-visual-card {
+    padding: 0.85rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .floating-benefit-badge {
+    padding: 0.75rem;
+    gap: 0.65rem;
+  }
+
+  .simulator-card {
+    padding: 1.25rem 0.85rem;
+    margin: 1rem 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .sim-controls, .sim-results {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .profile-brand-duo-card {
+    padding: 1rem 0.75rem !important;
+  }
+
+  .logo-pt-wrap, .logo-pintar-wrap {
+    padding: 8px 14px !important;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .logo-pt-wrap img, .logo-pintar-wrap img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
   .landing-bottom-cta {
     bottom: 78px;
     left: 0.5rem;

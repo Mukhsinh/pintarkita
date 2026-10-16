@@ -371,7 +371,8 @@ const PINTAR_DATA = {
       'Manajemen Risiko & Renstra',
       'Manajemen Komplain & Mutu',
       'Tata Kelola Keuangan RS',
-      'Psikotes MMPI-2 RS'
+      'Psikotes MMPI-2 RS',
+      'Manajemen Keuangan Klinik'
     ],
     courses: [
       {
@@ -384,7 +385,7 @@ const PINTAR_DATA = {
         lessonsCount: 14,
         duration: '24 Jam Pelajaran (JP)',
         badge: 'HAKI No: 000831709',
-        thumbnail: 'assets/images/galeri unit cost.jpg',
+        thumbnail: 'assets/images/PINTAR UC.jpeg',
         description: 'Bimbingan teknis intensif penyusunan biaya satuan (Unit Cost) rumah sakit metode Activity-Based Costing (ABC) Modifikasi terintegrasi Clinical Pathway sesuai regulasi Kemenkes dan pedoman tarif BLUD.',
         modules: [
           {
@@ -518,7 +519,7 @@ const PINTAR_DATA = {
         lessonsCount: 12,
         duration: '20 Jam Pelajaran (JP)',
         badge: 'Akuntansi & Keuangan RS',
-        thumbnail: 'assets/images/Galeri Tarif.jpg',
+        thumbnail: 'assets/images/Manajemen keuangan BLUD.jpg',
         description: 'Bimbingan teknis komprehensif tata kelola keuangan rumah sakit (BLUD/Swasta) mulai dari perencanaan dan penganggaran (RBA/RKA), penatausahaan kas dan belanja BHP, hingga penyusunan laporan keuangan standar akuntansi.',
         modules: [
           {
@@ -549,7 +550,7 @@ const PINTAR_DATA = {
       },
       {
         id: 'course-6',
-        title: 'Bimtek Administrasi & Interpretasi Hasil Psikotes MMPI-2 Rumah Sakit',
+        title: 'Pelatihan Test Psikotes MMPI-2 Online',
         category: 'Psikotes MMPI-2 RS',
         target: 'Dokter Sp.KJ, Psikolog Klinis, Tim MCU Rumah Sakit',
         rating: 4.96,
@@ -557,7 +558,7 @@ const PINTAR_DATA = {
         lessonsCount: 12,
         duration: '20 Jam Pelajaran (JP)',
         badge: 'Standar Baku MMPI-2',
-        thumbnail: 'assets/images/pintar-mmpi-3d.jpg',
+        thumbnail: 'assets/images/PINTAR MMPI2.jpg',
         description: 'Pelatihan teknis pengoperasian tes MMPI-2 berbasis web, analisis skala validitas (L, F, K), skala klinis, interpretasi psikogram T-Score, dan penulisan laporan MCU jiwa.',
         modules: [
           {
@@ -571,6 +572,43 @@ const PINTAR_DATA = {
           },
           {
             title: 'Modul 2: Kuis Sertifikasi Asesmen MMPI-2 Rumah Sakit',
+            type: 'quiz',
+            quizQuestionsCount: 5,
+            passScore: 80
+          }
+        ]
+      },
+      {
+        id: 'course-7',
+        title: 'Pelatihan Manajemen Keuangan Klinik',
+        category: 'Manajemen Keuangan Klinik',
+        target: 'Pemilik Klinik, Dokter Penanggung Jawab, Bagian Keuangan & Kasir Klinik Pratama/Utama',
+        rating: 4.94,
+        reviewsCount: 275,
+        lessonsCount: 12,
+        duration: '20 Jam Pelajaran (JP)',
+        badge: 'SIM & Keuangan Klinik',
+        thumbnail: 'assets/images/PINTAR KLINIK.jpg',
+        description: 'Pelatihan komprehensif manajemen keuangan dan operasional klinik terintegrasi SIM Klinik, tata kelola kasir POS, pembukuan farmasi, klaim BPJS/asuransi, serta pelaporan pajak PMK 168.',
+        modules: [
+          {
+            title: 'Modul 1: Tata Kelola Kasir POS & Billing Pelayanan Klinik',
+            type: 'video',
+            duration: '30 Menit',
+            src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+            videoSummary: 'Penyusunan tarif layanan klinik, integrasi pembayaran digital QRIS/EDC, dan alur pencatatan pendapatan jasa dokter.',
+            pdfSummary: 'Modul Standar Operasional Prosedur (SOP) Kasir & Penagihan Billing Klinik.',
+            hasQuiz: true
+          },
+          {
+            title: 'Modul 2: Akuntansi Keuangan Klinik, Pembukuan Farmasi & Pajak PMK 168',
+            type: 'pdf',
+            pages: 28,
+            pdfSummary: 'Panduan pencatatan arus kas, kartu stok BHP medis/obat, perhitungan laba rugi bulanan, dan pemotongan PPh 21 TER dokter klinik.',
+            hasQuiz: true
+          },
+          {
+            title: 'Modul 3: Kuis Uji Kompetensi Manajemen Keuangan Klinik',
             type: 'quiz',
             quizQuestionsCount: 5,
             passScore: 80

@@ -570,6 +570,8 @@ class PintarKitaApp {
     document.querySelectorAll('.nav-sub-item').forEach(item => {
       item.addEventListener('click', (e) => {
         const appId = item.dataset.app;
+        const dropdownWrap = document.querySelector('.nav-dropdown-item-wrap');
+        if (dropdownWrap) dropdownWrap.classList.remove('open');
         if (appId) {
           window.location.hash = appId;
           this.openProductLanding(appId);
