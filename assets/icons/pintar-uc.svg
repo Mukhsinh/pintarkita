@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="blueGradUC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0052D4"/>
+      <stop offset="100%" stop-color="#0A3F97"/>
+    </linearGradient>
+    <linearGradient id="orangeGradUC" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5E00"/>
+      <stop offset="50%" stop-color="#FF8A00"/>
+      <stop offset="100%" stop-color="#FFA800"/>
+    </linearGradient>
+    <filter id="shadowUC" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#003580" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer P Stem in Blue -->
+  <path d="M45,35 C45,26.7 51.7,20 60,20 L115,20 C145,20 168,42 168,72 C168,98 149,119 124,123.5 C108,126 80,126 80,126 L80,165 C80,173.3 73.3,180 65,180 L60,180 C51.7,180 45,173.3 45,165 Z" 
+        fill="url(#blueGradUC)" filter="url(#shadowUC)"/>
+        
+  <!-- Rising Cost & Clinical Pathway Bars -->
+  <rect x="90" y="82" width="13" height="38" rx="5" fill="#FFFFFF"/>
+  <rect x="109" y="68" width="13" height="52" rx="5" fill="#FFFFFF"/>
+  <rect x="128" y="52" width="13" height="68" rx="5" fill="#FFFFFF"/>
+
+  <!-- Golden Orange Swoop Ribbon forming bottom of P loop -->
+  <path d="M48,155 C70,165 95,160 120,140 C145,120 165,95 165,65 C165,85 145,125 115,145 C85,165 58,162 48,155 Z" 
+        fill="url(#orangeGradUC)"/>
+  
+  <path d="M45,145 C65,165 110,165 145,130 C165,110 168,85 168,75 C165,100 145,135 115,152 C85,170 55,160 45,145 Z" 
+        fill="url(#orangeGradUC)"/>
+</svg>

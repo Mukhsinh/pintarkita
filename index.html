@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>PINTARKITA - Solusi Terpadu Manajemen Rumah Sakit & Fasyankes | PT. Akademi Profesional Indonesia</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="PINTARKITA adalah platform terpadu dari PT. Akademi Profesional Indonesia (AKAPRO) untuk Rumah Sakit (BLUD/RSUD/RS Swasta) dan Fasyankes: PINTAR UC (Unit Cost Clinical Pathway HAKI 000831709), PINTAR JP (Remunerasi Jaspel KPI HAKI 001299375), PINTAR MR (Manajemen Risiko Renstra HAKI 001299405), PINTAR PUAS, PINTAR KLINIK, PINTAR MMPI-2, dan Pelatihan Diklat RS. Hubungi WhatsApp: 085726112001.">
+  <meta name="keywords" content="PINTARKITA, PT Akademi Profesional Indonesia, AKAPRO, Mukhsin Hadi, Unit Cost RS, Clinical Pathway, Remunerasi Jasa Pelayanan, KPI Rumah Sakit, Manajemen Risiko RS, Renstra RS, Survey Kepuasan Pasien, PINTAR UC, PINTAR JP, PINTAR MR, PINTAR PUAS, PINTAR KLINIK, PINTAR MMPI-2, Bimtek RS">
+  <meta name="author" content="PT. Akademi Profesional Indonesia">
+  <meta name="theme-color" content="#0A3F97">
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PINTARKITA - Solusi Manajemen Rumah Sakit & Fasyankes | PT. Akademi Profesional Indonesia">
+  <meta property="og:description" content="Optimasi Nilai dengan Talenta Terampil Berbasis Teknologi. Solusi Unit Cost, Remunerasi Jaspel KPI, Manajemen Risiko, SIM Klinik, MMPI-2, dan Diklat Rumah Sakit.">
+  <meta property="og:image" content="assets/images/pintar-uc-info.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/pintarkita-circle.svg">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP BAR: JADWAL WAKTU SHOLAT & COUNTDOWN (Compact, Elegant & Clear)
+       ======================================================================== -->
+  <div class="prayer-bar-wrapper">
+    <div class="container">
+      <div class="prayer-bar-content">
+        <!-- City Selector & Current Date -->
+        <div class="prayer-info-left">
+          <div class="city-select-pill">
+            <i class="fas fa-map-marker-alt text-warning"></i>
+            <select id="prayer-city-select" aria-label="Pilih Kota"></select>
+          </div>
+          <div class="prayer-date-text">
+            <i class="far fa-calendar-alt text-warning"></i>
+            <span id="prayer-current-date">Memuat jadwal...</span>
+          </div>
+        </div>
+
+        <!-- Prayer Times Track -->
+        <div class="prayer-times-track">
+          <div class="prayer-pill" data-prayer="subuh">
+            <span class="prayer-name">Subuh</span>
+            <span class="prayer-val" id="prayer-subuh">--:--</span>
+          </div>
+          <div class="prayer-pill" data-prayer="terbit">
+            <span class="prayer-name">Terbit</span>
+            <span class="prayer-val" id="prayer-terbit">--:--</span>
+          </div>
+          <div class="prayer-pill" data-prayer="dzuhur">
+            <span class="prayer-name">Dzuhur</span>
+            <span class="prayer-val" id="prayer-dzuhur">--:--</span>
+          </div>
+          <div class="prayer-pill" data-prayer="ashar">
+            <span class="prayer-name">Ashar</span>
+            <span class="prayer-val" id="prayer-ashar">--:--</span>
+          </div>
+          <div class="prayer-pill" data-prayer="maghrib">
+            <span class="prayer-name">Maghrib</span>
+            <span class="prayer-val" id="prayer-maghrib">--:--</span>
+          </div>
+          <div class="prayer-pill" data-prayer="isya">
+            <span class="prayer-name">Isya</span>
+            <span class="prayer-val" id="prayer-isya">--:--</span>
+          </div>
+        </div>
+
+        <!-- Real-time Countdown Badge -->
+        <div class="prayer-countdown-badge">
+          <span class="pulse-dot"></span>
+          <div class="countdown-text-group">
+            <span class="countdown-label" id="prayer-next-label">Menuju Jadwal</span>
+            <span class="countdown-digits" id="prayer-countdown">00j 00m 00d</span>
+          </div>
+          <span class="header-clock" id="live-clock">--:--:-- WIB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MAIN DESKTOP HEADER & APP BAR
+       ======================================================================== -->
+  <header class="main-header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Fresh Circular Logo PINTARKITA with PT. Akademi Profesional Indonesia Attribution -->
+        <div class="brand-link brand-home-link" title="PINTARKITA Home">
+          <img src="assets/icons/pintarkita-main.svg" alt="PINTARKITA - Layanan PT. Akademi Profesional Indonesia" class="brand-logo-img">
+        </div>
+
+        <!-- Desktop Navigation Menu: Beranda, Profil, Aplikasi, Pelatihan, Berita, Galeri -->
+        <ul class="desktop-nav-menu">
+          <li><span class="top-nav-link active" data-view="beranda"><i class="fas fa-home"></i> Beranda</span></li>
+          <li><span class="top-nav-link" data-view="profil"><i class="fas fa-building"></i> Profil</span></li>
+          
+          <!-- Dropdown Menu Aplikasi: Submenu Pintar UC, Pintar JP, Pintar MR, Pintar Puas, Pintar Klinik, Pintar MMPI-2 -->
+          <li class="nav-dropdown-item-wrap">
+            <span class="top-nav-link nav-dropdown-toggle" id="btn-dropdown-apps" role="button" tabindex="0">
+              <i class="fas fa-th-large"></i> Aplikasi <i class="fas fa-chevron-down nav-caret"></i>
+            </span>
+            <div class="nav-app-dropdown-menu" id="nav-app-dropdown-menu">
+              <div class="dropdown-header-bar">
+                <span class="font-bold text-primary"><i class="fas fa-cubes"></i> APLIKASI RUMAH SAKIT</span>
+                <small class="text-muted">6 Solusi Sistem Terintegrasi PT. AKAPRO</small>
+              </div>
+              <div class="nav-app-grid">
+                <a href="#pintar-uc" class="nav-sub-item" data-app="pintar-uc">
+                  <div class="sub-item-logo-box">
+                    <img src="assets/icons/pintar-uc.svg" alt="PINTAR UC" class="dropdown-app-logo">
+                  </div>
+                  <div class="sub-item-text">
+                    <div class="sub-item-title">PINTAR UC <span class="badge-sub-haki">HAKI</span></div>
+                    <div class="sub-item-desc">Sistem Manajemen Unit Cost RS (ABC Modifikasi)</div>
+                  </div>
+                </a>
+                <a href="#pintar-jp" class="nav-sub-item" data-app="pintar-jp">
+                  <div class="sub-item-logo-box">
+                    <img src="assets/icons/pintar-jp.svg" alt="PINTAR JP" class="dropdown-app-logo">
+                  </div>
+                  <div class="sub-item-text">
+                    <div class="sub-item-title">PINTAR JP <span class="badge-sub-haki">HAKI</span></div>
+                    <div class="sub-item-desc">Distribusi Insentif Jasa Pelayanan & KPI</div>
+                  </div>
+                </a>
+                <a href="#pintar-mr" class="nav-sub-item" data-app="pintar-mr">
+                  <div class="sub-item-logo-box">
+                    <img src="assets/icons/pintar-mr.svg" alt="PINTAR MR" class="dropdown-app-logo">
+                  </div>
+                  <div class="sub-item-text">
+                    <div class="sub-item-title">PINTAR MR <span class="badge-sub-haki">HAKI</span></div>
+                    <div class="sub-item-desc">Manajemen Risiko Terintegrasi Renstra RS</div>
+                  </div>
+                </a>
+                <a href="#pintar-puas" class="nav-sub-item" data-app="pintar-puas">
+                  <div class="sub-item-logo-box">
+                    <img src="assets/icons/pintar-puas.svg" alt="PINTAR PUAS" class="dropdown-app-logo">
+                  </div>
+                  <div class="sub-item-text">
+                    <div class="sub-item-title">PINTAR PUAS</div>
+                    <div class="sub-item-desc">Survei Kepuasan Masyarakat PermenPAN-RB</div>
+                  </div>
+                </a>
+                <a href="#pintar-klinik" class="nav-sub-item" data-app="pintar-klinik">
+                  <div class="sub-item-logo-box">
+                    <img src="assets/icons/pintar-klinik.svg" alt="PINTAR KLINIK" class="dropdown-app-logo">
+                  </div>
+                  <div class="sub-item-text">
+                    <div class="sub-item-title">PINTAR KLINIK</div>
+                    <div class="sub-item-desc">SIM Klinik & Tata Kelola Keuangan Terpadu</div>
+                  </div>
+                </a>
+                <a href="#pintar-mmpi-2" class="nav-sub-item" data-app="pintar-mmpi-2">
+                  <div class="sub-item-logo-box">
+                    <img src="assets/icons/pintar-mmpi.svg" alt="PINTAR MMPI-2" class="dropdown-app-logo">
+                  </div>
+                  <div class="sub-item-text">
+                    <div class="sub-item-title">PINTAR MMPI-2</div>
+                    <div class="sub-item-desc">Psikotes MMPI-2 Digital & Skoring Otomatis</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li><span class="top-nav-link" data-view="pelatihan"><i class="fas fa-graduation-cap"></i> Pelatihan</span></li>
+          <li><span class="top-nav-link" data-view="artikel"><i class="fas fa-newspaper"></i> Berita</span></li>
+          <li><span class="top-nav-link" data-view="galeri"><i class="fas fa-images"></i> Galeri</span></li>
+        </ul>
+
+        <!-- Direct WhatsApp Action Header -->
+        <div class="header-actions">
+          <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA%20(PT.%20Akademi%20Profesional%20Indonesia),%20saya%20ingin%20berkonsultasi%20mengenai%20solusi%20aplikasi%20dan%20bimtek%20manajemen%20rumah%20sakit." target="_blank" class="btn btn-success btn-sm pulse-glow">
+            <i class="fas fa-headset"></i> Chat Admin
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       SPA VIEW 1: BERANDA (Dashboard Superapp, 6 Core Menus, Banners)
+       ======================================================================== -->
+  <main id="view-beranda" class="view-container active">
+    <div class="container">
+      
+      <!-- Dashboard Wallet / Quick Status Card (Strictly Matching Company Profile) -->
+      <section class="dashboard-hero-banner">
+        <div class="wallet-summary-card">
+          <div class="greeting-row">
+            <div class="user-greeting">
+              <span class="badge badge-warning mb-2"><i class="fas fa-award"></i> PT. AKADEMI PROFESIONAL INDONESIA (AKAPRO)</span>
+              <h2>Optimasi Nilai dengan Talenta Terampil Berbasis Teknologi</h2>
+              <p>Solusi profesional dan sistem terintegrasi untuk meningkatkan efisiensi, kualitas layanan, dan daya saing organisasi, khususnya di sektor kesehatan dan rumah sakit.</p>
+              <div class="slogan-badge mt-2">
+                <i class="fas fa-quote-left text-warning"></i> <em>Membangun Entitas. Tumbuh Melesat. Berdampak Nyata.</em>
+              </div>
+            </div>
+            <div class="d-none-mobile text-right">
+              <img src="assets/images/logo pt akademi profesional indonesia.jpeg" alt="PT. Akademi Profesional Indonesia" style="height: 68px; max-width: 220px; object-fit: contain; background: #ffffff; padding: 8px 16px; border-radius: 14px; margin-bottom: 0.5rem; box-shadow: 0 4px 14px rgba(0,0,0,0.1);">
+              <small class="d-block text-light"><i class="fas fa-shield-alt text-success"></i> SK Kemenkumham 2025 | NIB Terdaftar</small>
+            </div>
+          </div>
+
+          <div class="quick-stats-strip">
+            <div class="q-stat-item">
+              <span class="q-stat-val">100+</span>
+              <span class="q-stat-lbl">Rumah Sakit & Fasyankes</span>
+            </div>
+            <div class="q-stat-item">
+              <span class="q-stat-val">30+</span>
+              <span class="q-stat-lbl">Provinsi Bimtek & FGD</span>
+            </div>
+            <div class="q-stat-item">
+              <span class="q-stat-val">5+ HAKI</span>
+              <span class="q-stat-lbl">Hak Cipta Resmi Kemenkumham</span>
+            </div>
+            <div class="q-stat-item">
+              <span class="q-stat-val">100%</span>
+              <span class="q-stat-lbl">Kepatuhan Kemenkes & Kemendagri</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 Core Menu Applications Grid (Matching Image 3 Logos) -->
+      <section class="menu-grid-section">
+        <div class="section-head-bar">
+          <div>
+            <span class="subtitle-tag">Ekosistem Aplikasi Terintegrasi</span>
+            <h3>Solusi Sistem Informasi Manajemen Rumah Sakit & Fasyankes</h3>
+          </div>
+          <small class="text-muted"><i class="fas fa-info-circle"></i> Klik ikon menu untuk membuka landing page & simulasi sistem</small>
+        </div>
+
+        <div class="menu-icons-grid">
+          <!-- 1. PINTAR UC -->
+          <div class="product-menu-item" data-product="pintar-uc" title="Klik untuk Pelajari PINTAR UC">
+            <span class="menu-pill-badge">Unit Cost</span>
+            <div class="menu-icon-squircle">
+              <img src="assets/icons/pintar-uc.svg" alt="PINTAR UC" class="menu-icon-svg">
+            </div>
+            <h4 class="menu-title">PINTAR UC</h4>
+            <p class="menu-subtitle">Unit Cost & Clinical Pathway</p>
+          </div>
+
+          <!-- 2. PINTAR JP -->
+          <div class="product-menu-item" data-product="pintar-jp" title="Klik untuk Pelajari PINTAR JP">
+            <span class="menu-pill-badge">Remunerasi</span>
+            <div class="menu-icon-squircle">
+              <img src="assets/icons/pintar-jp.svg" alt="PINTAR JP" class="menu-icon-svg">
+            </div>
+            <h4 class="menu-title">PINTAR JP</h4>
+            <p class="menu-subtitle">Distribusi Insentif Jaspel & KPI</p>
+          </div>
+
+          <!-- 3. PINTAR MR (Updated badge to 'risiko' as requested) -->
+          <div class="product-menu-item" data-product="pintar-mr" title="Klik untuk Pelajari PINTAR MR">
+            <span class="menu-pill-badge">risiko</span>
+            <div class="menu-icon-squircle">
+              <img src="assets/icons/pintar-mr.svg" alt="PINTAR MR" class="menu-icon-svg">
+            </div>
+            <h4 class="menu-title">PINTAR MR</h4>
+            <p class="menu-subtitle">Manajemen Risiko & Renstra RS</p>
+          </div>
+
+          <!-- 4. PINTAR PUAS -->
+          <div class="product-menu-item" data-product="pintar-puas" title="Klik untuk Pelajari PINTAR PUAS">
+            <span class="menu-pill-badge">SKM & PPID</span>
+            <div class="menu-icon-squircle">
+              <img src="assets/icons/pintar-puas.svg" alt="PINTAR PUAS" class="menu-icon-svg">
+            </div>
+            <h4 class="menu-title">PINTAR PUAS</h4>
+            <p class="menu-subtitle">Komplain & Survei Kepuasan RS</p>
+          </div>
+
+          <!-- 5. PINTAR KLINIK -->
+          <div class="product-menu-item" data-product="pintar-klinik" title="Klik untuk Pelajari PINTAR KLINIK">
+            <span class="menu-pill-badge">Klinik & Pajak</span>
+            <div class="menu-icon-squircle">
+              <img src="assets/icons/pintar-klinik.svg" alt="PINTAR KLINIK" class="menu-icon-svg">
+            </div>
+            <h4 class="menu-title">PINTAR KLINIK</h4>
+            <p class="menu-subtitle">Kasir, Stok, Lapkeu & Pajak</p>
+          </div>
+
+          <!-- 6. PINTAR MMPI-2 -->
+          <div class="product-menu-item" data-product="pintar-mmpi-2" title="Klik untuk Pelajari PINTAR MMPI-2">
+            <span class="menu-pill-badge">Psikotes MCU</span>
+            <div class="menu-icon-squircle">
+              <img src="assets/icons/pintar-mmpi.svg" alt="PINTAR MMPI-2" class="menu-icon-svg">
+            </div>
+            <h4 class="menu-title">PINTAR MMPI-2</h4>
+            <p class="menu-subtitle">Psikotes MMPI-2 Realtime</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlight Banner Slider (Matching Infographics from Company Profile) -->
+      <section class="promo-carousel-section">
+        <div class="hero-banner-card">
+          <!-- Slide 1: Hospital Cost Management (PINTAR UC) -->
+          <div class="hero-banner-slide active">
+            <div class="banner-content-grid">
+              <div class="banner-text-box">
+                <span class="banner-tag"><i class="fas fa-calculator"></i> PINTAR UC - HAKI No: 000831709</span>
+                <h3 class="banner-heading">Jangan Tunda Penyusunan Unit Cost Rumah Sakit!</h3>
+                <p class="banner-desc">Tanpa Unit Cost yang andal, Anda hanya melangkah dalam ketidakpastian. Kenali biaya riil, kendalikan biaya RS, dan jangan biarkan rumah sakit Anda boncos lagi.</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <a href="#pintar-uc" class="btn btn-warning" onclick="window.PintarKita.openProductLanding('pintar-uc');">
+                    <i class="fas fa-file-invoice-dollar"></i> Pelajari PINTAR UC
+                  </a>
+                  <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20jadwalkan%20presentasi%20PINTAR%20UC%20untuk%20Rumah%20Sakit." target="_blank" class="btn btn-outline-primary" style="color: #fff; border-color: #fff;">
+                    <i class="fas fa-headset"></i> Chat Admin
+                  </a>
+                </div>
+              </div>
+              <div class="banner-image-box">
+                <img src="assets/images/pintar-uc-info.jpg" alt="Penyusunan Unit Cost Rumah Sakit" class="banner-3d-img">
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Jasa Pelayanan Remunerasi (PINTAR JP) -->
+          <div class="hero-banner-slide">
+            <div class="banner-content-grid">
+              <div class="banner-text-box">
+                <span class="banner-tag"><i class="fas fa-users-cog"></i> PINTAR JP - HAKI No: 001299375</span>
+                <h3 class="banner-heading">Distribusi Insentif Jasa Pelayanan Terintegrasi dengan KPI</h3>
+                <p class="banner-desc">Kemudahan, keadilan, dan akuntabilitas remunerasi tenaga kesehatan. Formula P1 (Kinerja Utama), P2 (Kinerja Tambahan), P3 (Perilaku), dan kepatuhan pajak PPh 21 TER PMK 168.</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <a href="#pintar-jp" class="btn btn-warning" onclick="window.PintarKita.openProductLanding('pintar-jp');">
+                    <i class="fas fa-hand-holding-usd"></i> Pelajari PINTAR JP
+                  </a>
+                  <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20konsultasi%20skema%20remunerasi%20PINTAR%20JP%20Rumah%20Sakit." target="_blank" class="btn btn-outline-primary" style="color: #fff; border-color: #fff;">
+                    <i class="fas fa-headset"></i> Chat Admin
+                  </a>
+                </div>
+              </div>
+              <div class="banner-image-box">
+                <img src="assets/images/pintar-jp-info.jpg" alt="PINTAR JP Remunerasi Nakes" class="banner-3d-img">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="banner-nav-dots">
+          <span class="banner-dot active"></span>
+          <span class="banner-dot"></span>
+        </div>
+      </section>
+
+      <!-- Mitra & Pengalaman Lapangan - Partners Marquee Showcase -->
+      <section class="landing-section partners-showcase-section">
+        <div class="section-title-wrap text-center mb-4">
+          <span class="subtitle-tag"><i class="fas fa-handshake"></i> Mitra & Pengalaman Lapangan</span>
+          <h2>Rekam Jejak Kemitraan Nyata di Seluruh Indonesia</h2>
+          <p>Telah dipercaya oleh berbagai Rumah Sakit Daerah, Kementerian, dan Lembaga Pengawasan di seluruh nusantara.</p>
+        </div>
+
+        <div class="partners-marquee-container">
+          <div class="partners-marquee-track" id="partners-marquee-track">
+            <!-- Injected via app.js renderPartnersMarquee() -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Dokumentasi & Galeri Foto Lapangan (Beranda Preview) -->
+      <section class="landing-section">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-3">
+          <div>
+            <span class="subtitle-tag"><i class="fas fa-camera"></i> Dokumentasi Lapangan</span>
+            <h2>Galeri Kegiatan & Kemitraan Rumah Sakit</h2>
+            <p class="text-muted mb-0">Rekam jejak bimbingan teknis, implementasi sistem PINTARKITA, dan FGD tata kelola fasyankes di berbagai daerah.</p>
+          </div>
+          <button class="btn btn-outline-primary btn-sm" id="btn-see-all-gallery">
+            <i class="fas fa-images"></i> Lihat Seluruh Galeri Foto
+          </button>
+        </div>
+
+        <div class="grid-3" id="beranda-gallery-preview">
+          <!-- Injected via app.js -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       SPA VIEW 2: PELATIHAN (LMS - EXCLUSIVELY RS & FASYANKES MANAGEMENT)
+       ======================================================================== -->
+  <section id="view-pelatihan" class="view-container">
+    <div class="container">
+      
+      <!-- LMS Hero Banner -->
+      <div class="lms-hero-banner">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+          <div>
+            <span class="badge badge-warning mb-2"><i class="fas fa-hospital-alt"></i> DIKLAT & BIMTEK MANAJEMEN RUMAH SAKIT</span>
+            <h2 class="lms-hero-title">LMS PINTARKITA - Pelatihan Manajemen Rumah Sakit & Fasyankes</h2>
+            <p class="lms-hero-desc">Sistem pembelajaran online dan bimbingan teknis terpadu khusus untuk peningkatan kapasitas SDM Rumah Sakit (BLUD/RSUD/RS Swasta) dan Fasilitas Pelayanan Kesehatan Indonesia.</p>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-warning" id="btn-show-laporan">
+              <i class="fas fa-file-invoice"></i> Laporan Pelatihan
+            </button>
+            <button class="btn btn-warning" id="btn-show-certificate">
+              <i class="fas fa-certificate"></i> Sertifikat Digital Saya
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills (Exclusively RS & Fasyankes) -->
+      <div class="lms-filter-strip">
+        <button class="lms-cat-pill active" data-cat="Semua Pelatihan">Semua Pelatihan RS</button>
+        <button class="lms-cat-pill" data-cat="Unit Cost & Tarif RS">Unit Cost & Tarif RS</button>
+        <button class="lms-cat-pill" data-cat="Remunerasi Jaspel & KPI">Remunerasi Jaspel & KPI</button>
+        <button class="lms-cat-pill" data-cat="Manajemen Risiko & Renstra">Manajemen Risiko & Renstra</button>
+        <button class="lms-cat-pill" data-cat="Manajemen Komplain & Mutu">Manajemen Komplain & Mutu</button>
+        <button class="lms-cat-pill" data-cat="SIM Klinik, RME & Pajak">SIM Klinik & Pajak</button>
+        <button class="lms-cat-pill" data-cat="Psikotes MMPI-2 RS">Psikotes MMPI-2 RS</button>
+      </div>
+
+      <!-- LMS Course Grid -->
+      <div class="grid-3" id="lms-course-grid">
+        <!-- Rendered via lms.js -->
+      </div>
+
+      <!-- LMS Features Overview Box (Hospital Focused Only) -->
+      <div class="glass-panel p-4 mt-4">
+        <div class="grid-2 align-items-center">
+          <div>
+            <span class="subtitle-tag">Peningkatan Kapasitas SDM Rumah Sakit</span>
+            <h3>Fitur Komprehensif LMS Diklat Fasyankes</h3>
+            <ul class="compare-list mt-3">
+              <li><i class="fas fa-video text-primary"></i> <strong>Modul Video Paparan Ahli:</strong> Bimbingan teknis interaktif dari narasumber praktisi rumah sakit dan konsultan berpengalaman.</li>
+              <li><i class="fas fa-file-pdf text-danger"></i> <strong>Buku Kerja & Regulasi PDF:</strong> Format regulasi resmi, draf SK Direktur, lembar kerja unit cost, dan tabel tarif siap pakai.</li>
+              <li><i class="fas fa-clipboard-check text-warning"></i> <strong>Kuis Sertifikasi Kompetensi:</strong> Ujian pemahaman manajemen rumah sakit dengan evaluasi dan skor instan.</li>
+              <li><i class="fas fa-file-excel text-success"></i> <strong>Ekspor Rekap Laporan ke Excel:</strong> Unduh seluruh data partisipasi dan nilai pegawai rumah sakit dalam format Excel (.csv).</li>
+              <li><i class="fas fa-award text-accent"></i> <strong>Sertifikat Digital Terakreditasi:</strong> Sertifikat resmi PT. Akademi Profesional Indonesia ber-QR Code untuk kelengkapan SKP dan rekam jejak nakes.</li>
+            </ul>
+          </div>
+          <div class="text-center">
+            <img src="assets/images/lms-3d.jpg" alt="Diklat Rumah Sakit" class="rounded-lg shadow-md" style="max-height: 280px; margin: 0 auto; border-radius: 20px;">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SPA VIEW 3: ARTIKEL & REGULASI RUMAH SAKIT
+       ======================================================================== -->
+  <section id="view-artikel" class="view-container">
+    <div class="container">
+      <div class="section-title-wrap text-center my-4">
+        <span class="subtitle-tag">Pusat Pengetahuan Rumah Sakit</span>
+        <h2>Artikel, Regulasi & Studi Kasus Manajemen Fasyankes</h2>
+        <p>Wawasan komprehensif seputar pola tarif BLUD, kendali biaya INA-CBGs, formula remunerasi nakes, dan mitigasi risiko rumah sakit.</p>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="grid-3" id="articles-grid">
+        <!-- Injected via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SPA VIEW 4: PROFIL PERUSAHAAN (PT. AKADEMI PROFESIONAL INDONESIA)
+       ======================================================================== -->
+  <section id="view-profil" class="view-container">
+    <div class="container">
+      
+      <!-- Company Official Header Card -->
+      <div class="glass-panel p-4 my-4">
+        <div class="grid-2 align-items-center">
+          <div>
+            <span class="subtitle-tag">Profil Perusahaan</span>
+            <h2>PT. AKADEMI PROFESIONAL INDONESIA</h2>
+            <h5 class="text-primary font-bold">AKAPRO • Pengembang Platform PINTARKITA</h5>
+            <p class="mt-2 text-dark"><strong>PT. Akademi Profesional Indonesia (AKAPRO)</strong> merupakan perusahaan profesional yang bergerak di bidang pengembangan sumber daya manusia (SDM), konsultasi manajemen, sertifikasi kompetensi, serta penyediaan solusi teknologi digital berbasis web-based dan mobile terintegrasi.</p>
+            <p class="text-muted">Perusahaan hadir sebagai mitra strategis bagi instansi pemerintah, rumah sakit (BLUD/RSUD/RS Swasta), BUMN, sektor korporasi, maupun pelaku usaha dalam meningkatkan kapasitas organisasi melalui pendekatan terpadu yang memadukan kompetensi SDM dengan inovasi teknologi informasi modern.</p>
+            
+            <div class="slogan-box p-3 glass-inset mt-3">
+              <strong class="text-dark"><i class="fas fa-hand-holding-heart text-danger"></i> Janji Layanan AKAPRO:</strong>
+              <p class="mb-0 mt-1"><em>"Profesional dalam kompetensi, terukur dalam proses, transparan dalam tata kelola, berkelanjutan dalam kemitraan."</em></p>
+            </div>
+          </div>
+          <div class="text-center p-3">
+            <img src="assets/images/logo pt akademi profesional indonesia.jpeg" alt="Logo PT. Akademi Profesional Indonesia" style="max-height: 85px; max-width: 250px; object-fit: contain; margin: 0 auto 1.5rem; background: #fff; padding: 10px 16px; border-radius: 16px; box-shadow: var(--shadow-sm); display: block;">
+            <div class="d-flex justify-content-center align-items-center gap-3">
+              <img src="assets/icons/pintarkita-main.svg" alt="PINTARKITA Fresh Logo" style="height: 54px;">
+            </div>
+            <small class="d-block text-muted mt-2">PINTARKITA adalah platform layanan resmi dari PT. AKAPRO</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visi & Misi Perusahaan (PDF Page 2) -->
+      <div class="grid-2 mb-4">
+        <div class="glass-panel p-4">
+          <div class="feature-icon-wrap"><i class="fas fa-eye"></i></div>
+          <h4>VISI PERUSAHAAN</h4>
+          <p>“Menjadi institusi profesional terdepan yang mempersiapkan talenta Indonesia dalam menghadapi era ekonomi digital melalui penyelenggaraan pembelajaran berkualitas, inovasi teknologi, serta kolaborasi strategis yang berkelanjutan.”</p>
+        </div>
+        <div class="glass-panel p-4">
+          <div class="feature-icon-wrap"><i class="fas fa-bullseye"></i></div>
+          <h4>MISI PERUSAHAAN</h4>
+          <ul class="compare-list">
+            <li><i class="fas fa-check text-primary"></i> Menyelenggarakan program pelatihan dan bimbingan teknis yang berstandar tinggi serta relevan dengan perkembangan industri dan regulasi nasional.</li>
+            <li><i class="fas fa-check text-primary"></i> Mengembangkan solusi teknologi berbasis web dan mobile yang terintegrasi guna mendukung digitalisasi proses bisnis organisasi.</li>
+            <li><i class="fas fa-check text-primary"></i> Mendorong penerapan tata kelola yang transparan, akuntabel, dan berorientasi pada peningkatan kinerja.</li>
+            <li><i class="fas fa-check text-primary"></i> Membangun budaya transformasi digital di berbagai sektor melalui inovasi yang berkelanjutan.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nilai Layanan - 4 Pillars of Excellence -->
+      <div class="section-title-wrap text-center my-4">
+        <span class="subtitle-tag">Nilai Layanan Kami</span>
+        <h3>Komitmen Keunggulan PT. Akademi Profesional Indonesia</h3>
+        <p>Didukung tim multidisiplin: kepemimpinan, akuntansi keuangan, manajemen risiko, medis, paramedis, dan arsitek perangkat lunak.</p>
+      </div>
+      <div class="grid-4 mb-4" id="profile-values-grid">
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrap"><i class="fas fa-medal"></i></div>
+          <h4>PROFESIONAL</h4>
+          <p>Berkomitmen pada kualitas, integritas, dan standar tertinggi dalam setiap program bimbingan teknis dan aplikasi.</p>
+        </div>
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrap"><i class="fas fa-lightbulb"></i></div>
+          <h4>INOVATIF</h4>
+          <p>Menghadirkan solusi cerdas dan teknologi mutakhir untuk masa depan tata kelola rumah sakit modern.</p>
+        </div>
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrap"><i class="fas fa-handshake"></i></div>
+          <h4>KOLABORATIF</h4>
+          <p>Sinergi dan kerja sama lintas disiplin untuk hasil yang lebih terukur dan berdaya guna.</p>
+        </div>
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-wrap"><i class="fas fa-chart-line"></i></div>
+          <h4>BERDAMPAK</h4>
+          <p>Memberi nilai nyata bagi organisasi rumah sakit, pasien, dan masyarakat secara berkelanjutan.</p>
+        </div>
+      </div>
+
+      <!-- Legalitas & Administrasi Lengkap (PDF Page 3) -->
+      <div class="glass-panel p-4 mb-4">
+        <span class="subtitle-tag">Kepatuhan Hukum & Legalitas</span>
+        <h3>Legalitas & Kelengkapan Administrasi Perusahaan</h3>
+        <p class="text-muted">PT. Akademi Profesional Indonesia beroperasi secara sah berdasarkan hukum Republik Indonesia dan memenuhi legalitas perizinan berusaha berbasis risiko (OSS-RBA):</p>
+        
+        <div class="grid-2 mt-3">
+          <div class="glass-inset p-3">
+            <h6 class="font-bold text-primary mb-2"><i class="fas fa-certificate"></i> Dokumen Legalitas Resmi</h6>
+            <table class="table-legal" style="width: 100%; font-size: 0.85rem;">
+              <tr><td style="width: 40%; font-weight: 600; padding: 4px 0;">Nama Perusahaan:</td><td>PT. AKADEMI PROFESIONAL INDONESIA</td></tr>
+              <tr><td style="font-weight: 600; padding: 4px 0;">SK Pengesahan:</td><td>AHU-041019.AH.01.30. Tahun 2025 (Terdaftar: 3 Agustus 2025)</td></tr>
+              <tr><td style="font-weight: 600; padding: 4px 0;">Nomor Induk Berusaha (NIB):</td><td>0308250032922 (Sistem OSS Risk-Based Approach)</td></tr>
+              <tr><td style="font-weight: 600; padding: 4px 0;">NPWP Perusahaan:</td><td>33.750.330.1-185.000 (KPP Pratama Pekalongan)</td></tr>
+              <tr><td style="font-weight: 600; padding: 4px 0;">Status Modal:</td><td>PMDN (Penanaman Modal Dalam Negeri)</td></tr>
+            </table>
+          </div>
+
+          <div class="glass-inset p-3">
+            <h6 class="font-bold text-primary mb-2"><i class="fas fa-award"></i> Hak Kekayaan Intelektual (HAKI)</h6>
+            <div class="haki-credentials-grid">
+              <div class="haki-card">
+                <div class="haki-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                <div class="haki-info">
+                  <span class="haki-label">PINTAR UC</span>
+                  <span class="haki-number">No. 000831709</span>
+                  <span class="haki-desc">Sistem Unit Cost RS</span>
+                </div>
+              </div>
+              <div class="haki-card">
+                <div class="haki-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                <div class="haki-info">
+                  <span class="haki-label">PINTAR JP</span>
+                  <span class="haki-number">No. 001299375</span>
+                  <span class="haki-desc">Remunerasi Jaspel</span>
+                </div>
+              </div>
+              <div class="haki-card">
+                <div class="haki-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="haki-info">
+                  <span class="haki-label">PINTAR MR</span>
+                  <span class="haki-number">No. 001299405</span>
+                  <span class="haki-desc">Manajemen Risiko RS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Struktur Manajemen & Tim Ahli (PDF Page 5) -->
+      <div class="section-title-wrap text-center my-4">
+        <span class="subtitle-tag">Struktur Manajemen & Narasumber</span>
+        <h3>Tim Multidisiplin & Pakar Konsultan Rumah Sakit</h3>
+        <p>Memadukan kepemimpinan, akuntansi keuangan, medis, paramedis, manajemen risiko, dan teknologi informasi.</p>
+      </div>
+
+      <div class="grid-4 mb-4" id="profile-advisors-grid">
+        <!-- Injected via app.js -->
+      </div>
+
+
+
+      <!-- Kantor & Kontak Resmi (PDF Page 6 & 7) -->
+      <div class="glass-panel p-4 mb-4">
+        <div class="grid-2 align-items-center">
+          <div>
+            <span class="subtitle-tag">Kontak & Kantor Pusat</span>
+            <h3>PT. AKADEMI PROFESIONAL INDONESIA</h3>
+            <p><i class="fas fa-map-marker-alt text-primary"></i> <strong>Alamat Kantor:</strong> Perum Saphire Townhouse Blok C-3, Jl. Truntum, Kel. Krapyak, Kec. Pekalongan Utara, Kota Pekalongan, Jawa Tengah 51147</p>
+            <p><i class="fas fa-user-tie text-primary"></i> <strong>PIC:</strong> Mukhsin Hadi, SE, M.Si</p>
+            <p><i class="fab fa-whatsapp text-success font-xl"></i> <strong>WhatsApp:</strong> 085726112001</p>
+            <p><i class="far fa-envelope text-primary"></i> <strong>Email:</strong> mukhsin9@gmail.com / akademiprofesional@gmail.com</p>
+          </div>
+          <div class="text-center p-3">
+            <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20PT.%20Akademi%20Profesional%20Indonesia." target="_blank" class="btn btn-success btn-lg pulse-glow">
+              <i class="fas fa-headset"></i> Chat Admin (085726112001)
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SPA VIEW 4: GALERI DOKUMENTASI KEGIATAN & REKAM JEJAK RESMI
+       ======================================================================== -->
+  <section id="view-galeri" class="view-container">
+    <div class="container">
+      
+      <!-- Galeri Hero Banner -->
+      <div class="gallery-hero-banner glass-panel p-4 mb-4">
+        <div class="gallery-hero-content">
+          <span class="badge badge-warning mb-2"><i class="fas fa-camera-retro"></i> DOKUMENTASI RESMI PT. AKAPRO</span>
+          <h2 class="font-bold text-dark mb-2">Galeri Kegiatan & Rekam Jejak Lapangan</h2>
+          <p class="text-muted mb-0">Dokumentasi nyata kegiatan bimbingan teknis manajemen rumah sakit, implementasi aplikasi PINTARKITA, Focus Group Discussion (FGD) remunerasi & unit cost, serta kemitraan strategis di berbagai daerah di Indonesia.</p>
+        </div>
+      </div>
+
+      <!-- Kategori Filter Tab -->
+      <div class="gallery-filter-strip mb-4">
+        <button class="gallery-filter-btn active" data-filter="all"><i class="fas fa-border-all"></i> Semua Foto</button>
+        <button class="gallery-filter-btn" data-filter="aplikasi"><i class="fas fa-laptop-medical"></i> Implementasi Aplikasi</button>
+        <button class="gallery-filter-btn" data-filter="bimtek"><i class="fas fa-chalkboard-teacher"></i> Bimtek & Pelatihan RS</button>
+        <button class="gallery-filter-btn" data-filter="fgd"><i class="fas fa-comments"></i> FGD & Tata Kelola</button>
+        <button class="gallery-filter-btn" data-filter="kemitraan"><i class="fas fa-handshake"></i> Kemitraan RS</button>
+      </div>
+
+      <!-- Grid Foto Galeri -->
+      <div class="grid-3" id="gallery-grid">
+        <!-- Injected via app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SPA VIEW 5: DYNAMIC MARKETING LANDING PAGES (Generated by app.js)
+       For PINTAR UC, PINTAR JP, PINTAR MR, PINTAR PUAS, PINTAR KLINIK, PINTAR MMPI-2
+       ======================================================================== -->
+  <section id="view-landing-page" class="view-container">
+    <!-- Dynamically injected with rich copywriting, graphics, simulators & CTAs -->
+  </section>
+
+  <!-- ========================================================================
+       MODAL 1: LMS INTERACTIVE COURSE PLAYER (Video, PDF, Quiz Engine)
+       ======================================================================== -->
+  <div class="modal-overlay" id="lms-player-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <h4 id="player-course-title">Judul Diklat Rumah Sakit</h4>
+          <small class="text-muted" id="player-course-category">Kategori & Durasi</small>
+        </div>
+        <button class="modal-close-btn" id="close-lms-player" title="Tutup">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="player-layout">
+          <!-- Sidebar: Module Playlist -->
+          <div class="player-sidebar">
+            <h6 class="font-bold mb-3"><i class="fas fa-list-ul"></i> Silabus Materi Bimbingan Teknis</h6>
+            <div id="player-module-list">
+              <!-- Modules injected by lms.js -->
+            </div>
+          </div>
+
+          <!-- Main Content Area: Video, PDF Viewer or Quiz -->
+          <div class="player-content-area" id="player-content-area">
+            <!-- Injected by lms.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 2: DIGITAL CERTIFICATE GENERATOR & PREVIEW
+       ======================================================================== -->
+  <div class="modal-overlay" id="cert-modal">
+    <div class="modal-dialog" style="max-width: 860px;">
+      <div class="modal-header">
+        <div>
+          <h4><i class="fas fa-certificate text-warning"></i> Sertifikat Kelulusan Diklat Rumah Sakit</h4>
+          <small class="text-muted">Diterbitkan oleh PT. Akademi Profesional Indonesia (AKAPRO)</small>
+        </div>
+        <button class="modal-close-btn" id="close-cert-modal" title="Tutup">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="certificate-frame" id="printable-certificate">
+          <div class="certificate-inner-border">
+            <img src="assets/images/logo pt akademi profesional indonesia.jpeg" alt="PT. Akademi Profesional Indonesia" class="cert-emblem" style="height: 52px; width: auto; object-fit: contain; background: #fff; padding: 4px 8px; border-radius: 8px;">
+            <div class="cert-inst-title">PT. AKADEMI PROFESIONAL INDONESIA</div>
+            <div class="cert-sub-inst">SK KEMENKUMHAM RI NO. AHU-041019.AH.01.30. TAHUN 2025 • NIB: 0308250032922</div>
+
+            <div class="cert-headline">SERTIFIKAT KELULUSAN KOMPETENSI</div>
+            <div class="cert-reg-no">Nomor Registrasi: <span id="cert-reg-id">AKAPRO-RS/2026/X/08491</span></div>
+
+            <div class="cert-given-to">Diberikan dengan hormat kepada:</div>
+            <div class="cert-recipient-name" id="cert-name">dr. Siti Rahmawati, Sp.A, MARS</div>
+
+            <p style="font-size: 0.95rem; color: #475569; margin: 0 auto; max-width: 600px;">
+              Telah menyelesaikan secara tuntas seluruh modul materi, telaah standar regulasi, dan dinyatakan <strong>LULUS UJI KOMPETENSI</strong> pada program bimbingan teknis:
+            </p>
+            <div class="cert-course-name" id="cert-course">Bimtek Penyusunan Unit Cost & Clinical Pathway Rumah Sakit (ABC Modifikasi)</div>
+
+            <div class="cert-footer-row">
+              <div class="cert-qr-box">
+                <i class="fas fa-qrcode font-xxl text-primary"></i>
+              </div>
+              <div class="text-center">
+                <small class="text-muted">Tanggal Kelulusan</small>
+                <div class="font-bold" id="cert-date">16 Oktober 2026</div>
+              </div>
+              <div class="cert-sig-block">
+                <div style="font-family: 'Brush Script MT', cursive, sans-serif; font-size: 1.8rem; color: #0A3F97;">Mukhsin Hadi</div>
+                <div class="border-top pt-1 font-bold" style="font-size: 0.8rem;">Mukhsin Hadi, SE, M.Si</div>
+                <div class="text-muted" style="font-size: 0.72rem;">Direktur PT. AKAPRO</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-action-bar d-flex justify-content-center gap-3 mt-4">
+          <button class="btn btn-outline-primary" id="btn-edit-student-name">
+            <i class="fas fa-user-edit"></i> Ubah Nama di Sertifikat
+          </button>
+          <button class="btn btn-primary" id="btn-print-certificate">
+            <i class="fas fa-print"></i> Cetak / Simpan PDF Sertifikat
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 3: ARTICLE READER MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="article-modal">
+    <div class="modal-dialog" style="max-width: 780px;">
+      <div class="modal-header">
+        <h4 id="art-modal-title">Judul Artikel</h4>
+        <button class="modal-close-btn" id="close-article-modal" title="Tutup">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="article-meta mb-3" id="art-modal-meta"></div>
+        <div id="art-modal-body" class="article-content-typography"></div>
+        <div class="mt-4 p-3 glass-inset text-center">
+          <h5>Ingin Mendiskusikan Implementasi di Rumah Sakit Anda?</h5>
+          <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20tertarik%20dengan%20artikel%20dan%20ingin%20berkonsultasi%20langsung." target="_blank" class="btn btn-success mt-2">
+            <i class="fas fa-headset"></i> Chat Admin (085726112001)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       BOTTOM NAVIGATION BAR (Superapp Floating Dock as Requested)
+       Icons: Beranda, Pelatihan (LMS RS), WhatsApp PIC, Artikel, Profil
+       ======================================================================== -->
+  <!-- ========================================================================
+       BOTTOM NAVIGATION BAR (Superapp Floating Dock)
+       Urutan: Beranda, Profil, Aplikasi, WhatsApp, Pelatihan, Berita, Galeri
+       ======================================================================== -->
+  <nav class="bottom-nav-bar" aria-label="Navigasi Utama">
+    <!-- 1. Beranda -->
+    <a class="bottom-nav-item active" data-view="beranda" role="button" tabindex="0">
+      <i class="fas fa-home"></i>
+      <span>Beranda</span>
+    </a>
+
+    <!-- 2. Profil PT. AKAPRO -->
+    <a class="bottom-nav-item" data-view="profil" role="button" tabindex="0">
+      <i class="fas fa-building"></i>
+      <span>Profil</span>
+    </a>
+
+    <!-- 3. Aplikasi (Mobile Sheet Trigger) -->
+    <a class="bottom-nav-item" data-view="aplikasi-sheet" role="button" tabindex="0" id="btn-mobile-app-sheet">
+      <i class="fas fa-th-large"></i>
+      <span>Aplikasi</span>
+    </a>
+
+    <!-- 4. WhatsApp Chat Admin (Center Elevated Button) -->
+    <a class="bottom-nav-item wa-item" data-view="whatsapp" role="button" tabindex="0" title="Chat Admin PINTARKITA 085726112001">
+      <div class="wa-fab-circle">
+        <i class="fab fa-whatsapp"></i>
+      </div>
+      <span>WhatsApp</span>
+    </a>
+
+    <!-- 5. Pelatihan (LMS RS) -->
+    <a class="bottom-nav-item" data-view="pelatihan" role="button" tabindex="0">
+      <i class="fas fa-graduation-cap"></i>
+      <span>Pelatihan</span>
+    </a>
+
+    <!-- 6. Berita -->
+    <a class="bottom-nav-item" data-view="artikel" role="button" tabindex="0">
+      <i class="fas fa-newspaper"></i>
+      <span>Berita</span>
+    </a>
+
+    <!-- 7. Galeri Foto -->
+    <a class="bottom-nav-item" data-view="galeri" role="button" tabindex="0">
+      <i class="fas fa-images"></i>
+      <span>Galeri</span>
+    </a>
+  </nav>
+
+  <!-- ========================================================================
+       MODAL 4: LAPORAN PELATIHAN (Official PDF-style Training Report)
+       ======================================================================== -->
+  <div class="modal-overlay" id="laporan-modal">
+    <div class="modal-dialog" style="max-width: 900px;">
+      <div class="modal-header">
+        <div>
+          <h4><i class="fas fa-file-invoice text-primary"></i> Laporan Pelatihan Resmi</h4>
+          <small class="text-muted">Diterbitkan oleh PT. Akademi Profesional Indonesia (AKAPRO)</small>
+        </div>
+        <button class="modal-close-btn" id="close-laporan-modal" title="Tutup">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="laporan-sheet" id="printable-laporan">
+          <!-- KOP SURAT -->
+          <div class="kop-surat-header">
+            <img src="assets/images/logo pt akademi profesional indonesia.jpeg" alt="Logo PT. AKAPRO" class="kop-logo" style="height: 58px; max-width: 160px; object-fit: contain;">
+            <div class="kop-text">
+              <h2>PT. AKADEMI PROFESIONAL INDONESIA</h2>
+              <p>SK Kemenkumham RI No. AHU-041019.AH.01.30. Tahun 2025</p>
+              <p>Perum Saphire Townhouse Blok C-3, Jl. Truntum, Kel. Krapyak, Kec. Pekalongan Utara, Kota Pekalongan 51147</p>
+              <p>Telp: 085726112001 | Email: akademiprofesional@gmail.com</p>
+            </div>
+          </div>
+          <div class="kop-divider"></div>
+
+          <!-- Judul Dokumen -->
+          <div class="laporan-doc-title">
+            <h3>LAPORAN PELATIHAN</h3>
+            <p class="laporan-ref-no">Nomor: LAP/AKAPRO-DIKLAT/X/2026/001</p>
+            <p class="laporan-perihal">Perihal: Rekapitulasi Hasil Evaluasi Pelatihan & Bimbingan Teknis Manajemen Rumah Sakit</p>
+          </div>
+
+          <!-- Ringkasan Eksekutif -->
+          <div class="laporan-section">
+            <h5>I. PENDAHULUAN</h5>
+            <p>Sehubungan dengan pelaksanaan program Pelatihan dan Bimbingan Teknis (Bimtek) Manajemen Rumah Sakit yang diselenggarakan oleh <strong>PT. Akademi Profesional Indonesia (AKAPRO)</strong> melalui platform digital <strong>PINTARKITA LMS</strong>, berikut kami sampaikan laporan hasil evaluasi peserta pelatihan sebagai berikut:</p>
+          </div>
+
+          <!-- Tabel Evaluasi -->
+          <div class="laporan-section">
+            <h5>II. REKAPITULASI HASIL EVALUASI PESERTA</h5>
+            <table class="laporan-table">
+              <thead>
+                <tr>
+                  <th style="width: 40px;">No</th>
+                  <th>Nama Peserta</th>
+                  <th>Instansi / RS</th>
+                  <th>Judul Bimtek</th>
+                  <th style="width: 65px;">Skor</th>
+                  <th style="width: 90px;">Status</th>
+                </tr>
+              </thead>
+              <tbody id="laporan-table-body">
+                <!-- Injected by lms.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Kesimpulan -->
+          <div class="laporan-section">
+            <h5>III. KESIMPULAN</h5>
+            <p>Berdasarkan hasil evaluasi terhadap seluruh peserta pelatihan, kami menyatakan bahwa peserta yang dinyatakan <strong>LULUS KOMPETEN</strong> telah menyelesaikan seluruh modul pembelajaran, menunjukkan pemahaman memadai terhadap regulasi dan standar yang berlaku, serta memenuhi batas nilai minimum kelulusan (skor ≥ 70). Sertifikat digital resmi PT. AKAPRO telah diterbitkan bagi seluruh peserta yang memenuhi syarat.</p>
+          </div>
+
+          <!-- Tanda Tangan -->
+          <div class="laporan-signature">
+            <div class="sig-location">
+              <p>Pekalongan, <span id="laporan-date">16 Oktober 2026</span></p>
+              <p><strong>Direktur PT. Akademi Profesional Indonesia</strong></p>
+              <div class="sig-stamp-area">
+                <div class="stamp-badge"><i class="fas fa-stamp"></i></div>
+              </div>
+              <p class="sig-name"><strong>Mukhsin Hadi, SE, M.Si</strong></p>
+              <p class="sig-title">NIB: 0308250032922 | NPWP: 33.750.330.1-185.000</p>
+            </div>
+          </div>
+
+          <!-- Footer Dokumen -->
+          <div class="laporan-footer-doc">
+            <p>Dokumen ini diterbitkan secara resmi oleh PT. Akademi Profesional Indonesia dan sah tanpa tanda tangan basah.</p>
+            <p>Verifikasi keaslian dokumen: <strong>pintarkita.id</strong> | © 2026 PT. AKAPRO</p>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="d-flex justify-content-center gap-3 mt-4">
+          <button class="btn btn-primary" id="btn-print-laporan">
+            <i class="fas fa-print"></i> Cetak / Simpan PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 5: LIGHTBOX GALERI FOTO RESMI (Full Preview & Zoom)
+       ======================================================================== -->
+  <div class="modal-overlay" id="gallery-lightbox-modal">
+    <div class="modal-dialog" style="max-width: 920px;">
+      <div class="modal-header">
+        <div>
+          <span class="badge badge-warning mb-1" id="lightbox-badge">Kategori Kegiatan</span>
+          <h4 id="lightbox-title" style="margin: 0; font-size: 1.15rem;">Judul Kegiatan Lapangan</h4>
+        </div>
+        <button class="modal-close-btn" id="close-lightbox-modal" title="Tutup">&times;</button>
+      </div>
+
+      <div class="modal-body p-0">
+        <div class="lightbox-stage">
+          <img src="" alt="" id="lightbox-img" class="lightbox-main-img">
+          <button class="lightbox-nav-btn prev-btn" id="lightbox-prev" title="Foto Sebelumnya">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="lightbox-nav-btn next-btn" id="lightbox-next" title="Foto Selanjutnya">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        
+        <div class="lightbox-caption-box p-4">
+          <div class="d-flex flex-wrap justify-content-between align-items-center mb-2 gap-2 border-bottom pb-2">
+            <div id="lightbox-meta" class="text-muted" style="font-size: 0.85rem;">
+              <!-- Meta injected by app.js -->
+            </div>
+            <a href="" id="lightbox-download" target="_blank" download class="btn btn-sm btn-outline-primary">
+              <i class="fas fa-external-link-alt"></i> Buka Gambar Asli
+            </a>
+          </div>
+          <p id="lightbox-desc" class="mb-0 text-dark" style="font-size: 0.95rem; line-height: 1.6;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL 6: MOBILE APLIKASI BOTTOM SHEET
+       ======================================================================== -->
+  <div class="modal-overlay" id="mobile-app-modal">
+    <div class="modal-dialog modal-bottom-sheet" style="max-width: 600px;">
+      <div class="modal-header">
+        <div>
+          <h4 class="text-primary font-bold"><i class="fas fa-th-large"></i> Pilih Aplikasi PINTARKITA</h4>
+          <small class="text-muted">6 Solusi Sistem Unggulan PT. AKAPRO</small>
+        </div>
+        <button class="modal-close-btn" id="close-mobile-app-modal" title="Tutup">&times;</button>
+      </div>
+      <div class="modal-body p-3">
+        <div class="mobile-app-list">
+          <a href="#pintar-uc" class="mobile-app-card" data-app="pintar-uc">
+            <div class="sub-item-logo-box"><img src="assets/icons/pintar-uc.svg" alt="PINTAR UC" class="dropdown-app-logo"></div>
+            <div class="mobile-app-info">
+              <div class="font-bold text-dark">PINTAR UC <span class="badge-sub-haki">HAKI</span></div>
+              <small class="text-muted">Sistem Manajemen Unit Cost RS (ABC Modifikasi)</small>
+            </div>
+            <i class="fas fa-chevron-right text-muted"></i>
+          </a>
+          <a href="#pintar-jp" class="mobile-app-card" data-app="pintar-jp">
+            <div class="sub-item-logo-box"><img src="assets/icons/pintar-jp.svg" alt="PINTAR JP" class="dropdown-app-logo"></div>
+            <div class="mobile-app-info">
+              <div class="font-bold text-dark">PINTAR JP <span class="badge-sub-haki">HAKI</span></div>
+              <small class="text-muted">Distribusi Insentif Jasa Pelayanan & KPI</small>
+            </div>
+            <i class="fas fa-chevron-right text-muted"></i>
+          </a>
+          <a href="#pintar-mr" class="mobile-app-card" data-app="pintar-mr">
+            <div class="sub-item-logo-box"><img src="assets/icons/pintar-mr.svg" alt="PINTAR MR" class="dropdown-app-logo"></div>
+            <div class="mobile-app-info">
+              <div class="font-bold text-dark">PINTAR MR <span class="badge-sub-haki">HAKI</span></div>
+              <small class="text-muted">Manajemen Risiko Terintegrasi Renstra RS</small>
+            </div>
+            <i class="fas fa-chevron-right text-muted"></i>
+          </a>
+          <a href="#pintar-puas" class="mobile-app-card" data-app="pintar-puas">
+            <div class="sub-item-logo-box"><img src="assets/icons/pintar-puas.svg" alt="PINTAR PUAS" class="dropdown-app-logo"></div>
+            <div class="mobile-app-info">
+              <div class="font-bold text-dark">PINTAR PUAS</div>
+              <small class="text-muted">Survei Kepuasan Pasien PermenPAN-RB</small>
+            </div>
+            <i class="fas fa-chevron-right text-muted"></i>
+          </a>
+          <a href="#pintar-klinik" class="mobile-app-card" data-app="pintar-klinik">
+            <div class="sub-item-logo-box"><img src="assets/icons/pintar-klinik.svg" alt="PINTAR KLINIK" class="dropdown-app-logo"></div>
+            <div class="mobile-app-info">
+              <div class="font-bold text-dark">PINTAR KLINIK</div>
+              <small class="text-muted">SIM Klinik & Tata Kelola Keuangan Terpadu</small>
+            </div>
+            <i class="fas fa-chevron-right text-muted"></i>
+          </a>
+          <a href="#pintar-mmpi-2" class="mobile-app-card" data-app="pintar-mmpi-2">
+            <div class="sub-item-logo-box"><img src="assets/icons/pintar-mmpi.svg" alt="PINTAR MMPI-2" class="dropdown-app-logo"></div>
+            <div class="mobile-app-info">
+              <div class="font-bold text-dark">PINTAR MMPI-2</div>
+              <small class="text-muted">Psikotes MMPI-2 Digital & Skoring Otomatis</small>
+            </div>
+            <i class="fas fa-chevron-right text-muted"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/prayer-time.js"></script>
+  <script src="js/simulator.js"></script>
+  <script src="js/lms.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

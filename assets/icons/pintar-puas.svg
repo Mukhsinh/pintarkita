@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="blueGradPUAS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0052D4"/>
+      <stop offset="100%" stop-color="#0A3F97"/>
+    </linearGradient>
+    <linearGradient id="orangeGradPUAS" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5E00"/>
+      <stop offset="50%" stop-color="#FF8A00"/>
+      <stop offset="100%" stop-color="#FFA800"/>
+    </linearGradient>
+    <filter id="shadowPUAS" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#003580" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Orange Companion Bubble / Echo Wing -->
+  <path d="M120,45 C155,55 175,85 170,120 C166,145 145,165 125,170 C135,155 145,130 142,105 C138,80 120,60 100,50 C108,46 114,45 120,45 Z" 
+        fill="url(#orangeGradPUAS)"/>
+
+  <!-- Main Blue Chat Bubble -->
+  <path d="M90,30 C130,30 160,58 160,95 C160,118 147,138 128,150 L135,175 C136,179 132,182 128,180 L95,160 C93,160 91,160 90,160 C50,160 20,132 20,95 C20,58 50,30 90,30 Z" 
+        fill="url(#blueGradPUAS)" filter="url(#shadowPUAS)"/>
+
+  <!-- Inner Circle Cutout for Face -->
+  <circle cx="90" cy="95" r="45" fill="#FFFFFF"/>
+  <circle cx="90" cy="95" r="38" fill="url(#blueGradPUAS)"/>
+
+  <!-- Smiling Eyes -->
+  <circle cx="76" cy="85" r="5" fill="#FFFFFF"/>
+  <circle cx="104" cy="85" r="5" fill="#FFFFFF"/>
+
+  <!-- Smiling Curved Mouth -->
+  <path d="M72,98 C76,114 104,114 108,98 C108,98 90,108 72,98 Z" fill="#FFFFFF"/>
+</svg>

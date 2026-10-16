@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="blueGradMMPI" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0052D4"/>
+      <stop offset="100%" stop-color="#0A3F97"/>
+    </linearGradient>
+    <linearGradient id="orangeGradMMPI" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5E00"/>
+      <stop offset="50%" stop-color="#FF8A00"/>
+      <stop offset="100%" stop-color="#FFA800"/>
+    </linearGradient>
+    <filter id="shadowMMPI" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#003580" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Orange Swoosh around the head profile / occipital lobe -->
+  <path d="M142,48 C165,70 170,105 160,135 C150,165 125,185 105,188 C120,180 145,150 148,125 C152,95 140,65 125,50 C132,48 138,48 142,48 Z" 
+        fill="url(#orangeGradMMPI)"/>
+  
+  <path d="M135,60 C155,80 160,110 150,140 C140,165 120,180 108,185 C122,175 140,150 142,125 C145,100 135,75 122,62 Z" 
+        fill="url(#orangeGradMMPI)"/>
+
+  <!-- Head Profile Silhouette in Blue -->
+  <path d="M105,25 C75,25 50,48 48,80 C48,88 45,95 38,98 C35,99 35,103 38,105 C44,108 45,115 42,120 C40,123 42,127 46,127 C48,127 50,132 50,136 C50,142 55,145 60,145 L62,180 L115,180 C110,165 108,150 108,135 C108,130 115,110 120,95 C128,70 125,45 105,25 Z" 
+        fill="url(#blueGradMMPI)" filter="url(#shadowMMPI)"/>
+
+  <!-- Stylized Brain Gyri/Sulci inside Head (Cutout in White) -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M80,52 C88,48 98,52 100,60 C102,68 95,74 88,72"/>
+    <path d="M88,72 C80,70 75,76 78,84 C80,92 92,92 95,85"/>
+    <path d="M95,85 C98,78 108,80 108,88 C108,98 96,102 90,105"/>
+    <path d="M78,84 C70,88 68,98 72,104 C76,110 85,110 88,105"/>
+    <path d="M92,95 C102,95 108,102 105,112 C102,120 90,120 85,115"/>
+    <path d="M85,62 C78,64 72,70 75,78"/>
+  </g>
+</svg>
