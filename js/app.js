@@ -10,6 +10,30 @@ class PintarKitaApp {
     this.currentView = 'beranda';
     this.adminPhone = '6285726112001';
     this.picName = 'Mukhsin Hadi, SE, M.Si';
+    // Cached DOM references for fast access
+    this._domCache = {};
+    // Simulator dispatcher map (replaces if-else chain)
+    this._simMap = {
+      'unit-cost-calc': 'renderUnitCostCalc',
+      'jp-calculator': 'renderJpCalculator',
+      'risk-matrix': 'renderRiskMatrix',
+      'survey-demo': 'renderSurveyDemo',
+      'clinic-billing': 'renderClinicBilling',
+      'mmpi-simulator': 'renderMmpiSimulator'
+    };
+  }
+
+  /** Cache a DOM element by id; only queries once */
+  $(id) {
+    if (!this._domCache[id]) {
+      this._domCache[id] = document.getElementById(id);
+    }
+    return this._domCache[id];
+  }
+
+  /** Invalidate a cached element (after innerHTML replace) */
+  $flush(id) {
+    delete this._domCache[id];
   }
 
   init() {
@@ -24,7 +48,7 @@ class PintarKitaApp {
     this.renderGallery('all');
     this.renderBerandaGalleryPreview();
     this.setupGalleryLightbox();
-    this.setupBannerSlider();
+    this.setupBookSlider();
     this.setupArticleReader();
     this.setupPrintCertificate();
 
@@ -32,9 +56,11 @@ class PintarKitaApp {
     this.handleHashChange();
     window.addEventListener('hashchange', () => this.handleHashChange());
 
-    // Initialize subsystems
-    if (window.PrayerTimeManager) window.PrayerTimeManager.init();
-    if (window.PintarLms) window.PintarLms.init();
+    // Initialize subsystems after a microtask to keep main thread responsive
+    requestAnimationFrame(() => {
+      if (window.PrayerTimeManager) window.PrayerTimeManager.init();
+      if (window.PintarLms) window.PintarLms.init();
+    });
   }
 
   handleHashChange() {
@@ -121,35 +147,32 @@ class PintarKitaApp {
   }
 
   switchView(viewName) {
+    if (this.currentView === viewName && document.querySelector(`#view-${viewName}.active`)) return;
     this.currentView = viewName;
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Hide all view containers
-    document.querySelectorAll('.view-container').forEach(c => {
-      c.classList.remove('active');
-    });
-
-    // Show target container
-    const target = document.getElementById(`view-${viewName}`);
-    if (target) {
-      target.classList.add('active');
-    }
-
-    // Update bottom nav active state
-    document.querySelectorAll('.bottom-nav-item').forEach(item => {
-      if (item.dataset.view === viewName) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
+    // Batch DOM reads/writes in a single rAF for jank-free transition
+    requestAnimationFrame(() => {
+      // Hide all view containers in one pass
+      const views = document.querySelectorAll('.view-container');
+      for (let i = 0, len = views.length; i < len; i++) {
+        views[i].classList.remove('active');
       }
-    });
 
-    // Update desktop nav
-    document.querySelectorAll('.top-nav-link').forEach(link => {
-      if (link.dataset.view === viewName) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
+      // Show target container
+      const target = this.$(`view-${viewName}`) || document.getElementById(`view-${viewName}`);
+      if (target) target.classList.add('active');
+
+      // Update bottom nav active state in one pass
+      const navItems = document.querySelectorAll('.bottom-nav-item');
+      for (let i = 0, len = navItems.length; i < len; i++) {
+        navItems[i].classList.toggle('active', navItems[i].dataset.view === viewName);
+      }
+
+      // Update desktop nav
+      const topLinks = document.querySelectorAll('.top-nav-link');
+      for (let i = 0, len = topLinks.length; i < len; i++) {
+        topLinks[i].classList.toggle('active', topLinks[i].dataset.view === viewName);
       }
     });
   }
@@ -196,21 +219,28 @@ class PintarKitaApp {
       this.switchView('beranda');
     });
 
+    // Smooth scroll with sticky navbar offset for simulator action buttons
+    landingContainer.querySelectorAll('a[href="#simulator-section"]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const simSection = document.getElementById('simulator-section');
+        if (simSection) {
+          const topOffset = simSection.getBoundingClientRect().top + window.pageYOffset - 85;
+          window.scrollTo({ top: topOffset, behavior: 'smooth' });
+        }
+      });
+    });
+
     // Initialize simulator for this product
-    if (prod.interactiveDemoType) {
-      if (prod.interactiveDemoType === 'unit-cost-calc') {
-        PINTAR_SIMULATORS.renderUnitCostCalc('landing-sim-slot');
-      } else if (prod.interactiveDemoType === 'jp-calculator') {
-        PINTAR_SIMULATORS.renderJpCalculator('landing-sim-slot');
-      } else if (prod.interactiveDemoType === 'risk-matrix') {
-        PINTAR_SIMULATORS.renderRiskMatrix('landing-sim-slot');
-      } else if (prod.interactiveDemoType === 'survey-demo') {
-        PINTAR_SIMULATORS.renderSurveyDemo('landing-sim-slot');
-      } else if (prod.interactiveDemoType === 'clinic-billing') {
-        PINTAR_SIMULATORS.renderClinicBilling('landing-sim-slot');
-      } else if (prod.interactiveDemoType === 'mmpi-simulator') {
-        PINTAR_SIMULATORS.renderMmpiSimulator('landing-sim-slot');
-      }
+    // Dispatch simulator via lookup map (O(1) instead of if-else chain)
+    if (prod.interactiveDemoType && this._simMap[prod.interactiveDemoType]) {
+      // Defer simulator rendering to next frame for faster initial paint
+      requestAnimationFrame(() => {
+        const method = this._simMap[prod.interactiveDemoType];
+        if (PINTAR_SIMULATORS[method]) {
+          PINTAR_SIMULATORS[method]('landing-sim-slot');
+        }
+      });
     }
   }
 
@@ -269,10 +299,10 @@ class PintarKitaApp {
 
                 <div class="landing-cta-buttons">
                   <a href="${waLink}" target="_blank" class="btn btn-primary btn-lg pulse-glow">
-                    <i class="fas fa-headset"></i> Chat Admin (085726112001)
+                    <i class="fab fa-whatsapp"></i> Chat Admin
                   </a>
-                  <a href="#simulator-section" class="btn btn-outline-primary btn-lg">
-                    <i class="fas fa-play"></i> Coba Simulasi Fitur
+                  <a href="#simulator-section" class="btn-hero-sim">
+                    <i class="fas fa-play-circle text-primary"></i> Uji Coba Simulasi
                   </a>
                 </div>
 
@@ -398,12 +428,27 @@ class PintarKitaApp {
                   </div>
                 </div>
                 <div class="text-center p-3">
-                  <div class="cta-direct-box glass-inset p-4">
+                  <div class="cta-direct-box glass-panel">
+                    <div class="cta-box-badge">
+                      <i class="fas fa-sparkles"></i> LIVE INTERACTIVE DEMO
+                    </div>
                     <img src="${p.icon}" alt="${p.name}" class="cta-box-logo">
-                    <h3>Siap Mengoptimalkan Manajemen Rumah Sakit Anda?</h3>
-                    <p>Konsultasikan kebutuhan spesifik institusi Anda bersama tim profesional PT. AKAPRO.</p>
-                    <a href="${waLink}" target="_blank" class="btn btn-primary btn-lg btn-block pulse-glow">
-                      <i class="fas fa-headset"></i> Chat Admin (085726112001)
+                    <h3 class="cta-box-headline">Jangan Biarkan Rumah Sakit Anda Tertinggal & Merugi!</h3>
+                    <p class="cta-box-subtext">Wujudkan efisiensi biaya riil, transparansi layanan, dan kepatuhan regulasi bersama tim ahli PT. AKAPRO.</p>
+                    <a href="#simulator-section" class="btn-simulation-premium" title="Buka Simulasi Interaktif ${p.name}">
+                      <span class="sim-btn-shimmer"></span>
+                      <div class="sim-btn-icon-box">
+                        <i class="fas fa-play"></i>
+                        <span class="sim-icon-ring"></span>
+                      </div>
+                      <div class="sim-btn-content">
+                        <div class="sim-btn-pill-tag"><i class="fas fa-bolt"></i> FITUR INTERAKTIF</div>
+                        <span class="sim-btn-label">Uji Coba Simulasi ${p.name}</span>
+                        <span class="sim-btn-sub">Hitung Cepat • Berbasis Data Riil Fasyankes</span>
+                      </div>
+                      <div class="sim-btn-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                      </div>
                     </a>
                   </div>
                 </div>
@@ -412,15 +457,15 @@ class PintarKitaApp {
           </div>
         </section>
 
-        <!-- Sticky Bottom CTA for Mobile & Desktop -->
+        <!-- Sticky Bottom CTA for Mobile & Desktop (Provocative Copywriting) -->
         <div class="landing-bottom-cta glass-panel">
           <div class="container d-flex align-items-center justify-content-between">
-            <div class="d-none-mobile">
-              <strong>Tertarik mengimplementasikan ${p.name} di Rumah Sakit Anda?</strong>
-              <small class="d-block text-muted">Dapatkan jadwal paparan, proposal teknis, dan demo live untuk tim Anda.</small>
+            <div class="cta-provocative-text">
+              <strong class="d-block text-dark font-bold cta-hook-title">${this.getProvocativeHook(p.id).title}</strong>
+              <small class="d-block text-muted cta-hook-desc">${this.getProvocativeHook(p.id).desc}</small>
             </div>
-            <a href="${waLink}" target="_blank" class="btn btn-success btn-lg ml-auto">
-              <i class="fas fa-headset"></i> Chat Admin (085726112001)
+            <a href="${waLink}" target="_blank" class="btn btn-success btn-lg ml-auto btn-chat-admin-cta">
+              <i class="fab fa-whatsapp"></i> Chat Admin
             </a>
           </div>
         </div>
@@ -507,6 +552,43 @@ class PintarKitaApp {
     }
   }
 
+  getProvocativeHook(prodId) {
+    const hooks = {
+      'pintar-uc': {
+        title: 'Berapa Ratus Juta Lagi Rumah Sakit Anda Boncos Akibat Tarif Tebak-tebakan?',
+        desc: 'Kendalikan biaya riil tindakan medis & kunci tarif rasional sebelum audit membongkar kebocoran anggaran fasyankes.'
+      },
+      'pintar-jp': {
+        title: 'Hentikan Konflik Internal & Kecemburuan Nakes Akibat Pembagian Jaspel yang Tidak Transparan!',
+        desc: 'Terapkan formula berkeadilan P1, P2, P3 & integrasi pajak PPh 21 TER PMK 168 tanpa celah manipulasi.'
+      },
+      'pintar-mr': {
+        title: 'Strategi Tanpa Risiko Itu Bunuh Diri, Risiko Tanpa Strategi Itu Mimpi Buruk Fasyankes!',
+        desc: 'Deteksi dini potensi gugatan malpraktik, defisit likuiditas, & temuan BPKP sebelum menjadi bencana institusi.'
+      },
+      'pintar-puas': {
+        title: 'Jangan Tunggu Keluhan Pasien Viral di Medsos Baru Rumah Sakit Kelabakan Bertindak!',
+        desc: 'Tangkap komplain pasien realtime & penuhi 9 unsur mutu PermenPAN-RB No. 14/2017 sebelum reputasi anjlok.'
+      },
+      'pintar-klinik': {
+        title: 'Masih Mencatat Keuangan Manual & Rawan Denda Pajak PMK 168? Amankan Klinik Anda Sekarang!',
+        desc: 'Otomatisasi kasir POS, stok farmasi, billing tindakan, hingga laporan keuangan laba rugi dalam satu sentuhan.'
+      },
+      'pintar-mmpi-2': {
+        title: 'Singkirkan Skoring Manual yang Menghabiskan Waktu & Rawan Salah Interpretasi Psikologis!',
+        desc: 'Dapatkan profil psikogram T-Score & validitas akurat dalam hitungan detik untuk MCU Rumah Sakit.'
+      },
+      'pintar-mmpi2': {
+        title: 'Singkirkan Skoring Manual yang Menghabiskan Waktu & Rawan Salah Interpretasi Psikologis!',
+        desc: 'Dapatkan profil psikogram T-Score & validitas akurat dalam hitungan detik untuk MCU Rumah Sakit.'
+      }
+    };
+    return hooks[prodId] || {
+      title: 'Jangan Biarkan Tata Kelola Rumah Sakit Berjalan Tanpa Sistem Terukur!',
+      desc: 'Tingkatkan akuntabilitas, transparansi, dan efisiensi manajemen fasyankes Anda hari ini bersama PT. AKAPRO.'
+    };
+  }
+
   renderPartnersMarquee() {
     const track = document.getElementById('partners-marquee-track');
     if (!track || !PINTAR_DATA.company || !PINTAR_DATA.company.partners) return;
@@ -516,44 +598,157 @@ class PintarKitaApp {
     const allPartners = [...partners, ...partners];
     
     track.innerHTML = allPartners.map(p => `
-      <div class="partner-card-ticker">
+      <div class="partner-card-ticker" title="Mitra Profesional PT. AKAPRO">
         <div class="partner-logo-wrap">
-          <img src="${p.logo}" alt="${p.name}" class="partner-logo-img" loading="lazy">
-        </div>
-        <div class="partner-info">
-          <div class="partner-name">${p.name}</div>
-          <div class="partner-region">${p.region || ''}</div>
-          <span class="partner-app-badge ${p.appBadge || 'badge-mr'}">${p.app || 'PINTAR MR'}</span>
+          <img src="${p.logo}" alt="Mitra Profesional" class="partner-logo-img" loading="lazy">
         </div>
       </div>
     `).join('');
   }
 
-  setupBannerSlider() {
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.hero-banner-slide');
-    const dots = document.querySelectorAll('.banner-dot');
-    if (slides.length <= 1) return;
+  setupBookSlider() {
+    let currentPage = 0;
+    const pages = document.querySelectorAll('.flipbook-page');
+    const pills = document.querySelectorAll('.book-pill-btn');
+    const currentIdxEl = document.getElementById('book-current-idx');
+    const totalCountEl = document.getElementById('book-total-count');
+    const prevBtn = document.getElementById('book-nav-prev');
+    const nextBtn = document.getElementById('book-nav-next');
+    const wrapper = document.getElementById('flipbook-wrapper');
 
-    const showSlide = (idx) => {
-      slides.forEach((s, i) => {
-        s.classList.toggle('active', i === idx);
-      });
-      dots.forEach((d, i) => {
-        d.classList.toggle('active', i === idx);
-      });
-      currentSlide = idx;
+    if (!pages.length) return;
+    if (totalCountEl) totalCountEl.textContent = pages.length;
+
+    let isFlipping = false;
+
+    const showPage = (idx, direction = 'next') => {
+      if (idx === currentPage || isFlipping) return;
+      isFlipping = true;
+
+      const oldPage = pages[currentPage];
+      const newPage = pages[idx];
+
+      // Add 3D book flip animations
+      if (direction === 'next') {
+        oldPage.classList.add('flipping-out-left');
+        newPage.classList.add('flipping-in-right');
+      } else {
+        oldPage.classList.add('flipping-out-right');
+        newPage.classList.add('flipping-in-left');
+      }
+
+      setTimeout(() => {
+        pages.forEach((p, i) => {
+          p.classList.remove('active', 'flipping-out-left', 'flipping-out-right', 'flipping-in-left', 'flipping-in-right');
+          if (i === idx) p.classList.add('active');
+        });
+
+        pills.forEach((pill, i) => {
+          pill.classList.toggle('active', i === idx);
+        });
+
+        if (currentIdxEl) currentIdxEl.textContent = idx + 1;
+        currentPage = idx;
+        isFlipping = false;
+      }, 500);
     };
 
-    dots.forEach((dot, idx) => {
-      dot.addEventListener('click', () => showSlide(idx));
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const next = (currentPage + 1) % pages.length;
+        showPage(next, 'next');
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        const prev = (currentPage - 1 + pages.length) % pages.length;
+        showPage(prev, 'prev');
+      });
+    }
+
+    pills.forEach((pill, idx) => {
+      pill.addEventListener('click', () => {
+        const dir = idx >= currentPage ? 'next' : 'prev';
+        showPage(idx, dir);
+      });
     });
 
-    // Auto rotate every 6 seconds
-    setInterval(() => {
-      let next = (currentSlide + 1) % slides.length;
-      showSlide(next);
-    }, 6000);
+    // Page poster frame click also turns page
+    document.querySelectorAll('.book-poster-frame').forEach((frame) => {
+      frame.addEventListener('click', (e) => {
+        if (!e.target.closest('a') && !e.target.closest('button')) {
+          const next = (currentPage + 1) % pages.length;
+          showPage(next, 'next');
+        }
+      });
+    });
+
+    // Touch gesture swipe support (turning pages like a book)
+    if (wrapper) {
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      wrapper.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      wrapper.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const swipeDistance = touchEndX - touchStartX;
+        if (Math.abs(swipeDistance) > 40) {
+          if (swipeDistance < 0) {
+            const next = (currentPage + 1) % pages.length;
+            showPage(next, 'next');
+          } else {
+            const prev = (currentPage - 1 + pages.length) % pages.length;
+            showPage(prev, 'prev');
+          }
+        }
+      }, { passive: true });
+
+      // Mouse drag support
+      let isMouseDown = false;
+      let mouseStartX = 0;
+
+      wrapper.addEventListener('mousedown', (e) => {
+        if (e.target.closest('a') || e.target.closest('button')) return;
+        isMouseDown = true;
+        mouseStartX = e.clientX;
+      });
+
+      window.addEventListener('mouseup', (e) => {
+        if (!isMouseDown) return;
+        isMouseDown = false;
+        const diff = e.clientX - mouseStartX;
+        if (Math.abs(diff) > 50) {
+          if (diff < 0) {
+            const next = (currentPage + 1) % pages.length;
+            showPage(next, 'next');
+          } else {
+            const prev = (currentPage - 1 + pages.length) % pages.length;
+            showPage(prev, 'prev');
+          }
+        }
+      });
+    }
+
+    // Auto flip every 7 seconds (pauses on hover)
+    let autoInterval = setInterval(() => {
+      const next = (currentPage + 1) % pages.length;
+      showPage(next, 'next');
+    }, 7000);
+
+    if (wrapper) {
+      wrapper.addEventListener('mouseenter', () => clearInterval(autoInterval));
+      wrapper.addEventListener('mouseleave', () => {
+        clearInterval(autoInterval);
+        autoInterval = setInterval(() => {
+          const next = (currentPage + 1) % pages.length;
+          showPage(next, 'next');
+        }, 7000);
+      });
+    }
   }
 
   setupPrintCertificate() {

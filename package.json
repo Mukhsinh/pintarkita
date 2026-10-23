@@ -1,0 +1,13 @@
+{
+  "name": "pintarkita",
+  "version": "1.0.0",
+  "description": "PINTARKITA - Solusi Terpadu Manajemen Rumah Sakit & Fasyankes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "PT. AKADEMI PROFESIONAL INDONESIA",
+  "license": "ISC"
+}

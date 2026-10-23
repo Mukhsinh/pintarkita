@@ -127,36 +127,64 @@
   }
 
   .menu-icon-squircle {
-    width: 58px;
-    height: 58px;
-    border-radius: 16px;
+    width: 68px;
+    height: 68px;
+    border-radius: 18px;
     margin-bottom: 0.5rem;
-    padding: 6px;
+    padding: 7px;
   }
 
   .menu-title {
-    font-size: 0.825rem;
+    font-size: 0.88rem;
   }
 
   .menu-subtitle {
     display: none; /* Hide long subtitle on mobile icon buttons */
   }
 
-  /* Banner slide mobile */
-  .hero-banner-slide {
-    padding: 1.75rem 1.25rem;
+  /* 3D Flip-Book Showcase Mobile */
+  .flipbook-wrapper {
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
   }
 
-  .banner-heading {
-    font-size: 1.45rem;
+  .flipbook-deck {
+    min-height: auto;
   }
 
-  .banner-desc {
+  .book-page-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .book-heading {
+    font-size: 1.5rem;
+  }
+
+  .book-desc {
     font-size: 0.9rem;
   }
 
-  .banner-3d-img {
-    max-height: 200px;
+  .book-poster-img {
+    max-height: 380px;
+  }
+
+  .book-flip-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .book-flip-prev {
+    left: 8px;
+  }
+
+  .book-flip-next {
+    right: 8px;
+  }
+
+  .solusi-aplikasi-title {
+    font-size: 1.45rem;
   }
 
   /* Grids */
@@ -248,11 +276,70 @@
     height: auto !important;
   }
 
+  .cta-direct-box {
+    padding: 1.85rem 1.15rem !important;
+    margin: 1.25rem 0 1.75rem;
+    border-radius: 20px;
+  }
+
+  .cta-box-headline {
+    font-size: 1.15rem;
+  }
+
+  .cta-box-subtext {
+    font-size: 0.82rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-simulation-premium {
+    padding: 1rem 1.15rem;
+    gap: 0.85rem;
+    border-radius: 18px;
+    margin-top: 1.25rem;
+  }
+
+  .sim-btn-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    font-size: 1.05rem;
+  }
+
+  .sim-btn-label {
+    font-size: 1rem;
+  }
+
+  .sim-btn-sub {
+    font-size: 0.74rem;
+  }
+
+  .sim-btn-arrow {
+    display: none;
+  }
+
   .landing-bottom-cta {
     bottom: 78px;
     left: 0.5rem;
     right: 0.5rem;
-    padding: 0.6rem 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 18px;
+  }
+
+  .cta-hook-title {
+    font-size: 0.82rem;
+    line-height: 1.3;
+  }
+
+  .cta-hook-desc {
+    font-size: 0.7rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .landing-page-wrap {
+    padding-bottom: 200px !important;
   }
 
   /* Modal Mobile */
@@ -422,6 +509,86 @@
     width: 38px;
     height: 38px;
     font-size: 1rem;
+  }
+
+  /* Header brand logo mobile */
+  .brand-logo-img {
+    height: 52px;
+    max-width: 235px;
+  }
+
+  /* Sticky Bottom CTA for Mobile */
+  .landing-page-wrap {
+    padding-bottom: 160px !important;
+  }
+
+  .landing-bottom-cta {
+    bottom: 68px;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .landing-bottom-cta .container {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+
+  .cta-provocative-text {
+    text-align: center;
+  }
+
+  .cta-hook-title {
+    font-size: 0.92rem;
+  }
+
+  .cta-hook-desc {
+    display: none;
+  }
+
+  .landing-bottom-cta .btn-chat-admin-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 0.55rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Extra Small Devices (< 480px) */
+@media (max-width: 480px) {
+  .brand-logo-img {
+    height: 44px;
+    max-width: 195px;
+  }
+
+  .header-actions .btn {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.75rem;
+  }
+
+  .menu-icon-squircle {
+    width: 62px;
+    height: 62px;
+    border-radius: 16px;
+  }
+
+  .menu-title {
+    font-size: 0.8rem;
+  }
+
+  .ekosistem-rs-title {
+    font-size: 1.35rem;
+  }
+
+  .ekosistem-rs-subtitle {
+    font-size: 0.82rem;
+  }
+
+  .book-poster-img {
+    max-height: 280px;
+  }
+
+  .book-heading {
+    font-size: 1.3rem;
   }
 }
 

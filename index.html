@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>PINTARKITA - Solusi Terpadu Manajemen Rumah Sakit & Fasyankes | PT. Akademi Profesional Indonesia</title>
   
+  <!-- Performance: DNS Prefetch & Preconnect -->
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  
   <!-- SEO Meta Tags -->
   <meta name="description" content="PINTARKITA adalah platform terpadu dari PT. Akademi Profesional Indonesia (AKAPRO) untuk Rumah Sakit (BLUD/RSUD/RS Swasta) dan Fasyankes: PINTAR UC (Unit Cost Clinical Pathway HAKI 000831709), PINTAR JP (Remunerasi Jaspel KPI HAKI 001299375), PINTAR MR (Manajemen Risiko Renstra HAKI 001299405), PINTAR PUAS, PINTAR KLINIK, PINTAR MMPI-2, dan Pelatihan Diklat RS. Hubungi WhatsApp: 085726112001.">
   <meta name="keywords" content="PINTARKITA, PT Akademi Profesional Indonesia, AKAPRO, Mukhsin Hadi, Unit Cost RS, Clinical Pathway, Remunerasi Jasa Pelayanan, KPI Rumah Sakit, Manajemen Risiko RS, Renstra RS, Survey Kepuasan Pasien, PINTAR UC, PINTAR JP, PINTAR MR, PINTAR PUAS, PINTAR KLINIK, PINTAR MMPI-2, Bimtek RS">
@@ -24,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
@@ -198,53 +202,11 @@
   <main id="view-beranda" class="view-container active">
     <div class="container">
       
-      <!-- Dashboard Wallet / Quick Status Card (Strictly Matching Company Profile) -->
-      <section class="dashboard-hero-banner">
-        <div class="wallet-summary-card">
-          <div class="greeting-row">
-            <div class="user-greeting">
-              <span class="badge badge-warning mb-2"><i class="fas fa-award"></i> PT. AKADEMI PROFESIONAL INDONESIA (AKAPRO)</span>
-              <h2>Optimasi Nilai dengan Talenta Terampil Berbasis Teknologi</h2>
-              <p>Solusi profesional dan sistem terintegrasi untuk meningkatkan efisiensi, kualitas layanan, dan daya saing organisasi, khususnya di sektor kesehatan dan rumah sakit.</p>
-              <div class="slogan-badge mt-2">
-                <i class="fas fa-quote-left text-warning"></i> <em>Membangun Entitas. Tumbuh Melesat. Berdampak Nyata.</em>
-              </div>
-            </div>
-            <div class="d-none-mobile text-right">
-              <img src="assets/images/logo pt akademi profesional indonesia.jpeg" alt="PT. Akademi Profesional Indonesia" style="height: 68px; max-width: 220px; object-fit: contain; background: #ffffff; padding: 8px 16px; border-radius: 14px; margin-bottom: 0.5rem; box-shadow: 0 4px 14px rgba(0,0,0,0.1);">
-              <small class="d-block text-light"><i class="fas fa-shield-alt text-success"></i> SK Kemenkumham 2025 | NIB Terdaftar</small>
-            </div>
-          </div>
-
-          <div class="quick-stats-strip">
-            <div class="q-stat-item">
-              <span class="q-stat-val">100+</span>
-              <span class="q-stat-lbl">Rumah Sakit & Fasyankes</span>
-            </div>
-            <div class="q-stat-item">
-              <span class="q-stat-val">30+</span>
-              <span class="q-stat-lbl">Provinsi Bimtek & FGD</span>
-            </div>
-            <div class="q-stat-item">
-              <span class="q-stat-val">5+ HAKI</span>
-              <span class="q-stat-lbl">Hak Cipta Resmi Kemenkumham</span>
-            </div>
-            <div class="q-stat-item">
-              <span class="q-stat-val">100%</span>
-              <span class="q-stat-lbl">Kepatuhan Kemenkes & Kemendagri</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 6 Core Menu Applications Grid (Matching Image 3 Logos) -->
+      <!-- 6 Core Menu Applications Grid -->
       <section class="menu-grid-section">
-        <div class="section-head-bar">
-          <div>
-            <span class="subtitle-tag">Ekosistem Aplikasi Terintegrasi</span>
-            <h3>Solusi Sistem Informasi Manajemen Rumah Sakit & Fasyankes</h3>
-          </div>
-          <small class="text-muted"><i class="fas fa-info-circle"></i> Klik ikon menu untuk membuka landing page & simulasi sistem</small>
+        <div class="section-head-bar text-center" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 2.25rem;">
+          <h2 class="ekosistem-rs-title">Ekosistem Aplikasi Rumah Sakit</h2>
+          <p class="ekosistem-rs-subtitle">Aplikasi yang sangat dibutuhkan oleh Direktur yang ingin memajukan Rumah Sakit</p>
         </div>
 
         <div class="menu-icons-grid">
@@ -298,78 +260,267 @@
             <p class="menu-subtitle">Kasir, Stok, Lapkeu & Pajak</p>
           </div>
 
-          <!-- 6. PINTAR MMPI-2 -->
-          <div class="product-menu-item" data-product="pintar-mmpi-2" title="Klik untuk Pelajari PINTAR MMPI-2">
+          <!-- 6. PINTAR MMPI2 -->
+          <div class="product-menu-item" data-product="pintar-mmpi-2" title="Klik untuk Pelajari PINTAR MMPI2">
             <span class="menu-pill-badge">Psikotes MCU</span>
             <div class="menu-icon-squircle">
-              <img src="assets/icons/pintar-mmpi.svg" alt="PINTAR MMPI-2" class="menu-icon-svg">
+              <img src="assets/icons/pintar-mmpi.svg" alt="PINTAR MMPI2" class="menu-icon-svg">
             </div>
-            <h4 class="menu-title">PINTAR MMPI-2</h4>
+            <h4 class="menu-title">PINTAR MMPI2</h4>
             <p class="menu-subtitle">Psikotes MMPI-2 Realtime</p>
           </div>
         </div>
       </section>
 
-      <!-- Highlight Banner Slider (Matching Infographics from Company Profile) -->
-      <section class="promo-carousel-section">
-        <div class="hero-banner-card">
-          <!-- Slide 1: Hospital Cost Management (PINTAR UC) -->
-          <div class="hero-banner-slide active">
-            <div class="banner-content-grid">
-              <div class="banner-text-box">
-                <span class="banner-tag"><i class="fas fa-calculator"></i> PINTAR UC - HAKI No: 000831709</span>
-                <h3 class="banner-heading">Jangan Tunda Penyusunan Unit Cost Rumah Sakit!</h3>
-                <p class="banner-desc">Tanpa Unit Cost yang andal, Anda hanya melangkah dalam ketidakpastian. Kenali biaya riil, kendalikan biaya RS, dan jangan biarkan rumah sakit Anda boncos lagi.</p>
-                <div class="d-flex flex-wrap gap-2">
-                  <a href="#pintar-uc" class="btn btn-warning" onclick="window.PintarKita.openProductLanding('pintar-uc');">
-                    <i class="fas fa-file-invoice-dollar"></i> Pelajari PINTAR UC
-                  </a>
-                  <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20jadwalkan%20presentasi%20PINTAR%20UC%20untuk%20Rumah%20Sakit." target="_blank" class="btn btn-outline-primary" style="color: #fff; border-color: #fff;">
-                    <i class="fas fa-headset"></i> Chat Admin
-                  </a>
+      <!-- 3D Executive Flip-Book Showcase (Poster & Infografis Interaktif) -->
+      <section class="promo-carousel-section book-showcase-section">
+        <div class="book-viewport-container">
+          <!-- The 3D Book Device / Foil -->
+          <div class="flipbook-wrapper" id="flipbook-wrapper">
+            <!-- Central Spine Binding Crease Shadow -->
+            <div class="flipbook-spine-crease"></div>
+
+            <!-- Flipbook Pages Deck -->
+            <div class="flipbook-deck" id="flipbook-deck">
+              <!-- Page 1: PINTAR UC -->
+              <div class="flipbook-page active" data-page="0" data-title="PINTAR UC - Unit Cost RS">
+                <div class="book-page-grid">
+                  <div class="book-page-info">
+                    <span class="book-tag-pill"><i class="fas fa-calculator text-warning"></i> HAKI No: 000831709</span>
+                    <h3 class="book-heading">Jangan Tunda Penyusunan Unit Cost Rumah Sakit!</h3>
+                    <p class="book-desc">Kenali biaya riil setiap tindakan medis dengan metode ABC Modifikasi. Kendalikan pemborosan BHP, cegah defisit klaim INA-CBGs, dan amankan akuntabilitas tarif fasyankes Anda.</p>
+                    <div class="book-highlights">
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Alokasi Biaya Riil Berbasis Cost Driver</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Integrasi Standar Clinical Pathway Tindakan</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Siap Uji Petik & Audit BPKP / Inspektorat</span></div>
+                    </div>
+                    <div class="book-actions mt-4">
+                      <a href="#pintar-uc" class="btn btn-warning" onclick="window.PintarKita.openProductLanding('pintar-uc');">
+                        <i class="fas fa-file-invoice-dollar"></i> Pelajari PINTAR UC
+                      </a>
+                      <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20jadwalkan%20presentasi%20PINTAR%20UC." target="_blank" class="btn btn-success btn-chat-admin-cta">
+                        <i class="fab fa-whatsapp"></i> Chat Admin
+                      </a>
+                    </div>
+                  </div>
+                  <div class="book-page-visual">
+                    <div class="book-poster-frame">
+                      <img src="assets/images/PINTAR UC.jpeg" alt="Poster PINTAR UC" class="book-poster-img" loading="lazy">
+                      <div class="book-page-turn-hint"><i class="fas fa-hand-pointer"></i> Klik / Geser Balik Halaman</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="banner-image-box">
-                <img src="assets/images/pintar-uc-info.jpg" alt="Penyusunan Unit Cost Rumah Sakit" class="banner-3d-img">
-              </div>
-            </div>
-          </div>
 
-          <!-- Slide 2: Jasa Pelayanan Remunerasi (PINTAR JP) -->
-          <div class="hero-banner-slide">
-            <div class="banner-content-grid">
-              <div class="banner-text-box">
-                <span class="banner-tag"><i class="fas fa-users-cog"></i> PINTAR JP - HAKI No: 001299375</span>
-                <h3 class="banner-heading">Distribusi Insentif Jasa Pelayanan Terintegrasi dengan KPI</h3>
-                <p class="banner-desc">Kemudahan, keadilan, dan akuntabilitas remunerasi tenaga kesehatan. Formula P1 (Kinerja Utama), P2 (Kinerja Tambahan), P3 (Perilaku), dan kepatuhan pajak PPh 21 TER PMK 168.</p>
-                <div class="d-flex flex-wrap gap-2">
-                  <a href="#pintar-jp" class="btn btn-warning" onclick="window.PintarKita.openProductLanding('pintar-jp');">
-                    <i class="fas fa-hand-holding-usd"></i> Pelajari PINTAR JP
-                  </a>
-                  <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20konsultasi%20skema%20remunerasi%20PINTAR%20JP%20Rumah%20Sakit." target="_blank" class="btn btn-outline-primary" style="color: #fff; border-color: #fff;">
-                    <i class="fas fa-headset"></i> Chat Admin
-                  </a>
+              <!-- Page 2: PINTAR JP -->
+              <div class="flipbook-page" data-page="1" data-title="PINTAR JP - Remunerasi Jaspel & KPI">
+                <div class="book-page-grid">
+                  <div class="book-page-info">
+                    <span class="book-tag-pill"><i class="fas fa-hand-holding-usd text-warning"></i> HAKI No: 001299375</span>
+                    <h3 class="book-heading">Distribusi Insentif Jasa Pelayanan Terintegrasi dengan KPI</h3>
+                    <p class="book-desc">Kemudahan, keadilan, dan akuntabilitas remunerasi tenaga kesehatan. Formula berkeadilan P1 (Kinerja Utama), P2 (Kinerja Tambahan), P3 (Perilaku), dan kepatuhan pajak PPh 21 TER PMK 168.</p>
+                    <div class="book-highlights">
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Formula P1, P2, P3 Berkeadilan & Transparan</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Pajak PPh 21 TER PMK 168 & BPJS Otomatis</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Slip Jaspel Digital Personal ke Smartphone Nakes</span></div>
+                    </div>
+                    <div class="book-actions mt-4">
+                      <a href="#pintar-jp" class="btn btn-warning" onclick="window.PintarKita.openProductLanding('pintar-jp');">
+                        <i class="fas fa-hand-holding-usd"></i> Pelajari PINTAR JP
+                      </a>
+                      <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20konsultasi%20skema%20remunerasi%20PINTAR%20JP." target="_blank" class="btn btn-success btn-chat-admin-cta">
+                        <i class="fab fa-whatsapp"></i> Chat Admin
+                      </a>
+                    </div>
+                  </div>
+                  <div class="book-page-visual">
+                    <div class="book-poster-frame">
+                      <img src="assets/images/pintar-jp-info.jpg" alt="Poster PINTAR JP" class="book-poster-img" loading="lazy">
+                      <div class="book-page-turn-hint"><i class="fas fa-hand-pointer"></i> Klik / Geser Balik Halaman</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="banner-image-box">
-                <img src="assets/images/pintar-jp-info.jpg" alt="PINTAR JP Remunerasi Nakes" class="banner-3d-img">
+
+              <!-- Page 3: PINTAR MR -->
+              <div class="flipbook-page" data-page="2" data-title="PINTAR MR - Manajemen Risiko & Renstra">
+                <div class="book-page-grid">
+                  <div class="book-page-info">
+                    <span class="book-tag-pill"><i class="fas fa-shield-alt text-warning"></i> HAKI No: 001299405</span>
+                    <h3 class="book-heading">Manajemen Risiko Terintegrasi Manajemen Strategi (Renstra)</h3>
+                    <p class="book-desc">Strategi tanpa risiko itu bunuh diri, risiko tanpa strategi itu mimpi! Petakan profil risiko klinis & non-klinis dalam matriks 5x5 heatmap interaktif selaras Kepmenkes 1354/2024.</p>
+                    <div class="book-highlights">
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Kategori Risiko Klinis (HAIs, Medication Error) & Non-Klinis</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Heatmap Matriks Probabilitas & Dampak 5x5 Interaktif</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Cascading KPI & Strategic Map Selaras Akreditasi RS</span></div>
+                    </div>
+                    <div class="book-actions mt-4">
+                      <a href="#pintar-mr" class="btn btn-warning" onclick="window.PintarKita.openProductLanding('pintar-mr');">
+                        <i class="fas fa-shield-alt"></i> Pelajari PINTAR MR
+                      </a>
+                      <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20konsultasi%20PINTAR%20MR." target="_blank" class="btn btn-success btn-chat-admin-cta">
+                        <i class="fab fa-whatsapp"></i> Chat Admin
+                      </a>
+                    </div>
+                  </div>
+                  <div class="book-page-visual">
+                    <div class="book-poster-frame">
+                      <img src="assets/images/pintar-mr-info.jpg" alt="Poster PINTAR MR" class="book-poster-img" loading="lazy">
+                      <div class="book-page-turn-hint"><i class="fas fa-hand-pointer"></i> Klik / Geser Balik Halaman</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Page 4: PINTAR PUAS -->
+              <div class="flipbook-page" data-page="3" data-title="PINTAR PUAS - Survei Kepuasan & PPID">
+                <div class="book-page-grid">
+                  <div class="book-page-info">
+                    <span class="book-tag-pill"><i class="fas fa-poll-h text-warning"></i> SKM PermenPAN-RB No. 14/2017</span>
+                    <h3 class="book-heading">Platform Terintegrasi Komplain, Survei Kepuasan Pasien & PPID</h3>
+                    <p class="book-desc">Satu aplikasi untuk menangani keluhan pasien secara cepat, survei kepuasan 9 unsur wajib, serta keterbukaan informasi publik (PPID) bebas maladministrasi Ombudsman.</p>
+                    <div class="book-highlights">
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Tiket Aduan & SLA Respons Pasien Terpantau Direksi</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>9 Unsur Baku Survei Kepuasan Masyarakat (IKM)</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Mencegah Keluhan Pasien Viral di Media Sosial</span></div>
+                    </div>
+                    <div class="book-actions mt-4">
+                      <a href="#pintar-puas" class="btn btn-warning" onclick="window.PintarKita.openProductLanding('pintar-puas');">
+                        <i class="fas fa-poll-h"></i> Pelajari PINTAR PUAS
+                      </a>
+                      <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20konsultasi%20PINTAR%20PUAS." target="_blank" class="btn btn-success btn-chat-admin-cta">
+                        <i class="fab fa-whatsapp"></i> Chat Admin
+                      </a>
+                    </div>
+                  </div>
+                  <div class="book-page-visual">
+                    <div class="book-poster-frame">
+                      <img src="assets/images/pintar-puas-info.jpg" alt="Poster PINTAR PUAS" class="book-poster-img" loading="lazy">
+                      <div class="book-page-turn-hint"><i class="fas fa-hand-pointer"></i> Klik / Geser Balik Halaman</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Page 5: PINTAR KLINIK -->
+              <div class="flipbook-page" data-page="4" data-title="PINTAR KLINIK - SIM Klinik & Pajak">
+                <div class="book-page-grid">
+                  <div class="book-page-info">
+                    <span class="book-tag-pill"><i class="fas fa-clinic-medical text-warning"></i> RME SATUSEHAT & PMK 168</span>
+                    <h3 class="book-heading">SIM Klinik Terpadu: Kasir POS, Gudang Obat, Lapkeu & Pajak</h3>
+                    <p class="book-desc">Solusi all-in-one klinik pratama dan utama. Kelola pendaftaran, antrean, rekam medis elektronik terhubung SATUSEHAT, stok farmasi akurat, hingga laporan keuangan akuntansi.</p>
+                    <div class="book-highlights">
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Kasir POS & Struk Billing Cetak Thermal</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Kartu Stok Farmasi Otomatis & Peringatan Kadaluwarsa</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Laporan Keuangan Laba Rugi & PPh 21 TER Dokter</span></div>
+                    </div>
+                    <div class="book-actions mt-4">
+                      <a href="#pintar-klinik" class="btn btn-warning" onclick="window.PintarKita.openProductLanding('pintar-klinik');">
+                        <i class="fas fa-clinic-medical"></i> Pelajari PINTAR KLINIK
+                      </a>
+                      <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20konsultasi%20PINTAR%20KLINIK." target="_blank" class="btn btn-success btn-chat-admin-cta">
+                        <i class="fab fa-whatsapp"></i> Chat Admin
+                      </a>
+                    </div>
+                  </div>
+                  <div class="book-page-visual">
+                    <div class="book-poster-frame">
+                      <img src="assets/images/PINTAR KLINIK.jpg" alt="Poster PINTAR KLINIK" class="book-poster-img" loading="lazy">
+                      <div class="book-page-turn-hint"><i class="fas fa-hand-pointer"></i> Klik / Geser Balik Halaman</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Page 6: PINTAR MMPI2 -->
+              <div class="flipbook-page" data-page="5" data-title="PINTAR MMPI2 - Psikotes Realtime RS">
+                <div class="book-page-grid">
+                  <div class="book-page-info">
+                    <span class="book-tag-pill"><i class="fas fa-brain text-warning"></i> 567 Soal Baku Internasional</span>
+                    <h3 class="book-heading">Komputerisasi Psikotes MMPI-2 Digital & Skoring Realtime</h3>
+                    <p class="book-desc">Pangkas waktu skoring MMPI-2 dari berhari-hari menjadi hitungan detik. Visualisasi kurva profil kepribadian T-Score baku, skala validitas L, F, K, dan laporan naratif siap ditinjau Psikiater.</p>
+                    <div class="book-highlights">
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Skoring Instan Real-time Begitu Ujian Selesai</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Deteksi Kejujuran (Skala L, F, K, VRIN, TRIN)</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Siap Ujian Massal MCU CPNS, Caleg & Direksi</span></div>
+                    </div>
+                    <div class="book-actions mt-4">
+                      <a href="#pintar-mmpi2" class="btn btn-warning" onclick="window.PintarKita.openProductLanding('pintar-mmpi-2');">
+                        <i class="fas fa-brain"></i> Pelajari PINTAR MMPI2
+                      </a>
+                      <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20konsultasi%20PINTAR%20MMPI2." target="_blank" class="btn btn-success btn-chat-admin-cta">
+                        <i class="fab fa-whatsapp"></i> Chat Admin
+                      </a>
+                    </div>
+                  </div>
+                  <div class="book-page-visual">
+                    <div class="book-poster-frame">
+                      <img src="assets/images/PINTAR MMPI2.jpg" alt="Poster PINTAR MMPI2" class="book-poster-img" loading="lazy">
+                      <div class="book-page-turn-hint"><i class="fas fa-hand-pointer"></i> Klik / Geser Balik Halaman</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Page 7: MANAJEMEN KEUANGAN BLUD -->
+              <div class="flipbook-page" data-page="6" data-title="MANAJEMEN KEUANGAN - Tata Kelola BLUD">
+                <div class="book-page-grid">
+                  <div class="book-page-info">
+                    <span class="book-tag-pill"><i class="fas fa-file-invoice-dollar text-warning"></i> Pedoman BLUD Permendagri 79/2018</span>
+                    <h3 class="book-heading">Tata Kelola Keuangan Rumah Sakit: RBA, Kas & Akuntabilitas</h3>
+                    <p class="book-desc">Penguatan fleksibilitas pengelolaan keuangan BLUD RSUD. Panduan penyusunan Rencana Bisnis dan Anggaran (RBA), penatausahaan kas tertib, serta penyusunan laporan keuangan akuntabel siap audit.</p>
+                    <div class="book-highlights">
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Penyusunan RBA BLUD Berbasis Kinerja & Standar Biaya</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Penatausahaan Belanja Operasional & Pengadaan Farmasi</span></div>
+                      <div class="b-highlight-item"><i class="fas fa-check-circle text-success"></i> <span>Laporan Keuangan SAK & SAP Bebas Temuan BPK / Inspektorat</span></div>
+                    </div>
+                    <div class="book-actions mt-4">
+                      <a href="#artikel" class="btn btn-warning" onclick="window.PintarKita.switchView('artikel');">
+                        <i class="fas fa-book-reader"></i> Baca Berita Manajemen RS
+                      </a>
+                      <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20konsultasi%20tata%20kelola%20keuangan%20BLUD." target="_blank" class="btn btn-success btn-chat-admin-cta">
+                        <i class="fab fa-whatsapp"></i> Chat Admin
+                      </a>
+                    </div>
+                  </div>
+                  <div class="book-page-visual">
+                    <div class="book-poster-frame">
+                      <img src="assets/images/Manajemen keuangan BLUD.jpg" alt="Poster Manajemen Keuangan BLUD" class="book-poster-img" loading="lazy">
+                      <div class="book-page-turn-hint"><i class="fas fa-hand-pointer"></i> Klik / Geser Balik Halaman</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <div class="banner-nav-dots">
-          <span class="banner-dot active"></span>
-          <span class="banner-dot"></span>
+            <!-- 3D Flip Navigation Arrows -->
+            <button class="book-flip-nav book-flip-prev" id="book-nav-prev" title="Buka Halaman Sebelumnya" aria-label="Sebelumnya">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="book-flip-nav book-flip-next" id="book-nav-next" title="Buka Halaman Berikutnya" aria-label="Berikutnya">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Bottom Navigation Tabs (Chapter Pills) -->
+          <div class="book-chapter-pills-wrap">
+            <div class="book-chapter-pills" id="book-chapter-pills">
+              <button class="book-pill-btn active" data-idx="0">1. PINTAR UC</button>
+              <button class="book-pill-btn" data-idx="1">2. PINTAR JP</button>
+              <button class="book-pill-btn" data-idx="2">3. PINTAR MR</button>
+              <button class="book-pill-btn" data-idx="3">4. PINTAR PUAS</button>
+              <button class="book-pill-btn" data-idx="4">5. PINTAR KLINIK</button>
+              <button class="book-pill-btn" data-idx="5">6. PINTAR MMPI2</button>
+              <button class="book-pill-btn" data-idx="6">7. Keuangan BLUD</button>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- Mitra & Pengalaman Lapangan - Partners Marquee Showcase -->
+      <!-- Mitra Profesional Showcase -->
       <section class="landing-section partners-showcase-section">
         <div class="section-title-wrap text-center mb-4">
-          <span class="subtitle-tag"><i class="fas fa-handshake"></i> Mitra & Pengalaman Lapangan</span>
-          <h2>Rekam Jejak Kemitraan Nyata di Seluruh Indonesia</h2>
-          <p>Telah dipercaya oleh berbagai Rumah Sakit Daerah, Kementerian, dan Lembaga Pengawasan di seluruh nusantara.</p>
+          <h2 class="section-heading-navy"><i class="fas fa-handshake text-primary mr-2"></i> Mitra Profesional</h2>
         </div>
 
         <div class="partners-marquee-container">
@@ -379,16 +530,14 @@
         </div>
       </section>
 
-      <!-- Dokumentasi & Galeri Foto Lapangan (Beranda Preview) -->
+      <!-- Galeri Kegiatan (Beranda Preview) -->
       <section class="landing-section">
-        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-3">
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
           <div>
-            <span class="subtitle-tag"><i class="fas fa-camera"></i> Dokumentasi Lapangan</span>
-            <h2>Galeri Kegiatan & Kemitraan Rumah Sakit</h2>
-            <p class="text-muted mb-0">Rekam jejak bimbingan teknis, implementasi sistem PINTARKITA, dan FGD tata kelola fasyankes di berbagai daerah.</p>
+            <h2 class="section-heading-navy m-0"><i class="fas fa-camera-retro text-primary mr-2"></i> Galeri Kegiatan</h2>
           </div>
-          <button class="btn btn-outline-primary btn-sm" id="btn-see-all-gallery">
-            <i class="fas fa-images"></i> Lihat Seluruh Galeri Foto
+          <button class="btn btn-primary btn-elegant" id="btn-see-all-gallery">
+            <i class="fas fa-photo-film"></i> Buka Galeri <i class="fas fa-arrow-right ml-1"></i>
           </button>
         </div>
 
@@ -406,22 +555,10 @@
   <section id="view-pelatihan" class="view-container">
     <div class="container">
       
-      <!-- LMS Hero Banner -->
-      <div class="lms-hero-banner">
-        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
-          <div>
-            <span class="badge badge-warning mb-2"><i class="fas fa-hospital-alt"></i> DIKLAT & BIMTEK MANAJEMEN RUMAH SAKIT</span>
-            <h2 class="lms-hero-title">LMS PINTARKITA - Pelatihan Manajemen Rumah Sakit & Fasyankes</h2>
-            <p class="lms-hero-desc">Sistem pembelajaran online dan bimbingan teknis terpadu khusus untuk peningkatan kapasitas SDM Rumah Sakit (BLUD/RSUD/RS Swasta) dan Fasilitas Pelayanan Kesehatan Indonesia.</p>
-          </div>
-          <div class="d-flex flex-wrap gap-2">
-            <button class="btn btn-warning" id="btn-show-laporan">
-              <i class="fas fa-file-invoice"></i> Laporan Pelatihan
-            </button>
-            <button class="btn btn-warning" id="btn-show-certificate">
-              <i class="fas fa-certificate"></i> Sertifikat Digital Saya
-            </button>
-          </div>
+      <!-- LMS Executive Header -->
+      <div class="lms-hero-banner elegant-header mb-4">
+        <div class="text-center py-3">
+          <h2 class="section-heading-navy m-0"><i class="fas fa-graduation-cap text-primary mr-2"></i> PELATIHAN & BIMTEK PROFESIONAL</h2>
         </div>
       </div>
 
@@ -469,10 +606,9 @@
        ======================================================================== -->
   <section id="view-artikel" class="view-container">
     <div class="container">
-      <div class="section-title-wrap text-center my-4">
-        <span class="subtitle-tag">Pusat Pengetahuan Rumah Sakit</span>
-        <h2>Artikel, Regulasi & Studi Kasus Manajemen Fasyankes</h2>
-        <p>Wawasan komprehensif seputar pola tarif BLUD, kendali biaya INA-CBGs, formula remunerasi nakes, dan mitigasi risiko rumah sakit.</p>
+      <div class="section-title-wrap text-center artikel-header-wrap">
+        <h2 class="section-heading-navy font-bold mb-3"><i class="fas fa-newspaper text-primary mr-2"></i> Berita Manajemen Rumah Sakit</h2>
+        <p class="artikel-header-desc">Kupas tuntas dinamika regulasi kesehatan nasional, strategi kendali tarif BLUD, sistem remunerasi nakes, dan transformasi digital tata kelola rumah sakit modern di Indonesia.</p>
       </div>
 
       <!-- Articles Grid -->
@@ -672,11 +808,10 @@
     <div class="container">
       
       <!-- Galeri Hero Banner -->
-      <div class="gallery-hero-banner glass-panel p-4 mb-4">
+      <div class="gallery-hero-banner glass-panel p-4 mb-4 text-center">
         <div class="gallery-hero-content">
-          <span class="badge badge-warning mb-2"><i class="fas fa-camera-retro"></i> DOKUMENTASI RESMI PT. AKAPRO</span>
-          <h2 class="font-bold text-dark mb-2">Galeri Kegiatan & Rekam Jejak Lapangan</h2>
-          <p class="text-muted mb-0">Dokumentasi nyata kegiatan bimbingan teknis manajemen rumah sakit, implementasi aplikasi PINTARKITA, Focus Group Discussion (FGD) remunerasi & unit cost, serta kemitraan strategis di berbagai daerah di Indonesia.</p>
+          <span class="badge badge-primary-soft font-md mb-2" style="font-size: 0.95rem; padding: 0.45rem 1.25rem;"><i class="fas fa-camera-retro"></i> Galeri Kegiatan</span>
+          <p class="text-muted mt-2 mb-0">Dokumentasi nyata bimbingan teknis, implementasi sistem PINTARKITA, dan FGD tata kelola fasyankes di berbagai daerah di Indonesia.</p>
         </div>
       </div>
 
@@ -1076,10 +1211,11 @@
   </div>
 
   <!-- Scripts -->
+  <!-- Scripts: data.js & app.js load first (critical), rest deferred -->
   <script src="js/data.js"></script>
-  <script src="js/prayer-time.js"></script>
-  <script src="js/simulator.js"></script>
-  <script src="js/lms.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/prayer-time.js" defer></script>
+  <script src="js/simulator.js" defer></script>
+  <script src="js/lms.js" defer></script>
 </body>
 </html>

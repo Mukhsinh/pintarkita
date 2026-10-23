@@ -305,16 +305,16 @@ const PINTAR_DATA = {
 
     'pintar-mmpi-2': {
       id: 'pintar-mmpi-2',
-      name: 'PINTAR MMPI-2',
+      name: 'PINTAR MMPI2',
       fullName: 'Aplikasi Psikotes MMPI-2 Sesuai Standar Berbasis Web & Realtime',
       menuBadge: 'Psikotes MCU',
       tagline: 'Tes Minnesota Multiphasic Personality Inventory (MMPI-2) Digital 567 Soal Baku dengan Skoring Cepat, Akurat, dan Validitas Teruji',
       shortDesc: 'Aplikasi psikotes MMPI-2 sesuai standar baku internasional berbasis web-based dan terintegrasi dengan hasil psikogram secara langsung dan realtime.',
       icon: 'assets/icons/pintar-mmpi.svg',
-      badge: 'Psikotes MMPI-2 • MCU RS',
+      badge: 'Psikotes MMPI2 • MCU RS',
       themeColor: '#0052D4',
       accentColor: '#FF7A00',
-      heroImage: 'assets/images/pintar-mmpi-info.jpg',
+      heroImage: 'assets/images/PINTAR MMPI2.jpg',
       stat1: { value: '567 Soal', label: 'Standar Baku' },
       stat2: { value: 'Detik', label: 'Skoring Realtime' },
       stat3: { value: 'T-Score', label: 'Profil Validitas & Klinis' },
@@ -733,7 +733,7 @@ const PINTAR_DATA = {
       date: '05 Oktober 2026',
       readTime: '6 Menit Baca',
       author: 'Rima Devaluasi, SE, M.Ak (Trainer Akuntansi Keuangan AKAPRO)',
-      image: 'assets/images/pintar-klinik-3d.jpg',
+      image: 'assets/images/Manajemen keuangan BLUD.jpg',
       summary: 'Langkah praktis menyusun RBA BLUD, pembukuan kas, serta laporan keuangan akuntansi rumah sakit yang siap diaudit BPKP.',
       content: `
         <p>Pengelolaan keuangan rumah sakit BLUD maupun swasta memerlukan siklus akuntansi yang tertib mulai dari penetapan pagu anggaran (RBA), penatausahaan penerimaan pasien, belanja persediaan farmasi, hingga penyusunan laporan keuangan (Neraca, Laporan Operasional, dan Arus Kas).</p>
@@ -828,150 +828,26 @@ const PINTAR_DATA = {
       }
     ],
     partners: [
-      {
-        id: 'p-1',
-        name: 'RSUD Bandar Negara Husada',
-        region: 'Pemerintah Provinsi Lampung',
-        app: 'PINTAR MR',
-        appDesc: 'Sistem Manajemen Risiko RS',
-        appBadge: 'badge-mr',
-        logo: 'assets/icons/partners/lampung.svg'
-      },
-      {
-        id: 'p-2',
-        name: 'RSUD Batiling',
-        region: 'Fasilitas Pelayanan Kesehatan Daerah',
-        app: 'PINTAR MR',
-        appDesc: 'Sistem Manajemen Risiko RS',
-        appBadge: 'badge-mr',
-        logo: 'assets/icons/partners/batiling.svg'
-      },
-      {
-        id: 'p-3',
-        name: 'RSUD Kabupaten Kerinci',
-        region: 'Pemerintah Kabupaten Kerinci, Jambi',
-        app: 'PINTAR MR',
-        appDesc: 'Sistem Manajemen Risiko RS',
-        appBadge: 'badge-mr',
-        logo: 'assets/icons/partners/kerinci.svg'
-      },
-      {
-        id: 'p-4',
-        name: 'UPTD Khusus RSU Haji Medan',
-        region: 'Pemerintah Provinsi Sumatera Utara',
-        app: 'PINTAR MR',
-        appDesc: 'Sistem Manajemen Risiko RS',
-        appBadge: 'badge-mr',
-        logo: 'assets/icons/partners/sumut-haji.svg'
-      },
-      {
-        id: 'p-5',
-        name: 'RSUD Bumiayu',
-        region: 'Pemerintah Kabupaten Brebes, Jateng',
-        app: 'PINTAR MR',
-        appDesc: 'Sistem Manajemen Risiko RS',
-        appBadge: 'badge-mr',
-        logo: 'assets/icons/partners/brebes-bumiayu.svg'
-      },
-      {
-        id: 'p-6',
-        name: 'RSUD Teungku Peukan',
-        region: 'Pemerintah Kab. Aceh Barat Daya, Aceh',
-        app: 'PINTAR MR',
-        appDesc: 'Sistem Manajemen Risiko RS',
-        appBadge: 'badge-mr',
-        logo: 'assets/icons/partners/abdya.svg'
-      },
-      {
-        id: 'p-7',
-        name: 'RSUD dr. Soeroto',
-        region: 'Pemerintah Kabupaten Ngawi, Jatim',
-        app: 'PINTAR MR',
-        appDesc: 'Sistem Manajemen Risiko RS',
-        appBadge: 'badge-mr',
-        logo: 'assets/icons/partners/ngawi.svg'
-      },
-      {
-        id: 'p-8',
-        name: 'RSUD Ahmad Ripin',
-        region: 'Pemerintah Kab. Muaro Jambi, Jambi',
-        app: 'PINTAR MR',
-        appDesc: 'Sistem Manajemen Risiko RS',
-        appBadge: 'badge-mr',
-        logo: 'assets/icons/partners/muaro-jambi.svg'
-      },
-      {
-        id: 'p-9',
-        name: 'RSUD dr. Soeselo Slawi',
-        region: 'Pemerintah Kabupaten Tegal, Jateng',
-        app: 'PINTAR JP',
-        appDesc: 'Distribusi Remunerasi Jaspel & KPI',
-        appBadge: 'badge-jp',
-        logo: 'assets/icons/partners/tegal.svg'
-      },
-      {
-        id: 'p-10',
-        name: 'RSUD dr. R. Goeteng Taroenadibrata',
-        region: 'Pemerintah Kab. Purbalingga, Jateng',
-        app: 'PINTAR JP & TARIF',
-        appDesc: 'Remunerasi & Kendali Biaya JKN',
-        appBadge: 'badge-jp',
-        logo: 'assets/icons/partners/purbalingga.svg'
-      },
-      {
-        id: 'p-11',
-        name: 'RSUD Bendan Kota Pekalongan',
-        region: 'Pemerintah Kota Pekalongan, Jateng',
-        app: 'PINTAR UC',
-        appDesc: 'Unit Cost ABC Modifikasi',
-        appBadge: 'badge-uc',
-        logo: 'assets/icons/partners/pekalongan.svg'
-      },
-      {
-        id: 'p-12',
-        name: 'RSUD Sungai Bahar',
-        region: 'Pemerintah Kab. Muaro Jambi, Jambi',
-        app: 'PINTAR JP',
-        appDesc: 'Sistem Remunerasi Jaspel Nakes',
-        appBadge: 'badge-jp',
-        logo: 'assets/icons/partners/sungai-bahar.svg'
-      },
-      {
-        id: 'p-13',
-        name: 'RSUD Mayjen H.A. Thalib',
-        region: 'Pemerintah Kota Sungai Penuh, Jambi',
-        app: 'PINTAR JP & BLUD',
-        appDesc: 'Tata Kelola Fleksibilitas BLUD & Jaspel',
-        appBadge: 'badge-jp',
-        logo: 'assets/icons/partners/sungai-penuh.svg'
-      },
-      {
-        id: 'p-14',
-        name: 'BPKP Perwakilan Jawa Tengah',
-        region: 'Badan Pengawasan Keuangan & Pembangunan',
-        app: 'PINTAR MR',
-        appDesc: 'Peta Risiko & Tata Kelola Fasyankes',
-        appBadge: 'badge-mr',
-        logo: 'assets/icons/partners/bpkp.svg'
-      },
-      {
-        id: 'p-15',
-        name: 'Subdit BLUD Kemendagri RI',
-        region: 'Kementerian Dalam Negeri Republik Indonesia',
-        app: 'PINTAR UC',
-        appDesc: 'Kaji Banding Tarif Layanan BLUD',
-        appBadge: 'badge-uc',
-        logo: 'assets/icons/partners/kemendagri.svg'
-      },
-      {
-        id: 'p-16',
-        name: 'Tim Unit Cost & Tarif Kemenkes RI',
-        region: 'Kementerian Kesehatan Republik Indonesia',
-        app: 'PINTAR UC',
-        appDesc: 'Pedoman Perhitungan Biaya Satuan RS',
-        appBadge: 'badge-uc',
-        logo: 'assets/icons/partners/kemenkes.svg'
-      }
+      { id: 'p-1', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (1).jpeg' },
+      { id: 'p-2', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (2).jpeg' },
+      { id: 'p-3', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (3).jpeg' },
+      { id: 'p-4', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (4).jpeg' },
+      { id: 'p-5', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (5).jpeg' },
+      { id: 'p-6', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (6).jpeg' },
+      { id: 'p-7', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (7).jpeg' },
+      { id: 'p-8', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (8).jpeg' },
+      { id: 'p-9', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (9).jpeg' },
+      { id: 'p-10', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (10).jpeg' },
+      { id: 'p-11', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (11).jpeg' },
+      { id: 'p-12', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (12).jpeg' },
+      { id: 'p-13', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (13).jpeg' },
+      { id: 'p-14', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (14).jpeg' },
+      { id: 'p-15', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (15).jpeg' },
+      { id: 'p-16', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (16).jpeg' },
+      { id: 'p-17', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (17).jpeg' },
+      { id: 'p-18', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (18).jpeg' },
+      { id: 'p-19', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.32 (19).jpeg' },
+      { id: 'p-20', logo: 'assets/images/Mitra Profesional/WhatsApp Image 2026-10-23 at 02.27.33.jpeg' }
     ],
     contact: {
       address: 'Perum Saphire Townhouse Blok C-3, Jl. Truntum, Kel. Krapyak, Kec. Pekalongan Utara, Kota Pekalongan, Jawa Tengah 51147',
@@ -1105,3 +981,7 @@ const PINTAR_DATA = {
 };
 
 window.PINTAR_DATA = PINTAR_DATA;
+// Alias for backward compatibility
+if (PINTAR_DATA.products && PINTAR_DATA.products['pintar-mmpi-2']) {
+  PINTAR_DATA.products['pintar-mmpi2'] = PINTAR_DATA.products['pintar-mmpi-2'];
+}
