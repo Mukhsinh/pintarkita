@@ -263,122 +263,180 @@ class PintarKitaApp {
                 ${p.hakiNo ? `<small class="d-block text-muted" style="font-size: 0.65rem;">${p.hakiNo}</small>` : ''}
               </div>
             </div>
-            <a href="${waLink}" target="_blank" class="btn btn-sm btn-success">
-              <i class="fab fa-whatsapp"></i> Demo Rumah Sakit
-            </a>
+            <div class="d-flex align-items-center gap-2">
+              <a href="#simulator-section" class="btn btn-sm btn-outline-primary">
+                <i class="fas fa-play-circle"></i> Uji Coba
+              </a>
+              <a href="${waLink}" target="_blank" class="btn btn-sm btn-success">
+                <i class="fas fa-headset"></i> Chat Admin
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Hero Section with Distinct Image for Each Menu -->
+        <!-- Hero Section: Clean Enterprise Header -->
         <section class="landing-hero">
-          <div class="container">
-            <div class="hero-grid">
-              <div class="hero-text-col">
-                <div class="d-flex align-items-center gap-2 mb-2">
-                  <span class="product-badge-pill">${p.badge}</span>
-                  <span class="badge badge-primary">PT. AKADEMI PROFESIONAL INDONESIA</span>
-                </div>
-                <h1 class="landing-hero-title">${p.fullName}</h1>
-                <p class="landing-hero-subtitle">${p.tagline}</p>
-                <p class="landing-summary-p">${p.summary}</p>
+          <div class="container text-center">
+            <div class="landing-hero-head-wrap mx-auto" style="max-width: 860px;">
+              <div class="d-inline-flex align-items-center gap-2 mb-3 flex-wrap justify-content-center">
+                <span class="product-badge-pill">${p.badge}</span>
+                <span class="badge badge-primary font-semibold">PT. AKADEMI PROFESIONAL INDONESIA</span>
+              </div>
+              <h1 class="landing-hero-title mb-3">${p.fullName}</h1>
+              <p class="landing-hero-subtitle text-primary font-semibold mb-3">${p.tagline}</p>
+              <p class="landing-summary-p mx-auto text-muted mb-4" style="max-width: 780px;">${p.summary}</p>
 
-                <div class="landing-stats-row">
-                  <div class="stat-box glass-panel">
-                    <h3>${p.stat1.value}</h3>
-                    <p>${p.stat1.label}</p>
-                  </div>
-                  <div class="stat-box glass-panel">
-                    <h3>${p.stat2.value}</h3>
-                    <p>${p.stat2.label}</p>
-                  </div>
-                  <div class="stat-box glass-panel">
-                    <h3>${p.stat3.value}</h3>
-                    <p>${p.stat3.label}</p>
-                  </div>
+              <div class="landing-stats-row justify-content-center mb-4">
+                <div class="stat-box glass-panel">
+                  <h3>${p.stat1.value}</h3>
+                  <p>${p.stat1.label}</p>
                 </div>
-
-                <div class="landing-cta-buttons">
-                  <a href="${waLink}" target="_blank" class="btn btn-primary btn-lg pulse-glow">
-                    <i class="fab fa-whatsapp"></i> Chat Admin
-                  </a>
-                  <a href="#simulator-section" class="btn-hero-sim">
-                    <i class="fas fa-play-circle text-primary"></i> Uji Coba Simulasi
-                  </a>
+                <div class="stat-box glass-panel">
+                  <h3>${p.stat2.value}</h3>
+                  <p>${p.stat2.label}</p>
                 </div>
-
-                <div class="compliance-row mt-3">
-                  <small class="text-muted"><i class="fas fa-shield-alt text-primary"></i> Regulasi & Standar:</small>
-                  <div class="d-flex flex-wrap gap-2 mt-1">
-                    ${p.compliance.map(c => `<span class="badge badge-light-blue">${c}</span>`).join('')}
-                  </div>
+                <div class="stat-box glass-panel">
+                  <h3>${p.stat3.value}</h3>
+                  <p>${p.stat3.label}</p>
                 </div>
               </div>
 
-              <!-- Dedicated Distinct Visual Image -->
-              <div class="hero-visual-col">
-                <div class="landing-visual-card glass-panel">
-                  <div class="visual-card-header">
-                    <div class="circle-dots"><span></span><span></span><span></span></div>
-                    <small class="font-bold text-primary">${p.name} • PT. AKAPRO Cloud System</small>
-                  </div>
-                  <img src="${p.heroImage}" alt="${p.name} Infographic & Preview" class="landing-preview-img" style="border-radius: 12px; max-height: 440px; object-fit: contain; background: #f8fafc;">
-                  <div class="floating-benefit-badge glass-panel mt-2">
-                    <img src="${p.icon}" alt="${p.name} Logo" class="benefit-logo">
-                    <div>
-                      <strong>Solusi Resmi Ber-HAKI Kemenkumham</strong>
-                      <p>Kepatuhan regulasi Kemenkes & Kemendagri terjamin</p>
-                    </div>
-                  </div>
+              <div class="landing-cta-buttons justify-content-center gap-3">
+                <a href="#simulator-section" class="btn btn-primary btn-lg font-bold">
+                  <i class="fas fa-play-circle"></i> Uji Coba
+                </a>
+                <a href="${waLink}" target="_blank" class="btn btn-success btn-lg pulse-glow font-bold">
+                  <i class="fas fa-headset"></i> Chat Admin
+                </a>
+              </div>
+
+              <div class="compliance-row mt-4 justify-content-center">
+                <small class="text-muted"><i class="fas fa-shield-alt text-primary"></i> Kepatuhan Regulasi & Standar:</small>
+                <div class="d-flex flex-wrap gap-2 mt-1 justify-content-center">
+                  ${p.compliance.map(c => `<span class="badge badge-light-blue font-semibold">${c}</span>`).join('')}
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Problem & Solution Comparison -->
+        <!-- Dedicated Full Poster Showcase -->
         <section class="landing-section bg-soft-alt">
           <div class="container">
-            <div class="section-title-wrap text-center">
-              <span class="subtitle-tag">Tantangan & Terobosan Rumah Sakit</span>
-              <h2>Mengapa Rumah Sakit Membutuhkan ${p.name}?</h2>
-              <p>Perbandingan nyata antara metode manual/konvensional dengan keunggulan solusi PT. Akademi Profesional Indonesia</p>
+            <div class="section-title-wrap text-center mb-4">
+              <span class="subtitle-tag">Poster Infografis & Arsitektur</span>
+              <h2>Poster Resmi & Arsitektur Solusi ${p.name}</h2>
+              <p class="text-muted">Pelajari arsitektur sistem, struktur alur implementasi, dan kerangka regulasi fasyankes secara menyeluruh.</p>
             </div>
 
-            <div class="grid-2 mt-4">
-              <div class="compare-card compare-problem glass-panel">
-                <div class="compare-header text-danger">
-                  <i class="fas fa-times-circle"></i> Tanpa ${p.name} (Kondisi Konvensional)
+            <div class="poster-featured-wrap">
+              <div class="poster-showcase-card glass-panel">
+                <div class="poster-showcase-bar d-flex justify-content-between align-items-center flex-wrap gap-2 p-3 border-bottom">
+                  <div class="d-flex align-items-center gap-2">
+                    <img src="${p.icon}" alt="${p.name}" style="width: 28px; height: 28px; object-fit: contain;">
+                    <strong class="text-dark font-bold">${p.name} • Infografis Resmi PT. AKAPRO</strong>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge badge-primary-soft font-semibold"><i class="fas fa-shield-alt"></i> HAKI Terdaftar Kemenkumham RI</span>
+                    <button type="button" class="btn btn-sm btn-outline-primary" onclick="window.PintarKita.openImageLightbox('${p.heroImage}', 'Poster Resmi ${p.name} - PT. Akademi Profesional Indonesia')">
+                      <i class="fas fa-expand"></i> Buka Layar Penuh
+                    </button>
+                  </div>
                 </div>
-                <p class="problem-quote">"${p.problemStatement}"</p>
-                <ul class="compare-list">
-                  <li><i class="fas fa-times text-danger"></i> Biaya tidak jelas dan keputusan tarif hanya berdasarkan asumsi</li>
-                  <li><i class="fas fa-times text-danger"></i> Rawan kesalahan rumus Excel yang menyebabkan selisih anggaran</li>
-                  <li><i class="fas fa-times text-danger"></i> Pembagian jaspel tidak transparan melahirkan konflik internal nakes</li>
-                  <li><i class="fas fa-times text-danger"></i> Sulit akuntabel saat audit BPKP, Kemendagri, maupun Inspektorat</li>
-                </ul>
-              </div>
 
-              <div class="compare-card compare-solution glass-panel highlight-border">
-                <div class="compare-header text-success">
-                  <i class="fas fa-check-circle"></i> Dengan ${p.name} (Solusi Cerdas AKAPRO)
+                <div class="poster-image-stage" onclick="window.PintarKita.openImageLightbox('${p.heroImage}', 'Poster Resmi ${p.name} - PT. Akademi Profesional Indonesia')" title="Klik untuk memperbesar gambar">
+                  <img src="${p.heroImage}" alt="Poster Infografis ${p.name}" class="poster-full-img">
+                  <div class="poster-zoom-floating-badge">
+                    <i class="fas fa-search-plus"></i> Klik untuk Memperbesar Gambar
+                  </div>
                 </div>
-                <ul class="solution-list">
-                  ${p.solutionHighlights.map(s => `
-                    <li><i class="fas fa-check text-success"></i> ${s}</li>
-                  `).join('')}
-                </ul>
+
+                <div class="poster-showcase-footer p-3 d-flex justify-content-between align-items-center flex-wrap gap-2 text-muted font-sm">
+                  <span><i class="fas fa-certificate text-primary"></i> Standar Implementasi Resmi Fasyankes PT. Akademi Profesional Indonesia</span>
+                  <span><i class="fas fa-lock text-success"></i> Dilindungi Hak Kekayaan Intelektual Republik Indonesia</span>
+                </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dampak Kritis Tanpa Sistem (Copywriting Provokatif Formal) -->
+        <section class="landing-section landing-dampak-section">
+          <div class="container">
+            <div class="section-title-wrap text-center mb-4">
+              <span class="subtitle-tag subtitle-danger"><i class="fas fa-exclamation-triangle"></i> Analisis Risiko & Konsekuensi</span>
+              <h2>${p.dampakTitle || 'Dampak Kritis Tanpa Sistem Terstandar'}</h2>
+              <p class="dampak-statement-lead">${p.dampakStatement || p.problemStatement}</p>
+            </div>
+
+            <div class="grid-4 mt-4">
+              ${(p.dampakItems || []).map((item, idx) => `
+                <div class="dampak-card glass-panel">
+                  <div class="dampak-card-head">
+                    <span class="dampak-index">0${idx + 1}</span>
+                    <i class="fas fa-exclamation-circle text-danger font-lg"></i>
+                  </div>
+                  <h4 class="dampak-card-title">${item.title}</h4>
+                  <p class="dampak-card-desc">${item.desc}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- Keunggulan Sistem (Mengapa Memilih Kami) -->
+        <section class="landing-section bg-soft-alt">
+          <div class="container">
+            <div class="section-title-wrap text-center mb-4">
+              <span class="subtitle-tag">Keunggulan Solusi</span>
+              <h2>Keunggulan Kompetitif ${p.name}</h2>
+              <p>Metodologi ilmiah dan rancangan sistem yang disesuaikan secara spesifik dengan karakteristik operasional fasyankes Indonesia.</p>
+            </div>
+
+            <div class="grid-4 mt-4">
+              ${(p.keunggulan || p.features).map(k => `
+                <div class="advantage-card glass-panel">
+                  <div class="advantage-icon-bubble">
+                    <i class="fas fa-check-circle text-primary"></i>
+                  </div>
+                  <h4 class="advantage-card-title">${k.title}</h4>
+                  <p class="advantage-card-desc">${k.desc}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- Manfaat Nyata Bagi Rumah Sakit -->
+        <section class="landing-section">
+          <div class="container">
+            <div class="section-title-wrap text-center mb-4">
+              <span class="subtitle-tag">Manfaat Nyata</span>
+              <h2>Nilai Tambah Terukur untuk Manajemen & Pasien</h2>
+              <p>Dampak langsung yang terbukti meningkatkan akuntabilitas keuangan, keharmonisan internal, dan kualitas layanan rumah sakit.</p>
+            </div>
+
+            <div class="grid-4 mt-4">
+              ${(p.manfaat || []).map(m => `
+                <div class="benefit-card glass-panel">
+                  <div class="benefit-icon-bubble">
+                    <i class="fas fa-award text-success"></i>
+                  </div>
+                  <h4 class="benefit-card-title">${m.title}</h4>
+                  <p class="benefit-card-desc">${m.desc}</p>
+                </div>
+              `).join('')}
             </div>
           </div>
         </section>
 
         <!-- Interactive Simulator Section -->
-        <section class="landing-section" id="simulator-section">
+        <section class="landing-section bg-soft-alt" id="simulator-section">
           <div class="container">
-            <div class="section-title-wrap text-center">
+            <div class="section-title-wrap text-center mb-3">
               <span class="subtitle-tag">Uji Coba Langsung</span>
               <h2>Simulasi Fitur Interaktif ${p.name}</h2>
-              <p>Rasakan kemudahan dan presisi perhitungan sistem kami langsung pada browser Anda.</p>
+              <p>Rasakan kemudahan dan presisi perhitungan sistem kami langsung pada browser Anda tanpa instalasi.</p>
             </div>
 
             <div id="landing-sim-slot" class="mt-4">
@@ -387,86 +445,22 @@ class PintarKitaApp {
           </div>
         </section>
 
-        <!-- Core Features Grid -->
-        <section class="landing-section bg-soft-alt">
-          <div class="container">
-            <div class="section-title-wrap text-center">
-              <span class="subtitle-tag">Fitur Unggulan Sistem</span>
-              <h2>Kemampuan Sistem yang Dirancang untuk Kebutuhan Riil Fasyankes</h2>
-              <p>Setiap modul dirancang sesuai alur kerja operasional rumah sakit dan fasyankes Indonesia.</p>
-            </div>
 
-            <div class="grid-4 mt-4">
-              ${p.features.map(f => `
-                <div class="feature-card glass-panel">
-                  <div class="feature-icon-wrap">
-                    <i class="${f.icon}"></i>
-                  </div>
-                  <h4>${f.title}</h4>
-                  <p>${f.desc}</p>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        </section>
-
-        <!-- Key Benefits List -->
-        <section class="landing-section">
-          <div class="container">
-            <div class="benefits-panel glass-panel">
-              <div class="grid-2 align-items-center">
-                <div>
-                  <span class="subtitle-tag">Dampak Positif Bagi Rumah Sakit</span>
-                  <h2>Nilai Tambah Terbesar untuk Manajemen & Pasien</h2>
-                  <div class="benefits-check-list mt-3">
-                    ${p.benefits.map(b => `
-                      <div class="benefit-item">
-                        <i class="fas fa-badge-check text-primary"></i>
-                        <span>${b}</span>
-                      </div>
-                    `).join('')}
-                  </div>
-                </div>
-                <div class="text-center p-3">
-                  <div class="cta-direct-box glass-panel">
-                    <div class="cta-box-badge">
-                      <i class="fas fa-sparkles"></i> LIVE INTERACTIVE DEMO
-                    </div>
-                    <img src="${p.icon}" alt="${p.name}" class="cta-box-logo">
-                    <h3 class="cta-box-headline">Jangan Biarkan Rumah Sakit Anda Tertinggal & Merugi!</h3>
-                    <p class="cta-box-subtext">Wujudkan efisiensi biaya riil, transparansi layanan, dan kepatuhan regulasi bersama tim ahli PT. AKAPRO.</p>
-                    <a href="#simulator-section" class="btn-simulation-premium" title="Buka Simulasi Interaktif ${p.name}">
-                      <span class="sim-btn-shimmer"></span>
-                      <div class="sim-btn-icon-box">
-                        <i class="fas fa-play"></i>
-                        <span class="sim-icon-ring"></span>
-                      </div>
-                      <div class="sim-btn-content">
-                        <div class="sim-btn-pill-tag"><i class="fas fa-bolt"></i> FITUR INTERAKTIF</div>
-                        <span class="sim-btn-label">Uji Coba Simulasi ${p.name}</span>
-                        <span class="sim-btn-sub">Hitung Cepat • Berbasis Data Riil Fasyankes</span>
-                      </div>
-                      <div class="sim-btn-arrow">
-                        <i class="fas fa-arrow-right"></i>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Sticky Bottom CTA for Mobile & Desktop (Provocative Copywriting) -->
+        <!-- Sticky Bottom CTA for Mobile & Desktop -->
         <div class="landing-bottom-cta glass-panel">
           <div class="container d-flex align-items-center justify-content-between">
             <div class="cta-provocative-text">
               <strong class="d-block text-dark font-bold cta-hook-title">${this.getProvocativeHook(p.id).title}</strong>
               <small class="d-block text-muted cta-hook-desc">${this.getProvocativeHook(p.id).desc}</small>
             </div>
-            <a href="${waLink}" target="_blank" class="btn btn-success btn-lg ml-auto btn-chat-admin-cta">
-              <i class="fab fa-whatsapp"></i> Chat Admin
-            </a>
+            <div class="d-flex align-items-center gap-2 ml-auto flex-shrink-0">
+              <a href="#simulator-section" class="btn btn-outline-primary btn-sm btn-uji-coba-sticky">
+                <i class="fas fa-play-circle"></i> Uji Coba
+              </a>
+              <a href="${waLink}" target="_blank" class="btn btn-success btn-sm btn-chat-admin-cta">
+                <i class="fas fa-headset"></i> Chat Admin
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -541,14 +535,29 @@ class PintarKitaApp {
     // Management & Expert Team (PDF Page 5)
     const advisorsGrid = document.getElementById('profile-advisors-grid');
     if (advisorsGrid && c.team) {
-      advisorsGrid.innerHTML = c.team.map(m => `
-        <div class="advisor-card glass-panel">
-          <div class="advisor-avatar"><i class="fas fa-user-tie"></i></div>
+      advisorsGrid.innerHTML = c.team.map((m, idx) => {
+        const isMaster = idx === 0;
+        let icon = 'fa-user-tie';
+        if (m.role.includes('Medis')) icon = 'fa-user-md';
+        else if (m.role.includes('Paramedis')) icon = 'fa-user-nurse';
+        else if (m.role.includes('Akuntansi')) icon = 'fa-chart-line';
+        else if (m.role.includes('Risiko')) icon = 'fa-shield-alt';
+        else if (m.role.includes('Operasional')) icon = 'fa-tasks';
+
+        return `
+        <div class="advisor-card glass-panel ${isMaster ? 'advisor-lead-card' : ''}">
+          <div class="advisor-avatar-box">
+            <div class="advisor-avatar">
+              <i class="fas ${icon}"></i>
+            </div>
+            ${isMaster ? '<span class="advisor-lead-badge"><i class="fas fa-crown"></i> Master Trainer</span>' : ''}
+          </div>
           <h5 class="advisor-name">${m.name}</h5>
-          <span class="advisor-role">${m.role}</span>
+          <span class="advisor-role ${isMaster ? 'role-badge-master' : ''}">${m.role}</span>
           <p class="advisor-desc">${m.desc}</p>
         </div>
-      `).join('');
+      `;
+      }).join('');
     }
   }
 
@@ -938,8 +947,42 @@ class PintarKitaApp {
 
   openLightbox(index) {
     this.activeGalleryIndex = index;
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+    if (prevBtn) prevBtn.style.display = 'flex';
+    if (nextBtn) nextBtn.style.display = 'flex';
     this.showLightboxPhoto(index);
     const modal = document.getElementById('gallery-lightbox-modal');
+    if (modal) modal.classList.add('open');
+  }
+
+  openImageLightbox(src, title) {
+    const modal = document.getElementById('gallery-lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    const titleEl = document.getElementById('lightbox-title');
+    const badge = document.getElementById('lightbox-badge');
+    const meta = document.getElementById('lightbox-meta');
+    const desc = document.getElementById('lightbox-desc');
+    const download = document.getElementById('lightbox-download');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+
+    if (img) {
+      img.src = src;
+      img.alt = title || 'Preview Dokumen';
+    }
+    if (titleEl) titleEl.textContent = title || 'Dokumen Resmi PINTARKITA';
+    if (badge) badge.textContent = 'Poster & Arsitektur Resmi';
+    if (meta) {
+      meta.innerHTML = `<span><i class="fas fa-shield-alt text-primary"></i> Hak Kekayaan Intelektual PT. Akademi Profesional Indonesia</span>`;
+    }
+    if (desc) desc.textContent = 'Infografis resmi beresolusi tinggi menampilkan arsitektur sistem, alur proses bisnis fasyankes, serta dasar regulasi Kementerian Kesehatan & Kemendagri.';
+    if (download) {
+      download.href = src;
+      download.setAttribute('download', src.split('/').pop());
+    }
+    if (prevBtn) prevBtn.style.display = 'none';
+    if (nextBtn) nextBtn.style.display = 'none';
     if (modal) modal.classList.add('open');
   }
 

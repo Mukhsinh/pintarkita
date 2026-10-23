@@ -51,22 +51,22 @@ const PINTAR_SIMULATORS = {
             <h5 class="text-center">Analisis Efisiensi Biaya</h5>
             
             <div class="sim-metric-row">
-              <span>Total Unit Cost (Biaya Satuan Riil):</span>
+              <span class="sim-metric-label">Total Unit Cost Riil:</span>
               <strong id="res-total-uc" class="text-primary">Rp 6.000.000</strong>
             </div>
 
             <div class="sim-metric-row">
-              <span>Paket Klaim Tarif INA-CBGs:</span>
+              <span class="sim-metric-label">Paket Klaim INA-CBGs:</span>
               <strong id="res-inacbg">Rp 7.450.000</strong>
             </div>
 
             <div class="sim-metric-row">
-              <span>Selisih Margin terhadap INA-CBGs:</span>
+              <span class="sim-metric-label">Selisih Margin (vs Klaim):</span>
               <strong id="res-margin" class="text-success">+Rp 1.450.000 (Surplus)</strong>
             </div>
 
             <div class="sim-metric-row highlight">
-              <span>Rekomendasi Tarif Pasien Umum (+Target Margin):</span>
+              <span class="sim-metric-label">Rekomendasi Tarif (+Margin):</span>
               <strong id="res-suggested-tariff" class="text-warning">Rp 7.200.000</strong>
             </div>
 
@@ -75,7 +75,7 @@ const PINTAR_SIMULATORS = {
             </div>
             <small id="uc-status-note" class="text-muted"><i class="fas fa-check-circle text-success"></i> Biaya rumah sakit aman dan berada di bawah plafon klaim BPJS Kesehatan.</small>
 
-            <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20tertarik%20dengan%20aplikasi%20PINTAR%20UC.%20Mohon%20jadwalkan%20presentasi%20dan%20demo%20lengkapnya." target="_blank" class="btn btn-primary btn-block mt-3">
+            <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20tertarik%20dengan%20aplikasi%20PINTAR%20UC.%20Mohon%20jadwalkan%20presentasi%20dan%20demo%20lengkapnya." target="_blank" class="btn btn-primary btn-block mt-3 font-bold">
               <i class="fab fa-whatsapp"></i> Konsultasi Implementasi PINTAR UC
             </a>
           </div>
@@ -113,13 +113,13 @@ const PINTAR_SIMULATORS = {
       progressFill.style.width = `${ratio}%`;
 
       if (diff >= 0) {
-        resMarginEl.innerHTML = `<span class="badge badge-success">+Rp ${diff.toLocaleString('id-ID')} (Surplus Aman)</span>`;
+        resMarginEl.innerHTML = `<span class="badge badge-success">+Rp ${diff.toLocaleString('id-ID')} (Surplus)</span>`;
         progressFill.style.background = 'linear-gradient(90deg, #10B981, #059669)';
         noteEl.innerHTML = '<i class="fas fa-check-circle text-success"></i> Pengendalian Clinical Pathway optimal. Rumah sakit memperoleh margin positif.';
       } else {
         resMarginEl.innerHTML = `<span class="badge badge-danger">-Rp ${Math.abs(diff).toLocaleString('id-ID')} (Defisit Klaim!)</span>`;
         progressFill.style.background = 'linear-gradient(90deg, #EF4444, #B91C1C)';
-        noteEl.innerHTML = '<i class="fas fa-exclamation-triangle text-danger"></i> PERINGATAN: Biaya riil melampaui tarif klaim INA-CBGs! Perlu evaluasi resep obat & lama rawat dengan PINTAR UC.';
+        noteEl.innerHTML = '<i class="fas fa-exclamation-triangle text-danger"></i> Biaya riil melampaui tarif klaim INA-CBGs. Perlu evaluasi BHP dan LOS tindakan.';
       }
     };
 
@@ -184,29 +184,29 @@ const PINTAR_SIMULATORS = {
           <div class="sim-results glass-inset">
             <h5 class="text-center">Estimasi Slip Jaspel Digital</h5>
             <div class="sim-metric-row">
-              <span>Dana Pool Jaspel Medis:</span>
+              <span class="sim-metric-label">Dana Pool Jaspel Medis:</span>
               <strong id="jp-res-pool-medis" class="text-primary">Rp 157.500.000</strong>
             </div>
             <div class="sim-metric-row">
-              <span>Indeks Total Kinerja (Bobot x KPI):</span>
+              <span class="sim-metric-label">Indeks Total Kinerja (Bobot x KPI):</span>
               <strong id="jp-res-indeks">414 Poin</strong>
             </div>
             <div class="sim-metric-row">
-              <span>Jasa Pelayanan Bruto:</span>
+              <span class="sim-metric-label">Jasa Pelayanan Bruto:</span>
               <strong id="jp-res-bruto" class="text-primary font-bold">Rp 18.250.000</strong>
             </div>
             <div class="sim-metric-row">
-              <span>Potongan Pajak PPh 21 TER:</span>
+              <span class="sim-metric-label">Potongan Pajak PPh 21 TER:</span>
               <strong id="jp-res-pajak" class="text-danger">-Rp 1.095.000 (6%)</strong>
             </div>
             <div class="sim-metric-row highlight">
-              <span>Take Home Pay Insentif Bersih:</span>
+              <span class="sim-metric-label">Take Home Pay Insentif Bersih:</span>
               <strong id="jp-res-netto" class="text-success font-xl">Rp 17.155.000</strong>
             </div>
 
-            <p class="small text-muted mt-2"><i class="fas fa-shield-alt"></i> Transparan, terverifikasi otomatis dengan sistem absensi, mutu rekam medis, dan SOP fasyankes.</p>
+            <p class="small text-muted mt-2"><i class="fas fa-shield-alt text-primary"></i> Transparan, terverifikasi otomatis dengan sistem absensi, mutu rekam medis, dan SOP fasyankes.</p>
 
-            <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20kami%20ingin%20berkonsultasi%20mengenai%20formula%20remunerasi%20PINTAR%20JP%20untuk%20fasyankes%20kami." target="_blank" class="btn btn-primary btn-block mt-3">
+            <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20kami%20ingin%20berkonsultasi%20mengenai%20formula%20remunerasi%20PINTAR%20JP%20untuk%20fasyankes%20kami." target="_blank" class="btn btn-primary btn-block mt-3 font-bold">
               <i class="fab fa-whatsapp"></i> Konsultasi Skema Remunerasi PINTAR JP
             </a>
           </div>
@@ -285,11 +285,9 @@ const PINTAR_SIMULATORS = {
           </div>
         </div>
 
-        <div class="text-center mt-3">
-          <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20kami%20butuh%20demo%20aplikasi%20PINTAR%20MR%20untuk%20persiapan%20akreditasi%20rumah%20sakit." target="_blank" class="btn btn-primary">
-            <i class="fab fa-whatsapp"></i> Siapkan Manajemen Risiko Fasyankes Anda
-          </a>
-        </div>
+        <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20kami%20butuh%20demo%20aplikasi%20PINTAR%20MR%20untuk%20persiapan%20akreditasi%20rumah%20sakit." target="_blank" class="btn btn-primary btn-block font-bold mt-3">
+          <i class="fab fa-whatsapp"></i> Siapkan Manajemen Risiko Fasyankes Anda
+        </a>
       </div>
     `;
 
@@ -483,7 +481,7 @@ const PINTAR_SIMULATORS = {
               <span class="badge badge-success"><i class="fas fa-check"></i> Jurnal Akuntansi & Kartu Stok Otomatis Terupdate</span>
             </div>
 
-            <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20berlangganan%20aplikasi%20PINTAR%20KLINIK%20lengkap%20dengan%20perpajakan." target="_blank" class="btn btn-primary btn-block mt-3">
+            <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20berlangganan%20aplikasi%20PINTAR%20KLINIK%20lengkap%20dengan%20perpajakan." target="_blank" class="btn btn-primary btn-block mt-3 font-bold">
               <i class="fab fa-whatsapp"></i> Dapatkan Demo PINTAR KLINIK
             </a>
           </div>
@@ -602,7 +600,7 @@ const PINTAR_SIMULATORS = {
             </div>
 
             <div class="text-center mt-3">
-              <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20jadwalkan%20demo%20aplikasi%20PINTAR%20MMPI-2%20untuk%20RS%20/%20Klinik%20/%20Institusi." target="_blank" class="btn btn-primary btn-block">
+              <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20jadwalkan%20demo%20aplikasi%20PINTAR%20MMPI-2%20untuk%20RS%20/%20Klinik%20/%20Institusi." target="_blank" class="btn btn-primary btn-block font-bold">
                 <i class="fas fa-headset"></i> Chat Admin untuk Uji Coba MMPI-2
               </a>
             </div>

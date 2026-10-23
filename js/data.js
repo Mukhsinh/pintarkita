@@ -21,18 +21,74 @@ const PINTAR_DATA = {
       fullName: 'Sistem Manajemen Unit Cost Terintegrasi Rumah Sakit',
       hakiNo: 'HAKI No: 000831709',
       menuBadge: 'Unit cost',
-      tagline: 'Kelola Biaya dengan Cerdas, Ukur dengan Tepat, Layani dengan Bermutu, Kelola untuk Masa Depan',
+      tagline: 'Kelola Biaya dengan Cerdas, Ukur dengan Tepat, Layani dengan Bermutu, Amankan Keberlangsungan Rumah Sakit',
       shortDesc: 'Aplikasi berbasis web untuk pengelolaan unit cost RS akurat, transparan, dan efisien berbasis Activity-Based Costing (ABC) Modifikasi terintegrasi Clinical Pathway.',
       icon: 'assets/icons/pintar-uc.svg',
       badge: 'Unit Cost RS • HAKI 000831709',
       themeColor: '#0052D4',
       accentColor: '#FF7A00',
       heroImage: 'assets/images/pintar-uc-info.jpg',
-      stat1: { value: '38%', label: 'Efisiensi Biaya RS' },
-      stat2: { value: 'ABC Modif', label: 'Metode Perhitungan' },
-      stat3: { value: 'Real Cost', label: 'Bukan Asumsi' },
-      summary: 'PINTAR UC adalah sistem aplikasi berbasis web untuk pengelolaan unit cost rumah sakit secara akurat, transparan, dan efisien berbasis metode Activity-Based Costing (ABC) Modifikasi. Terintegrasi dengan Clinical Pathway sesuai regulasi Kemenkes untuk penetapan tarif layanan yang presisi dan rasional.',
-      problemStatement: 'Tanpa Unit Cost yang andal, risiko biaya membengkak dan RS terancam! Biaya tidak jelas, keputusan hanya berdasarkan asumsi, pemborosan tidak terdeteksi, likuiditas menurun, dan manajemen berjalan tanpa arah.',
+      stat1: { value: 'Up to 38%', label: 'Efisiensi Biaya RS' },
+      stat2: { value: 'ABC Modifikasi', label: 'Metode Perhitungan' },
+      stat3: { value: 'Biaya Riil', label: 'Bukan Asumsi' },
+      summary: 'PINTAR UC adalah sistem aplikasi manajemen unit cost rumah sakit berbasis metode Activity-Based Costing (ABC) Modifikasi yang terhubung langsung dengan Clinical Pathway medis. Menghadirkan kepastian biaya riil tindakan, rasionalitas tarif layanan, dan perlindungan penuh terhadap audit regulasi Kemenkes dan Kemendagri.',
+      problemStatement: 'Tanpa perhitungan Unit Cost yang andal, rumah sakit beroperasi dalam kegelapan finansial. Keputusan tarif hanya didasarkan pada asumsi, kebocoran biaya tidak terdeteksi, dan potensi temuan audit mengintai setiap saat.',
+      dampakTitle: 'Dampak Fatal Jika Rumah Sakit Tidak Menghitung Unit Cost Secara Ilmiah & Riil',
+      dampakStatement: 'Menetapkan tarif dan mengelola operasional rumah sakit tanpa perhitungan Unit Cost berbasis data riil bukanlah bentuk efisiensi, melainkan pembiaran terhadap kebocoran anggaran terselubung dan potensi sanksi hukum.',
+      dampakItems: [
+        {
+          title: 'Kendala Likuiditas Akibat Subsidi Silang',
+          desc: 'Rumah sakit tidak pernah tahu layanan mana yang surplus dan mana yang merugi. Menjual tindakan medis di bawah harga pokok riil mengikis likuiditas dan membakar kas operasional tanpa disadari direksi.'
+        },
+        {
+          title: 'Clinical Pathway Financial Tidak Terukur',
+          desc: 'Ketiadaan keterhubungan antara standar pelayanan medis dokter dengan biaya riil per tindakan membuat kendali mutu dan kendali biaya fasyankes tidak dapat diukur secara akuntabel.'
+        },
+        {
+          title: 'Defisit Klaim Paket BPJS',
+          desc: 'Biaya riil tindakan medis yang melampaui tarif klaim penggantian paket INA-CBGs BPJS Kesehatan harus ditanggung mandiri oleh rumah sakit, memicu defisit operasional berkepanjangan.'
+        },
+        {
+          title: 'Pemborosan BHP Medis',
+          desc: 'Ketiadaan kalkulasi cost driver aktivitas membuat pemborosan Bahan Habis Pakai (BHP) medis dan obat tidak terdeteksi, anggaran membengkak, dan perencanaan logistik berjalan tanpa arah.'
+        }
+      ],
+      keunggulan: [
+        {
+          title: 'Metode Activity Based Costing (ABC) Modifikasi',
+          desc: 'Mengalokasikan biaya langsung dan tidak langsung fasyankes secara ilmiah dan proporsional berdasarkan aktivitas riil, bukan sekadar asumsi pembagian persentase rata-rata.'
+        },
+        {
+          title: 'Clinical Pathway Berbasis Unit Cost',
+          desc: 'Menghubungkan standar proses klinis dokter dengan alokasi biaya per episode layanan untuk kendali mutu pelayanan medis sekaligus efisiensi finansial yang terukur.'
+        },
+        {
+          title: 'Standarisasi Pemakaian BHP Medis per Tindakan',
+          desc: 'Menetapkan standar kuota dan biaya pemakaian Bahan Habis Pakai (BHP) medis untuk setiap prosedur tindakan klinis, mencegah kebocoran anggaran fasyankes.'
+        },
+        {
+          title: 'Dasar Kebijakan Remunerasi',
+          desc: 'Menghadirkan fondasi data biaya riil yang objektif dan transparan sebagai dasar ilmiah dalam perumusan kebijakan remunerasi dan jasa pelayanan tenaga kesehatan.'
+        }
+      ],
+      manfaat: [
+        {
+          title: 'Tarif Layanan Rasional, Akurat, & Akuntabel',
+          desc: 'Tarif memiliki dasar perhitungan ilmiah yang kuat, mudah dipertanggungjawabkan saat audit, dan tetap kompetitif bagi masyarakat.'
+        },
+        {
+          title: 'Margin Surplus Terukur di Setiap Unit Layanan',
+          desc: 'Manajemen mengetahui secara pasti kontribusi margin setiap tindakan medis, poliklinik, instalasi penunjang, dan rawat inap.'
+        },
+        {
+          title: 'Efisiensi Penganggaran BHP hingga 38%',
+          desc: 'Perencanaan kebutuhan logistik medis berbasis data historis konsumsi riil pasien, mencegah penumpukan stok mati dan pemborosan.'
+        },
+        {
+          title: 'Keputusan Strategis Direksi Berbasis Fakta Riil',
+          desc: 'Menghilangkan spekulasi dan asumsi dalam pengambilan kebijakan tarif, pengadaan alat kesehatan, dan efisiensi operasional rumah sakit.'
+        }
+      ],
       solutionHighlights: [
         'Pengelolaan Bahan: Kelola data bahan medis dan non-medis terpusat, terstruktur, dan real-time',
         'Proyeksi Biaya: Proyeksi kebutuhan bahan dan biaya berdasarkan tren historis dan prediksi cerdas',
@@ -64,12 +120,12 @@ const PINTAR_DATA = {
         }
       ],
       benefits: [
-        'Data Real Cost menjadi acuan akurat, bukan lagi asumsi biaya semata',
+        'Data Biaya Riil menjadi acuan akurat, bukan lagi asumsi biaya semata',
         'Pengambilan keputusan manajemen lebih tepat, berbasis data dan terukur',
         'Efisiensi & produktivitas meningkat, pemborosan biaya dapat dikendalikan',
         'Stabilitas keuangan terjaga, likuiditas sehat, dan direksi manajemen lebih tenang'
       ],
-      compliance: ['Permenkes No. 85/2015 Pola Tarif RS', 'Permendagri 79/2018 (BLUD)', 'HAKI Kemenkumham No. 000831709', 'Standar Tarif INA-CBGs Kemenkes'],
+      compliance: ['Permenkes No. 3 Tahun 2023 Pola Tarif', 'Permendagri 79/2018 (BLUD)', 'HAKI Kemenkumham No. 000831709', 'Tarif INA-CBGs/IDRGS Kemenkes'],
       interactiveDemoType: 'unit-cost-calc'
     },
 
@@ -89,8 +145,64 @@ const PINTAR_DATA = {
       stat1: { value: 'P1-P2-P3', label: 'Komponen Terstruktur' },
       stat2: { value: '100%', label: 'Transparan & Auditabel' },
       stat3: { value: 'PPh 21', label: 'Pajak TER Terintegrasi' },
-      summary: 'PINTAR JP merupakan sistem aplikasi berbasis web integratif untuk mendukung distribusi insentif jasa pelayanan yang terintegrasi dengan indikator kinerja pegawai, transparan, akuntabel, dan dapat ditelusuri. Membantu manajemen menghubungkan kinerja utama, kinerja tambahan, serta perilaku/potensi dengan distribusi insentif sesuai kebijakan organisasi.',
+      summary: 'PINTAR JP merupakan sistem aplikasi web integratif untuk mengelola, menghitung, dan mendistribusikan insentif jasa pelayanan yang terhubung dengan indikator kinerja pegawai (KPI). Menjamin prinsip keadilan, transparansi, ketepatan pajak PMK 168/2023, dan keterbukaan tanpa ruang kecemburuan internal.',
       problemStatement: 'Distribusi jasa pelayanan yang tidak transparan adalah bom waktu bagi produktivitas rumah sakit! Rentan konflik, rawan salah rumus Excel, dan ketiadaan korelasi antara kinerja nyata dengan insentif yang diterima.',
+      dampakTitle: 'Dampak Kritis Distribusi Jasa Pelayanan Tanpa Formula Terstandar & Transparan',
+      dampakStatement: 'Ketidakjelasan formula pembagian jasa pelayanan bukan sekadar perkara administrasi, melainkan bom waktu yang dapat memicu kecemburuan sosial, demotivasi tenaga medis, hingga sengketa pajak institusi.',
+      dampakItems: [
+        {
+          title: 'Konflik Internal & Demotivasi Pegawai',
+          desc: 'Ketidakterbukaan formula memicu kecurigaan dan rasa ketidakadilan antarkelompok nakes, memicu konflik horizontal dan merusak keharmonisan pelayanan rumah sakit.'
+        },
+        {
+          title: 'Sulit Pengukuran KPI dan tidak integratif',
+          desc: 'Ketiadaan sistem yang menghubungkan indikator kinerja individu (IKI/IKU) dengan absensi, mutu rekam medis, dan SOP membuat penilaian kompensasi berjalan subjektif.'
+        },
+        {
+          title: 'Proses Lambat Setiap Akhir Bulan',
+          desc: 'Penyusunan rekapitulasi manual memakan waktu berminggu-minggu, memperlambat penyaluran hak pegawai, dan membebani bagian keuangan dengan komplain berkepanjangan.'
+        },
+        {
+          title: 'Tidak Transparan dan Akuntabel',
+          desc: 'Tanpa rincian perhitungan yang jelas, distribusi insentif rawan salah rumus, sengketa pemotongan pajak PPh 21, dan berisiko tinggi saat diaudit BPKP atau Inspektorat.'
+        }
+      ],
+      keunggulan: [
+        {
+          title: 'Formula KPI Berkeadilan & Terstruktur',
+          desc: 'Alokasi insentif terukur dengan pembagian proporsi berbasis bobot profesi, kinerja utama (P1), kinerja tambahan (P2), dan evaluasi perilaku (P3).'
+        },
+        {
+          title: 'Laporan Integratif termasuk Pajak',
+          desc: 'Terhubung langsung dengan engine kalkulasi pajak penghasilan PPh 21 TER (PMK No. 168/2023), menjamin rekapitulasi pajak fasyankes tepat dan siap lapor.'
+        },
+        {
+          title: 'Slip Insentif Per Pegawai Rinci',
+          desc: 'Setiap dokter, perawat, penunjang, dan staf administrasi memperoleh slip digital mandiri berisi rincian poin kinerja, potongan pajak, dan nominal bersih.'
+        },
+        {
+          title: 'Sangat Transparan dan Akuntabel',
+          desc: 'Seluruh alur distribusi tercatat dalam sistem audit digital yang akuntabel, memitigasi kecemburuan sosial dan berpayung hukum resmi HAKI Kemenkumham.'
+        }
+      ],
+      manfaat: [
+        {
+          title: 'Keharmonisan Hubungan Kerja Antar Kelompok Nakes',
+          desc: 'Seluruh pegawai memahami formula perhitungan secara terbuka, menghilangkan kecurigaan dan rasa ketidakadilan.'
+        },
+        {
+          title: 'Peningkatan Produktivitas & Disiplin Layanan',
+          desc: 'Insentif yang proporsional memotivasi tenaga medis untuk meningkatkan mutu tindakan dan kepatuhan klinis.'
+        },
+        {
+          title: 'Proses Distribusi Cepat dalam Hitungan Menit',
+          desc: 'Memangkas waktu rekap jaspel dari berminggu-minggu menjadi hitungan menit dengan sekali klik proses batch transfer.'
+        },
+        {
+          title: 'Kepatuhan Pajak 100% Bebas dari Temuan Audit',
+          desc: 'Laporan potongan pajak PPh 21 siap ekspor dan sinkron dengan bukti potong resmi kantor pelayanan pajak.'
+        }
+      ],
       solutionHighlights: [
         'Penyusunan Rencana Teknis Pembagian: Menetapkan alokasi dana secara makro sesuai porsi kelompok',
         'Penyusunan Format Pembagian: Berbasis kinerja, proporsi, dan Indeks Rupiah (PIR) untuk menjamin keadilan',
@@ -147,8 +259,64 @@ const PINTAR_DATA = {
       stat1: { value: 'Renstra', label: 'Terintegrasi Penuh' },
       stat2: { value: '5x5 Matrix', label: 'Heatmap Diagram' },
       stat3: { value: 'Klinis & Non', label: 'Kategori Risiko' },
-      summary: 'PINTAR MR (HAKI No: 001299405) merupakan sistem aplikasi berbasis web terintegrasi untuk pengelolaan manajemen risiko rumah sakit yang selaras dengan manajemen rencana strategis (renstra). Dirancang untuk mendukung pengambilan keputusan berbasis data, meningkatkan kepatuhan regulasi/akreditasi, dan membangun budaya risiko positif di seluruh lini organisasi.',
+      summary: 'PINTAR MR (HAKI No: 001299405) merupakan sistem aplikasi web terintegrasi untuk pengelolaan manajemen risiko rumah sakit yang selaras dengan manajemen rencana strategis (Renstra). Dirancang untuk mendukung keselamatan pasien, kepatuhan akreditasi STARKES, dan mitigasi risiko hukum maupun finansial.',
       problemStatement: 'Tanpa konektivitas, strategi hanya jadi dokumen di lemari! Risiko klinis (Medical Error, HAIs, Keterlambatan Diagnosis) dan Risiko Non-Klinis (Keuangan, SDM, Cybersecurity, Legal) sering tidak terpantau sehingga mengancam kelangsungan RS.',
+      dampakTitle: 'Risiko Kritis Mengelola Rumah Sakit Tanpa Manajemen Risiko Terintegrasi Renstra',
+      dampakStatement: 'Menjalankan strategi rumah sakit tanpa pemetaan risiko terukur sama dengan membiarkan insiden keselamatan pasien dan krisis hukum terjadi tanpa pertahanan. Sekali insiden fatal terjadi, reputasi yang dibangun puluhan tahun dapat hancur dalam sekejap.',
+      dampakItems: [
+        {
+          title: 'Mitigasi risiko tidak selaras dengan Target Renstra',
+          desc: 'Target rencana strategis lima tahunan rumah sakit terancam gagal total karena ancaman dan hambatan operasional tidak pernah dipetakan mitigasinya sejak awal.'
+        },
+        {
+          title: 'Pengukuran kinerja BLUD tidak realtime',
+          desc: 'Capaian indikator kinerja rencana bisnis dan anggaran (RBA/Renstra BLUD) terlambat dievaluasi, menyulitkan direksi mengambil tindakan koreksi tepat waktu.'
+        },
+        {
+          title: 'Mitigasi Risiko tidak detail per Unit kerja',
+          desc: 'Manajemen risiko hanya bersifat formalitas dokumen di tingkat direksi tanpa adanya rencana aksi mitigasi konkret per instalasi, poliklinik, dan unit penunjang.'
+        },
+        {
+          title: 'Monitoring Risiko tidak realtime',
+          desc: 'Ketiadaan sistem peringatan dini membuat insiden keselamatan pasien dan krisis hukum baru terdeteksi saat dampak kerugian telah membesar.'
+        }
+      ],
+      keunggulan: [
+        {
+          title: 'Matriks Heatmap 5x5 Kepmenkes 1354/2024 Dinamis',
+          desc: 'Pemetaan probabilitas dan dampak risiko klinis dan non-klinis secara visual dan interaktif sesuai regulasi Kemenkes terbaru.'
+        },
+        {
+          title: 'Penyelarasan Renstra dengan Cascading KPI Risiko',
+          desc: 'Menghubungkan visi strategis 5 tahunan dengan mitigasi risiko di seluruh level instalasi melalui pendekatan Balanced Scorecard.'
+        },
+        {
+          title: 'Sistem Peringatan Dini & Pengingat Batas Waktu Mitigasi',
+          desc: 'Notifikasi otomatis atas tindakan mitigasi yang berisiko ekstrem atau mendekati tenggat waktu realisasi penanggung jawab.'
+        },
+        {
+          title: 'Standar Akreditasi Rumah Sakit (STARKES) Paripurna',
+          desc: 'Dokumen register risiko siap audit akreditasi, BPKP, dan bersertifikasi resmi HAKI Kemenkumham No. 001299405.'
+        }
+      ],
+      manfaat: [
+        {
+          title: 'Pencapaian Target Renstra yang Terukur & Terkendali',
+          desc: 'Direksi dan Dewan Pengawas dapat memantau progres ketercapaian target strategis lima tahunan bersamaan dengan kendali risikonya secara presisi.'
+        },
+        {
+          title: 'Efektifitas pengendalian risiko',
+          desc: 'Evaluasi berkala terhadap mitigasi risiko klinis dan non-klinis memastikan setiap rencana aksi berjalan efektif menurunkan skor grading risiko fasyankes.'
+        },
+        {
+          title: 'Data integratif LOSS Event dan Early Warning System',
+          desc: 'Pencatatan riwayat kejadian kerugian (loss event) terhubung dengan alarm peringatan dini otomatis untuk mencegah insiden berulang.'
+        },
+        {
+          title: 'Anggaran Berbasis Risiko',
+          desc: 'Alokasi anggaran operasional dan belanja modal fasyankes diprioritaskan pada penanganan risiko kritis dengan asas efisiensi dan transparansi BLUD.'
+        }
+      ],
       solutionHighlights: [
         'Penyusunan Renstra & Penetapan KPI: Visi, misi, sasaran strategis, analisis SWOT terintegrasi cascading KPI',
         'Identifikasi & Analisis Risiko: Pemetaan profil risiko klinis dan non-klinis sesuai Kepmenkes 1354/2024 & ISO 31000',
@@ -204,8 +372,64 @@ const PINTAR_DATA = {
       stat1: { value: '9 Unsur', label: 'SKM MenPAN-RB' },
       stat2: { value: 'PPID RS', label: 'Keterbukaan Informasi' },
       stat3: { value: 'Ombudsman', label: 'Bebas Maladministrasi' },
-      summary: 'PINTAR PUAS adalah sistem terintegrasi untuk mengelola komplain, aduan, dan survei kepuasan pasien secara digital, cepat, transparan, dan akuntabel. Didukung untuk kebutuhan strategis PPID (Keterbukaan Informasi Publik), Ombudsman, Evaluasi Kinerja BLUD, Indeks Kepuasan Masyarakat (IKM), dan Inovasi Pelayanan Rumah Sakit.',
+      summary: 'PINTAR PUAS adalah sistem terintegrasi untuk penanganan komplain, aduan pasien, survei kepuasan masyarakat (SKM) 9 unsur PermenPAN-RB, dan portal PPID rumah sakit. Menjaga citra institusi, mempercepat respon aduan ber-SLA, dan membebaskan fasyankes dari maladministrasi.',
       problemStatement: 'Komplain pasien yang tidak tercatat dan lambat direspons sering viral di media sosial, menurunkan citra rumah sakit, serta survei kepuasan manual sulit direkapitulasi secara valid untuk evaluasi mutu.',
+      dampakTitle: 'Dampak Serius Jika Komplain Pasien & Penilaian Layanan Diabaikan Fasyankes',
+      dampakStatement: 'Di era keterbukaan informasi dan media sosial, satu keluhan pasien yang terlambat direspons dapat viral dan menghancurkan reputasi rumah sakit dalam hitungan jam, serta mengundang sanksi teguran dari lembaga pengawas negara.',
+      dampakItems: [
+        {
+          title: 'Krisis Kepercayaan Publik Akibat Komplain Viral',
+          desc: 'Keluhan penanganan medis atau antrean yang tidak tertangani secara sigap berujung pada penyebaran di media sosial dan mencoreng nama baik RS.'
+        },
+        {
+          title: 'Teguran Ombudsman RI & Sanksi Maladministrasi',
+          desc: 'Pengabaian standar pelayanan publik dan ketiadaan kanal PPID resmi memicu pemeriksaan dari Ombudsman dan penurunan peringkat kepatuhan.'
+        },
+        {
+          title: 'Kebutaan Manajemen Terhadap Mutu Lapangan',
+          desc: 'Direksi tidak memiliki data objektif atas masalah layanan di ruang perawatan, sehingga program perbaikan mutu selalu meleset dari kebutuhan pasien.'
+        },
+        {
+          title: 'Penurunan Skor Penilaian Kinerja Fasyankes BLUD',
+          desc: 'Nilai Indeks Kepuasan Masyarakat (IKM) yang rendah menurunkan skor tata kelola rumah sakit di hadapan Pemerintah Daerah dan Kemenkes.'
+        }
+      ],
+      keunggulan: [
+        {
+          title: 'Manajemen Tiket Komplain dengan Batas Waktu (SLA)',
+          desc: 'Setiap aduan pasien masuk ke sistem tiket terpadu dengan alur eskalasi otomatis ke pejabat berwenang jika melewati batas waktu respons.'
+        },
+        {
+          title: 'Survei Digital 9 Unsur Mutu PermenPAN-RB No. 14/2017',
+          desc: 'Pengumpulan data kepuasan pasien melalui scan QR Code di loket dan bangsal, terhitung otomatis menjadi Indeks Kepuasan Masyarakat (IKM).'
+        },
+        {
+          title: 'Modul Keterbukaan Informasi Publik (PPID) Terpadu',
+          desc: 'Memenuhi kewajiban UU No. 14/2008 tentang Keterbukaan Informasi Publik dengan registrasi permohonan informasi secara transparan.'
+        },
+        {
+          title: 'Analitik Real-Time Per Unit Layanan & Ruang Rawat',
+          desc: 'Dashboard grafik interaktif memudahkan direksi mengidentifikasi instalasi yang membutuhkan intervensi perbaikan mutu layanan.'
+        }
+      ],
+      manfaat: [
+        {
+          title: 'Komplain Tertangani Tuntas Sebelum Meluas ke Publik',
+          desc: 'Pasien merasa didengar dan dihargai melalui tindak lanjut keluhan yang cepat, ramah, dan solutif.'
+        },
+        {
+          title: 'Peningkatan Skor Akreditasi dan Predikat WBK/WBBM',
+          desc: 'Memenuhi seluruh indikator mutu pelayanan publik prima yang dipersyaratkan KemenPAN-RB dan Kemenkes.'
+        },
+        {
+          title: 'Evaluasi Kinerja Unit Berbasis Masukan Nyata',
+          desc: 'Menghadirkan data kepuasan yang objektif sebagai bahan evaluasi berkala bagi dokter, perawat, dan staf penunjang.'
+        },
+        {
+          title: 'Kepuasan & Loyalitas Pasien Meningkat Signifikan',
+          desc: 'Layanan yang transparan dan tanggap membangun reputasi fasyankes sebagai rumah sakit pilihan utama masyarakat.'
+        }
+      ],
       solutionHighlights: [
         'Komplain & Aduan Online: Pasien dapat menyampaikan keluhan dengan mudah, cepat, dan aman via smartphone/QR',
         'Survei Kepuasan Digital: Pengumpulan penilaian pasien secara real-time melalui survei yang terintegrasi (PermenPAN-RB No. 14/2017)',
@@ -257,12 +481,68 @@ const PINTAR_DATA = {
       badge: 'SIM Klinik & Pajak',
       themeColor: '#0052D4',
       accentColor: '#FF7A00',
-      heroImage: 'assets/images/pintar-klinik-3d.jpg',
+      heroImage: 'assets/images/PINTAR KLINIK.jpg',
       stat1: { value: 'SATUSEHAT', label: 'Bridging Kemenkes' },
       stat2: { value: 'PMK 168', label: 'PPh 21 TER Dokter' },
       stat3: { value: '100% RME', label: 'Permenkes 24/2022' },
-      summary: 'PINTAR KLINIK adalah software manajemen operasional dan keuangan terlengkap untuk Klinik Pratama, Klinik Utama, dan Rumah Sakit Khusus. Menggabungkan alur pendaftaran, antrean display, Rekam Medis Elektronik (RME) terstandar SATUSEHAT Kemenkes, kasir POS multipayment, kontrol stok obat apotek FEFO, hingga pembukuan akuntansi otomatis dan kalkulator perpajakan dokter.',
+      summary: 'PINTAR KLINIK adalah software manajemen operasional dan keuangan terlengkap untuk Klinik Pratama, Klinik Utama, dan Rumah Sakit Khusus. Menghubungkan antrean display, Rekam Medis Elektronik (RME) terstandar SATUSEHAT Kemenkes, kasir POS multipayment, kontrol stok obat apotek FEFO, hingga pembukuan akuntansi otomatis dan kalkulator perpajakan dokter.',
       problemStatement: 'Klinik sering mengalami kebocoran stok obat, selisih uang kasir, kesulitan bridging RME ke SATUSEHAT Kemenkes, serta kebingungan menghitung pajak PPh 21 dokter sesuai skema TER PMK 168/2023.',
+      dampakTitle: 'Kerugian Finansial & Risiko Legal Akibat Pengelolaan Klinik Secara Konvensional',
+      dampakStatement: 'Mengoperasikan klinik tanpa sistem digital terintegrasi menyebabkan kebocoran kas kasir, selisih stok farmasi puluhan juta, serta ancaman pembekuan izin akibat ketidakpatuhan Rekam Medis Elektronik (RME) SATUSEHAT.',
+      dampakItems: [
+        {
+          title: 'Kebocoran Kas',
+          desc: 'Pencatatan kasir dan bukti pembayaran manual membuka celah selisih uang setoran, pembatalan sepihak tanpa otorisasi, dan rawan kecurangan kas fisik.'
+        },
+        {
+          title: 'Tidak terkendali pengelolaan stok BHP Medis',
+          desc: 'Mutasi obat dan bahan habis pakai medis tidak terpantau secara real-time, memicu selisih stok fisik dengan pembukuan serta kerugian akibat obat kedaluwarsa.'
+        },
+        {
+          title: 'Data aset tidak teridentifikasi jelas',
+          desc: 'Nilai penyusutan alat medis dan inventaris klinik tidak tercatat sistematis dalam pembukuan, menyulitkan audit keuangan dan proyeksi reinvestasi sarana.'
+        },
+        {
+          title: 'Ketidakjelasan perhitungan pajak dokter',
+          desc: 'Pemotongan PPh 21 jasa medis dokter tanpa dasar regulasi PMK No. 168/2023 memicu perselisihan kemitraan nakes dan risiko sanksi denda kantor pajak.'
+        }
+      ],
+      keunggulan: [
+        {
+          title: 'Sistem pendaftaran terintegrasi dengan kasir',
+          desc: 'Registrasi pasien otomatis menghubungkan data identitas, antrean poli, riwayat kunjungan, dan tagihan billing kasir tanpa input ulang data manual.'
+        },
+        {
+          title: 'Sistem kasir terintegrasi dengan farmasi dan laboratorium',
+          desc: 'Resep elektronik dari dokter langsung masuk ke antrean peracikan obat apotek dan order laboratorium, mempercepat proses pembayaran dan dispensing obat.'
+        },
+        {
+          title: 'Terintegrasi dengan laporan perpajakan',
+          desc: 'Perhitungan otomatis pemotongan PPh 21 dokter skema TER (PMK 168/2023) menghasilkan rekapitulasi bukti potong dan laporan keuangan siap audit.'
+        },
+        {
+          title: 'Monitoring stok berbasis FEFO/FIFO',
+          desc: 'Pengendalian inventori obat dan BHP medis dengan sistem peringatan dini batas kedaluwarsa (First Expired First Out) untuk meminimalisir stok mati.'
+        }
+      ],
+      manfaat: [
+        {
+          title: 'Klinik Aman & Patuh 100% Terhadap Regulasi Kemenkes',
+          desc: 'Izin operasional klinik terjaga dan kemitraan klaim BPJS Kesehatan berjalan lancar tanpa kendala teknis.'
+        },
+        {
+          title: 'Mencegah Kebocoran Finansial & Selisih Stok Obat',
+          desc: 'Seluruh transaksi uang masuk, jasa medis, dan mutasi obat tercatat akurat dan dapat ditelusuri riwayatnya.'
+        },
+        {
+          title: 'Pantau Omzet & Laba Bersih Kapan Saja dari Smartphone',
+          desc: 'Pemilik klinik dapat memonitor performa kunjungan pasien dan keuangan harian secara live tanpa harus hadir di lokasi.'
+        },
+        {
+          title: 'Hubungan Kemitraan Dokter Lebih Transparan & Profesional',
+          desc: 'Rincian jasa medis dan pemotongan pajak tercantum jelas dalam slip rincian yang rapi dan akuntabel.'
+        }
+      ],
       solutionHighlights: [
         'Pendaftaran Pasien & Display Antrean Multi-Poli Ruang Tunggu dengan Panggilan Audio Suara',
         'Rekam Medis Elektronik (RME) Standar Kemenkes RI Siap Interoperabilitas SATUSEHAT',
@@ -318,8 +598,64 @@ const PINTAR_DATA = {
       stat1: { value: '567 Soal', label: 'Standar Baku' },
       stat2: { value: 'Detik', label: 'Skoring Realtime' },
       stat3: { value: 'T-Score', label: 'Profil Validitas & Klinis' },
-      summary: 'PINTAR MMPI-2 adalah solusi psikotes berbasis web yang mengotomatisasi pengujian dan skoring inventori kepribadian terpopuler di dunia (MMPI-2 / 567 butir soal). Digunakan oleh Dokter Spesialis Kedokteran Jiwa (Sp.KJ), Psikolog Klinis, Instalasi MCU Rumah Sakit Umum dan RS Jiwa untuk seleksi pejabat publik, CPNS, Caleg, calon dokter spesialis (PPDS), dan evaluasi klinis kejiwaan.',
+      summary: 'PINTAR MMPI-2 adalah solusi psikotes berbasis web yang mengotomatisasi pelaksanaan dan skoring inventori kepribadian terpopuler di dunia (MMPI-2 / 567 butir soal). Digunakan oleh Dokter Spesialis Kedokteran Jiwa (Sp.KJ), Psikolog Klinis, dan Instalasi MCU Rumah Sakit untuk seleksi pejabat publik, CPNS, calon dokter spesialis (PPDS), dan evaluasi klinis kejiwaan.',
       problemStatement: 'Skoring manual MMPI-2 memakan waktu 1-2 jam per peserta, rawan salah hitung koreksi skor K, dan tidak memungkinkan menangani ratusan peserta seleksi MCU massal secara bersamaan.',
+      dampakTitle: 'Risiko Fatal & Pemborosan Waktu Akibat Skoring Psikotes MMPI-2 Secara Manual',
+      dampakStatement: 'Menilai 567 butir soal MMPI-2 secara manual memakan waktu berhari-hari, membuka risiko human error perhitungan koreksi skor K, dan menghilangkan potensi pendapatan rumah sakit dari pemeriksaan MCU massal instansi.',
+      dampakItems: [
+        {
+          title: 'Hilangnya Potensi Pendapatan Layanan MCU Massal',
+          desc: 'Pemeriksaan seleksi ratusan calon pegawai atau pejabat publik beralih ke rumah sakit lain karena proses penilaian manual yang lambat.'
+        },
+        {
+          title: 'Risiko Fatal Kesalahan Skoring Koreksi Skor K',
+          desc: 'Kekeliruan penjumlahan lembar jawaban manual menghasilkan interpretasi profil klinis kejiwaan yang salah dan tidak dapat dipertanggungjawabkan.'
+        },
+        {
+          title: 'Pemborosan Biaya Kertas & Risiko Kebocoran Berkas',
+          desc: 'Arsip ratusan lembar soal fisik rentan tercecer atau disalahgunakan, melanggar prinsip kerahasiaan rekam medis psikologis pasien.'
+        },
+        {
+          title: 'Kelelahan Dokter Spesialis & Psikolog Menilai Berkas',
+          desc: 'Waktu berharga Psikiater (dr. Sp.KJ) dan Psikolog Klinis tersita untuk pekerjaan klerikal skoring alih-alih analisis klinis mendalam.'
+        }
+      ],
+      keunggulan: [
+        {
+          title: 'Standardisasi Baku 567 Soal Digital University of Minnesota',
+          desc: 'Antarmuka tes responsif yang mudah dikerjakan melalui Komputer, Tablet, atau Laptop dengan pengacakan butir soal aman.'
+        },
+        {
+          title: 'Algoritma Skoring Otomatis Kurang dari 5 Detik',
+          desc: 'Hasil T-Score validitas dan seluruh skala klinis terhitung instan begitu peserta menyelesaikan tes pada sistem.'
+        },
+        {
+          title: 'Grafik Profil Psikogram T-Score Berwarna & Skala Validitas',
+          desc: 'Visualisasi kurva kepribadian baku dengan deteksi otomatis pola jawaban faking good (L) maupun faking bad (F).'
+        },
+        {
+          title: 'Export Berkas PDF Laporan Resmi Terenkripsi',
+          desc: 'Menghasilkan lembar hasil pemeriksaan psikologis siap tinjau dan tanda tangan digital oleh dokter spesialis kejiwaan.'
+        }
+      ],
+      manfaat: [
+        {
+          title: 'Mampu Menangani Ratusan Peserta MCU dalam Satu Hari',
+          desc: 'Instalasi MCU rumah sakit dapat melayani tender pemeriksaan massal instansi pemerintah, BUMN, dan korporasi dengan cepat.'
+        },
+        {
+          title: 'Akurasi Perhitungan Mutlak 100% Bebas Human Error',
+          desc: 'Menjamin validitas dan reliabilitas diagnosa klinis sesuai kode etik psikiatri dan psikologi klinis Indonesia.'
+        },
+        {
+          title: 'Efisiensi Waktu Dokter Meningkat hingga 90%',
+          desc: 'Psikiater dan psikolog dapat fokus menganalisis interpretasi klinis tanpa perlu menghabiskan waktu menjumlah poin manual.'
+        },
+        {
+          title: 'Keamanan & Kerahasiaan Data Medis Pasien Terjamin',
+          desc: 'Seluruh riwayat jawaban dan hasil tes tersimpan aman dalam basis data terenkripsi standar rumah sakit.'
+        }
+      ],
       solutionHighlights: [
         'Ujian Online Terstandar 567 Soal: Antarmuka responsif ramah pengguna (dapat dikerjakan via Laptop, Tablet, PC)',
         'Skala Validitas Otomatis: Deteksi manipulasi jawaban melalui Skala L (Lie), F (Infrequency), K (Correction), VRIN, dan TRIN',
@@ -793,13 +1129,13 @@ const PINTAR_DATA = {
     team: [
       {
         name: 'Mukhsin Hadi, SE, M.Si',
-        role: 'Direktur PT. AKAPRO',
-        desc: 'Arah strategis, master trainer, dan pakar remunerasi, unit cost, manajemen risiko bersertifikasi, konsultan pengembangan bisnis, dan pengembangan solusi aplikasi.'
+        role: 'Master Trainer',
+        desc: 'Arah strategis pembelajaran, master trainer unit cost, remunerasi jaspel, manajemen risiko bersertifikasi, konsultan pengembangan bisnis fasyankes, dan perancang solusi aplikasi.'
       },
       {
         name: 'Sarah Safitri, A.Md',
-        role: 'Manajer Keuangan',
-        desc: 'Pengelolaan anggaran, administrasi keuangan, laporan, penagihan, dan penguatan akuntansi fasyankes.'
+        role: 'Manajer Operasional',
+        desc: 'Pengelolaan operasional harian, tata kelola kemitraan fasyankes, administrasi organisasi, penagihan, dan penguatan koordinasi layanan rumah sakit.'
       },
       {
         name: 'dr. Udi Suhono, Sp. B, FINACS',

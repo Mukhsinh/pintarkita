@@ -357,6 +357,9 @@ img, svg {
 
 .form-control {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   padding: 0.75rem 1rem;
   font-family: var(--font-main);
   font-size: 0.95rem;
@@ -365,6 +368,12 @@ img, svg {
   background: #ffffff;
   color: var(--color-dark);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+select.form-control {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .form-control:focus {
@@ -403,7 +412,7 @@ img, svg {
 
 /* Section Spacing */
 .landing-section {
-  padding: 4rem 0;
+  padding: 2.75rem 0;
 }
 
 .bg-soft-alt {

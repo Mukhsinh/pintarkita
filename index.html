@@ -640,25 +640,25 @@
             </div>
           </div>
           <div class="text-center p-3">
-            <div class="profile-brand-duo-card glass-panel p-3 text-center" style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; border: 1.5px solid rgba(0, 82, 212, 0.15); box-shadow: 0 10px 30px rgba(0, 82, 212, 0.08);">
+            <div class="profile-brand-duo-card glass-panel text-center">
               <!-- Logo Resmi PT. AKAPRO (Enlarged & Prominent) -->
-              <div class="logo-pt-wrap mb-3" style="background: #ffffff; padding: 14px 24px; border-radius: 16px; border: 1px solid rgba(226, 232, 240, 0.9); box-shadow: 0 4px 12px rgba(0,0,0,0.04); display: inline-block;">
-                <img src="assets/images/logo pt akademi profesional indonesia.jpeg" alt="Logo PT. Akademi Profesional Indonesia" style="max-height: 110px; width: auto; max-width: 320px; object-fit: contain; display: block; margin: 0 auto;">
+              <div class="logo-pt-wrap mb-3">
+                <img src="assets/images/logo pt akademi profesional indonesia.jpeg" alt="Logo PT. Akademi Profesional Indonesia" class="profile-logo-pt-img">
               </div>
               
-              <div class="d-flex align-items-center justify-content-center gap-2 mb-3 text-muted" style="font-size: 0.82rem; font-weight: 600;">
-                <span style="height: 1px; width: 40px; background: rgba(0,82,212,0.2);"></span>
-                <span class="text-primary"><i class="fas fa-shield-check"></i> Pengembang Resmi</span>
-                <span style="height: 1px; width: 40px; background: rgba(0,82,212,0.2);"></span>
+              <div class="brand-duo-divider d-flex align-items-center justify-content-center gap-2 mb-3 text-muted">
+                <span class="divider-line"></span>
+                <span class="text-primary font-semibold"><i class="fas fa-shield-alt"></i> Pengembang Resmi</span>
+                <span class="divider-line"></span>
               </div>
 
               <!-- Logo PINTARKITA (Harmoniously Balanced) -->
-              <div class="logo-pintar-wrap" style="background: #ffffff; padding: 12px 24px; border-radius: 16px; border: 1px solid rgba(226, 232, 240, 0.9); box-shadow: 0 4px 12px rgba(0,0,0,0.04); display: inline-block;">
-                <img src="assets/icons/pintarkita-main.svg" alt="PINTARKITA Fresh Logo" style="height: 75px; max-width: 300px; object-fit: contain; display: block; margin: 0 auto;">
+              <div class="logo-pintar-wrap">
+                <img src="assets/icons/pintarkita-main.svg" alt="PINTARKITA Fresh Logo" class="profile-logo-pintar-img">
               </div>
 
               <div class="mt-3">
-                <span class="badge badge-light-blue font-bold px-3 py-1" style="font-size: 0.75rem;">
+                <span class="badge badge-light-blue font-bold px-3 py-1">
                   <i class="fas fa-check-circle text-primary"></i> Platform Solusi Manajemen RS & Fasyankes
                 </span>
               </div>
@@ -780,20 +780,58 @@
 
 
       <!-- Kantor & Kontak Resmi (PDF Page 6 & 7) -->
-      <div class="glass-panel p-4 mb-4">
+      <div class="glass-panel profile-contact-panel p-4 mb-4">
         <div class="grid-2 align-items-center">
-          <div>
+          <div class="profile-contact-details">
             <span class="subtitle-tag">Kontak & Kantor Pusat</span>
-            <h3>PT. AKADEMI PROFESIONAL INDONESIA</h3>
-            <p><i class="fas fa-map-marker-alt text-primary"></i> <strong>Alamat Kantor:</strong> Perum Saphire Townhouse Blok C-3, Jl. Truntum, Kel. Krapyak, Kec. Pekalongan Utara, Kota Pekalongan, Jawa Tengah 51147</p>
-            <p><i class="fas fa-user-tie text-primary"></i> <strong>PIC:</strong> Mukhsin Hadi, SE, M.Si</p>
-            <p><i class="fab fa-whatsapp text-success font-xl"></i> <strong>WhatsApp:</strong> 085726112001</p>
-            <p><i class="far fa-envelope text-primary"></i> <strong>Email:</strong> mukhsin9@gmail.com / akademiprofesional@gmail.com</p>
+            <h3 class="company-official-name">PT. AKADEMI PROFESIONAL INDONESIA</h3>
+            <p class="company-lead-sub text-muted">Pusat Konsultasi, Pelatihan & Tata Kelola Fasyankes Indonesia</p>
+            
+            <div class="contact-list-clean mt-3">
+              <div class="contact-item-row">
+                <div class="contact-icon-bubble"><i class="fas fa-map-marker-alt text-primary"></i></div>
+                <div class="contact-text-content">
+                  <span class="contact-label font-bold text-dark">Alamat Kantor:</span>
+                  <span class="contact-val text-muted">Perum Saphire Townhouse Blok C-3, Jl. Truntum, Kel. Krapyak, Kec. Pekalongan Utara, Kota Pekalongan, Jawa Tengah 51147</span>
+                </div>
+              </div>
+
+              <div class="contact-item-row">
+                <div class="contact-icon-bubble"><i class="fas fa-user-tie text-primary"></i></div>
+                <div class="contact-text-content">
+                  <span class="contact-val font-semibold text-dark">Mukhsin Hadi, SE, M.Si</span>
+                </div>
+              </div>
+
+              <div class="contact-item-row">
+                <div class="contact-icon-bubble"><i class="fab fa-whatsapp text-success font-xl"></i></div>
+                <div class="contact-text-content">
+                  <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20PT.%20Akademi%20Profesional%20Indonesia." target="_blank" class="contact-val font-semibold text-dark hover-primary">085726112001</a>
+                </div>
+              </div>
+
+              <div class="contact-item-row">
+                <div class="contact-icon-bubble"><i class="far fa-envelope text-primary font-lg"></i></div>
+                <div class="contact-text-content">
+                  <a href="mailto:akademiprofesional@gmail.com" class="contact-val font-semibold text-dark hover-primary">akademiprofesional@gmail.com</a>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div class="text-center p-3">
-            <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20PT.%20Akademi%20Profesional%20Indonesia." target="_blank" class="btn btn-success btn-lg pulse-glow">
-              <i class="fas fa-headset"></i> Chat Admin (085726112001)
-            </a>
+            <div class="contact-action-card glass-inset p-4">
+              <div class="status-indicator-badge mb-2">
+                <span class="live-dot pulse"></span>
+                <span class="font-semibold text-success font-sm">Layanan Konsultasi Aktif</span>
+              </div>
+              <h4 class="mb-1 text-dark font-bold">Konsultasi Tata Kelola Fasyankes</h4>
+              <p class="text-muted font-sm mb-3">Diskusikan kebutuhan bimbingan teknis dan implementasi aplikasi bersama tim konsultan kami.</p>
+              <a href="https://wa.me/6285726112001?text=Halo%20Admin%20PINTARKITA,%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20PT.%20Akademi%20Profesional%20Indonesia." target="_blank" class="btn btn-success btn-lg pulse-glow font-bold btn-chat-admin-unified">
+                <i class="fas fa-headset"></i> Chat Admin
+              </a>
+              <small class="text-muted d-block mt-2 font-xs"><i class="fas fa-bolt text-warning"></i> Respon Cepat Tim Konsultan Resmi</small>
+            </div>
           </div>
         </div>
       </div>
