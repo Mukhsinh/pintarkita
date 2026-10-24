@@ -58,7 +58,6 @@ class PintarKitaApp {
 
     // Initialize subsystems after a microtask to keep main thread responsive
     requestAnimationFrame(() => {
-      if (window.PrayerTimeManager) window.PrayerTimeManager.init();
       if (window.PintarLms) window.PintarLms.init();
     });
   }
@@ -283,23 +282,26 @@ class PintarKitaApp {
                 <span class="badge badge-primary font-semibold">PT. AKADEMI PROFESIONAL INDONESIA</span>
               </div>
               <h1 class="landing-hero-title mb-3">${p.fullName}</h1>
-              <p class="landing-hero-subtitle text-primary font-semibold mb-3">${p.tagline}</p>
+              ${p.tagline ? `<p class="landing-hero-subtitle text-primary font-semibold mb-3">${p.tagline}</p>` : ''}
               <p class="landing-summary-p mx-auto text-muted mb-4" style="max-width: 780px;">${p.summary}</p>
 
+              ${(p.stat1 && p.stat1.value) ? `
               <div class="landing-stats-row justify-content-center mb-4">
                 <div class="stat-box glass-panel">
                   <h3>${p.stat1.value}</h3>
                   <p>${p.stat1.label}</p>
                 </div>
+                ${p.stat2 ? `
                 <div class="stat-box glass-panel">
                   <h3>${p.stat2.value}</h3>
                   <p>${p.stat2.label}</p>
-                </div>
+                </div>` : ''}
+                ${p.stat3 ? `
                 <div class="stat-box glass-panel">
                   <h3>${p.stat3.value}</h3>
                   <p>${p.stat3.label}</p>
-                </div>
-              </div>
+                </div>` : ''}
+              </div>` : ''}
 
               <div class="landing-cta-buttons justify-content-center gap-3">
                 <a href="#simulator-section" class="btn btn-primary btn-lg font-bold">
@@ -550,7 +552,6 @@ class PintarKitaApp {
             <div class="advisor-avatar">
               <i class="fas ${icon}"></i>
             </div>
-            ${isMaster ? '<span class="advisor-lead-badge"><i class="fas fa-crown"></i> Master Trainer</span>' : ''}
           </div>
           <h5 class="advisor-name">${m.name}</h5>
           <span class="advisor-role ${isMaster ? 'role-badge-master' : ''}">${m.role}</span>

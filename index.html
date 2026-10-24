@@ -38,73 +38,30 @@
 <body>
 
   <!-- ========================================================================
-       TOP BAR: JADWAL WAKTU SHOLAT & COUNTDOWN (Compact, Elegant & Clear)
-       ======================================================================== -->
-  <div class="prayer-bar-wrapper">
-    <div class="container">
-      <div class="prayer-bar-content">
-        <!-- City Selector & Current Date -->
-        <div class="prayer-info-left">
-          <div class="city-select-pill">
-            <i class="fas fa-map-marker-alt text-warning"></i>
-            <select id="prayer-city-select" aria-label="Pilih Kota"></select>
-          </div>
-          <div class="prayer-date-text">
-            <i class="far fa-calendar-alt text-warning"></i>
-            <span id="prayer-current-date">Memuat jadwal...</span>
-          </div>
-        </div>
-
-        <!-- Prayer Times Track -->
-        <div class="prayer-times-track">
-          <div class="prayer-pill" data-prayer="subuh">
-            <span class="prayer-name">Subuh</span>
-            <span class="prayer-val" id="prayer-subuh">--:--</span>
-          </div>
-          <div class="prayer-pill" data-prayer="terbit">
-            <span class="prayer-name">Terbit</span>
-            <span class="prayer-val" id="prayer-terbit">--:--</span>
-          </div>
-          <div class="prayer-pill" data-prayer="dzuhur">
-            <span class="prayer-name">Dzuhur</span>
-            <span class="prayer-val" id="prayer-dzuhur">--:--</span>
-          </div>
-          <div class="prayer-pill" data-prayer="ashar">
-            <span class="prayer-name">Ashar</span>
-            <span class="prayer-val" id="prayer-ashar">--:--</span>
-          </div>
-          <div class="prayer-pill" data-prayer="maghrib">
-            <span class="prayer-name">Maghrib</span>
-            <span class="prayer-val" id="prayer-maghrib">--:--</span>
-          </div>
-          <div class="prayer-pill" data-prayer="isya">
-            <span class="prayer-name">Isya</span>
-            <span class="prayer-val" id="prayer-isya">--:--</span>
-          </div>
-        </div>
-
-        <!-- Real-time Countdown Badge -->
-        <div class="prayer-countdown-badge">
-          <span class="pulse-dot"></span>
-          <div class="countdown-text-group">
-            <span class="countdown-label" id="prayer-next-label">Menuju Jadwal</span>
-            <span class="countdown-digits" id="prayer-countdown">00j 00m 00d</span>
-          </div>
-          <span class="header-clock" id="live-clock">--:--:-- WIB</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================================================================
-       MAIN DESKTOP HEADER & APP BAR
+       MAIN DESKTOP HEADER & APP BAR (Enterprise Standard)
        ======================================================================== -->
   <header class="main-header">
+    <div class="header-top-accent-bar"></div>
     <div class="container">
       <div class="header-inner">
-        <!-- Fresh Circular Logo PINTARKITA with PT. Akademi Profesional Indonesia Attribution -->
-        <div class="brand-link brand-home-link" title="PINTARKITA Home">
-          <img src="assets/icons/pintarkita-main.svg" alt="PINTARKITA - Layanan PT. Akademi Profesional Indonesia" class="brand-logo-img">
+        <!-- Enterprise Header Brand Frame: PINTARKITA -->
+        <div class="brand-link brand-home-link" title="PINTARKITA - PT. Akademi Profesional Indonesia">
+          <div class="enterprise-brand-frame">
+            <div class="brand-emblem-wrap">
+              <img src="assets/icons/pintarkita-circle.svg" alt="Logo PINTARKITA" class="brand-emblem-img">
+              <span class="brand-emblem-glow"></span>
+            </div>
+            <div class="brand-meta-group">
+              <div class="brand-headline-row">
+                <span class="brand-wordmark-unified"><span class="brand-name-pintar">PINTAR</span><span class="brand-name-kita">KITA</span></span>
+              </div>
+              <div class="brand-subline-row">
+                <span class="brand-company-label">
+                  <i class="fas fa-shield-alt text-primary"></i> PT. AKADEMI PROFESIONAL INDONESIA
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Desktop Navigation Menu: Beranda, Profil, Aplikasi, Pelatihan, Berita, Galeri -->
@@ -1252,7 +1209,6 @@
   <!-- Scripts: data.js & app.js load first (critical), rest deferred -->
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/prayer-time.js" defer></script>
   <script src="js/simulator.js" defer></script>
   <script src="js/lms.js" defer></script>
 </body>

@@ -59,6 +59,31 @@
   .sim-results {
     padding: 1.5rem 1.25rem;
   }
+  /* Enterprise Brand Frame Tablet Adaptation */
+  .enterprise-brand-frame {
+    padding: 0.35rem 0.85rem 0.35rem 0.5rem;
+    gap: 0.75rem;
+  }
+
+  .brand-emblem-wrap {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand-emblem-img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .brand-name-pintar,
+  .brand-name-kita {
+    font-size: 1.55rem;
+  }
+
+  .brand-company-label {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.45rem;
+  }
 }
 
 /* Small Devices (Smartphones, < 768px) */
@@ -71,40 +96,32 @@
     padding: 0 1rem;
   }
 
-  /* Prayer bar mobile compactness */
-  .prayer-bar-content {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
+  /* Enterprise Brand Frame Smartphone Adaptation */
+  .enterprise-brand-frame {
+    padding: 0.3rem 0.65rem 0.3rem 0.45rem;
+    gap: 0.6rem;
+    border-radius: 12px;
   }
 
-  .prayer-info-left {
-    justify-content: space-between;
-    width: 100%;
+  .brand-emblem-wrap {
+    width: 40px;
+    height: 40px;
   }
 
-  .prayer-times-track {
-    justify-content: flex-start;
-    padding-bottom: 0.25rem;
+  .brand-emblem-img {
+    width: 38px;
+    height: 38px;
   }
 
-  .prayer-pill {
-    min-width: 54px;
-    padding: 0.2rem 0.45rem;
+  .brand-name-pintar,
+  .brand-name-kita {
+    font-size: 1.35rem;
   }
 
-  .prayer-pill .prayer-name {
-    font-size: 0.62rem;
-  }
-
-  .prayer-pill .prayer-val {
-    font-size: 0.78rem;
-  }
-
-  .prayer-countdown-badge {
-    justify-content: center;
-    width: 100%;
-    margin-top: 0.2rem;
+  .brand-company-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+    padding: 0.12rem 0.35rem;
   }
 
   /* Wallet summary card mobile */

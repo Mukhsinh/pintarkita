@@ -473,22 +473,19 @@ const PINTAR_DATA = {
     'pintar-klinik': {
       id: 'pintar-klinik',
       name: 'PINTAR KLINIK',
-      fullName: 'Aplikasi Manajemen Klinik Terintegrasi Pendaftaran, Kasir, Stok, Biaya, Lapkeu & Pajak',
+      fullName: 'Aplikasi Manajemen Klinik Terintegrasi Pendaftaran, Kasir, Stok, Biaya, Laporan Keuangan & Pajak',
       menuBadge: 'Klinik & Pajak',
-      tagline: 'Solusi Lengkap Klinik Pratama & Utama: Rekam Medis Elektronik (RME) SATUSEHAT, Kasir POS, Gudang Obat, Lapkeu & Pajak PMK 168',
+      tagline: '',
       shortDesc: 'Aplikasi manajemen klinik dari pendaftaran, antrean, kasir, manajemen stok farmasi, biaya, laporan keuangan standar akuntansi dan terintegrasi dengan perpajakan.',
       icon: 'assets/icons/pintar-klinik.svg',
       badge: 'SIM Klinik & Pajak',
       themeColor: '#0052D4',
       accentColor: '#FF7A00',
       heroImage: 'assets/images/PINTAR KLINIK.jpg',
-      stat1: { value: 'SATUSEHAT', label: 'Bridging Kemenkes' },
-      stat2: { value: 'PMK 168', label: 'PPh 21 TER Dokter' },
-      stat3: { value: '100% RME', label: 'Permenkes 24/2022' },
-      summary: 'PINTAR KLINIK adalah software manajemen operasional dan keuangan terlengkap untuk Klinik Pratama, Klinik Utama, dan Rumah Sakit Khusus. Menghubungkan antrean display, Rekam Medis Elektronik (RME) terstandar SATUSEHAT Kemenkes, kasir POS multipayment, kontrol stok obat apotek FEFO, hingga pembukuan akuntansi otomatis dan kalkulator perpajakan dokter.',
+      summary: 'PINTAR KLINIK adalah software manajemen operasional dan keuangan terintegrasi untuk Klinik Pratama dan Klinik Utama, yang menghubungkan pendaftaran,  kasir POS multipayment, kontrol stok obat apotek FEFO, hingga pembukuan akuntansi otomatis dan perpajakan dokter.',
       problemStatement: 'Klinik sering mengalami kebocoran stok obat, selisih uang kasir, kesulitan bridging RME ke SATUSEHAT Kemenkes, serta kebingungan menghitung pajak PPh 21 dokter sesuai skema TER PMK 168/2023.',
-      dampakTitle: 'Kerugian Finansial & Risiko Legal Akibat Pengelolaan Klinik Secara Konvensional',
-      dampakStatement: 'Mengoperasikan klinik tanpa sistem digital terintegrasi menyebabkan kebocoran kas kasir, selisih stok farmasi puluhan juta, serta ancaman pembekuan izin akibat ketidakpatuhan Rekam Medis Elektronik (RME) SATUSEHAT.',
+      dampakTitle: 'Kerugian Finansial & Risiko Pengelolaan Klinik Tanpa Sistem Integratif',
+      dampakStatement: 'Mengoperasikan klinik tanpa sistem digital terintegrasi menyebabkan kebocoran kas kasir, selisih stok farmasi puluhan juta, serta ancaman kurang bayar pajak.',
       dampakItems: [
         {
           title: 'Kebocoran Kas',
@@ -579,7 +576,7 @@ const PINTAR_DATA = {
         'Owner klinik dapat memantau pendapatan harian dan laba bersih secara live dari ponsel',
         'Kepatuhan pajak dokter dan badan usaha klinik terjamin tanpa perlu biaya konsultan mahal'
       ],
-      compliance: ['Permenkes No. 24/2022 (RME)', 'Interoperabilitas SATUSEHAT Kemenkes', 'PMK No. 168/2023 (Pajak TER)', 'Standar Akuntansi Keuangan (SAK)'],
+      compliance: ['PMK No. 168/2023 (Pajak TER)', 'Standar Akuntansi Keuangan (SAK)'],
       interactiveDemoType: 'clinic-billing'
     },
 
